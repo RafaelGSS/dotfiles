@@ -38,30 +38,43 @@ chmod +x /usr/local/bin/docker-compose
 groupadd docker
 usermod -aG docker $USER
 
-echo "------------- Installing php and php-extensions ----------------";
-
-add-apt-repository ppa:ondrej/php;
-apt update;
-apt-get install php7.3 -y;
-apt install php7.3-cli php7.3-json php7.3-pdo php7.3-mysql php7.3-zip php7.3-gd  php7.3-mbstring php7.3-curl php7.3-xml php7.3-bcmath php7.3-json -y;
-
-
-echo "-------------- Installing nginx server HTTP --------------------";
-apt install nginx -y;
-
-
 echo "-------------- Installing NVM --------------------";
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 
 apt install snapd;
 
 echo "-------------- Installing VSCODE --------------";
-snap install vscode --classic
+snap install code --classic;
 
+echo "------------- Installing RVM -----------------";
+sudo apt install gnupg2 -y;
 
-echo "------------ Intalling Composer --------------";
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');";
-php -r "if (hash_file('sha384', 'composer-setup.php') === '48e3236262b34d30969dca3c37281b3b4bbe3221bda826ac6a9a62d6444cdb0dcd0615698a5cbe587c3f0fe57a54d8f5') { echo 'Installer verified'; } else { echo $
-php composer-setup.php --install-dir=/usr/local/bin --filename=composer;
-php -r "unlink('composer-setup.php');";
+gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB;
 
+\curl -sSL https://get.rvm.io | bash -s stable --rails;
+
+echo "------------- Installing Ruby --------------";
+source ~/.bashrc;
+rvm install ruby --latest;
+
+echo "------------- Installing Elixir --------------";
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.5;
+echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.bashrc;
+echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.bashrc;
+sudo apt install automake autoconf libreadline-dev libncurses-dev libssl-dev libyaml-dev libxslt-dev libffi-dev libtool unixodbc-dev unzip curl;
+source ~/.bashrc;
+
+asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git;
+
+asdf plugin-add erlang;
+asdf plugin-add elixir;
+
+asdf install erlang 22.0.7;
+asdf install elixir 1.9.1-otp-22;
+
+asdf global erlang 22.0.7;
+asdf global elixir 1.9.1-otp-22;
+
+echo "------------ Instaling NodeJS LTS -------------";
+source ~/.bashrc;
+nvm install --lts;
