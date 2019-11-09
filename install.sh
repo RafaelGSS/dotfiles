@@ -78,3 +78,7 @@ asdf global elixir 1.9.1-otp-22;
 echo "------------ Instaling NodeJS LTS -------------";
 source ~/.bashrc;
 nvm install --lts;
+
+echo "------------- Installing FiraCode Fonts ------------";
+
+apt install fonts-firacode;
