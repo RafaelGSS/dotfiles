@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "--------------------- Update and Upgrade ----------------------";
-apt update -y && apt upgrade -y;
+sudo apt update -y && apt upgrade -y;
 
 sudo apt-get install -y \
     build-essential \
@@ -20,15 +20,15 @@ sudo apt-get install -y \
     libpspell-dev \
     libreadline-dev;
 
-apt install -y curl git htop;
+sudo apt install -y curl git htop;
 
 echo "---------------- Installing Docker CE ----------------";
 
-apt-get install apt-transport-https ca-certificates curl software-properties-common
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
-apt-get update
-apt-get install docker-ce
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
+sudo apt-get update
+sudo apt-get install docker-ce -y
 
 # https://docs.docker.com/compose/install/
 curl -L https://github.com/docker/compose/releases/download/1.20.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
@@ -41,10 +41,10 @@ usermod -aG docker $USER
 echo "-------------- Installing NVM --------------------";
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 
-apt install snapd;
+sudo apt install snapd -y;
 
 echo "-------------- Installing VSCODE --------------";
-snap install code --classic;
+snap install code --classic -y;
 
 echo "------------- Installing RVM -----------------";
 sudo apt install gnupg2 -y;
@@ -63,7 +63,7 @@ echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.bashrc;
 echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.bashrc;
 sudo apt install automake autoconf libreadline-dev libncurses-dev libssl-dev libyaml-dev libxslt-dev libffi-dev libtool unixodbc-dev unzip curl;
 source ~/.bashrc;
-
+sudo chown -R $USER:$USER ~/.asdf
 asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git;
 
 asdf plugin-add erlang;
@@ -77,8 +77,10 @@ asdf global elixir 1.9.1-otp-22;
 
 echo "------------ Instaling NodeJS LTS -------------";
 source ~/.bashrc;
+sudo chown -R $USER:$USER ~/.nvm
 nvm install --lts;
 
 echo "------------- Installing FiraCode Fonts ------------";
 
-apt install fonts-firacode;
+sudo apt install fonts-firacode -y;
+
