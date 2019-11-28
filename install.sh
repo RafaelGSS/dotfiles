@@ -36,7 +36,7 @@ chmod +x /usr/local/bin/docker-compose
 
 # https://docs.docker.com/install/linux/linux-postinstall/
 groupadd docker
-usermod -aG docker $USER
+sudo usermod -aG docker $USER
 
 echo "-------------- Installing NVM --------------------";
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
