@@ -1,13 +1,13 @@
 call plug#begin()
 " autocomplete
-Plug 'terryma/vim-multiple-cursors'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " File explorer
 Plug 'scrooloose/nerdtree'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'dyng/ctrlsf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " interfaces
 Plug 'morhetz/gruvbox'
@@ -53,8 +53,6 @@ set colorcolumn=120
 " hidden characters
 set hidden
 set list
-set listchars=tab:>-,trail:.
-"set lcs+=space:.
 
 " enable mouse
 set mouse=a
@@ -92,15 +90,10 @@ nnoremap <leader>gl :Glog<CR>
 nnoremap <leader>dg :diffget<CR>
 nnoremap <leader>dp :diffput<CR>
 
-" Find files CTRL-P
-nnoremap <C-p> :CtrlP<CR>
-" / CTRL F
-nnoremap <C-F>f <Plug>CtrlSFPrompt                  
-nnoremap <C-F>n <Plug>CtrlSFCwordPath
-nnoremap <C-F>p <Plug>CtrlSFPwordPath
-
-" escape the terminal
-"tnoremap <Esc> <C-\><C-n>
+" fuzzy finder
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
+nnoremap <c-P> :Files<cr>
+nnoremap <c-F> :Ag<cr>
 
 " NERDTree
 "nnoremap <s-e> :NERDTreeToggle<cr>
@@ -110,6 +103,7 @@ nnoremap <leader>e :NERDTreeFind<cr>
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+let NERDTreeWinSize=20
 
 " search
 set incsearch
