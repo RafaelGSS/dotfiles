@@ -90,7 +90,7 @@ sudo apt install i3 i3status -y;
 
 echo "------------ Install Neovim --------------";
 sudo apt install neovim -y;
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "----------- Install Spotify TUI -------------";
 sudo snap install spt --channel=edge;
