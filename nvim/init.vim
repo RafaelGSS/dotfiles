@@ -6,6 +6,8 @@ Plug 'mattn/emmet-vim'
 
 " File explorer
 Plug 'scrooloose/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dyng/ctrlsf.vim'
 
 " interfaces
 Plug 'morhetz/gruvbox'
@@ -90,6 +92,13 @@ nnoremap <leader>gl :Glog<CR>
 nnoremap <leader>dg :diffget<CR>
 nnoremap <leader>dp :diffput<CR>
 
+" Find files CTRL-P
+nnoremap <C-p> :CtrlP<CR>
+" / CTRL F
+nnoremap <C-F>f <Plug>CtrlSFPrompt                  
+nnoremap <C-F>n <Plug>CtrlSFCwordPath
+nnoremap <C-F>p <Plug>CtrlSFPwordPath
+
 " escape the terminal
 "tnoremap <Esc> <C-\><C-n>
 
@@ -106,7 +115,7 @@ let NERDTreeDirArrows = 1
 set incsearch
 set hlsearch
 nnoremap <leader>s :nohlsearch<cr>
-:
+
 " Maps Alt-[h,j,k,l] to resizing a window split
 map <silent> <A-H> <C-w><
 map <silent> <A-K> <C-W>-
