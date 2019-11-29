@@ -1,5 +1,5 @@
 #!/bin/bash
-
+ 
 echo "--------------------- Update and Upgrade ----------------------";
 sudo apt update -y && apt upgrade -y;
 
@@ -91,7 +91,7 @@ sudo apt install i3 i3status i3lock arandr -y;
 # Todo copy i3 folder to current user folder .config/i3
 
 echo "------------ Install Neovim --------------";
-sudo apt install neovim -y;
+sudo apt install neovim silversearcher-ag -y;
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "----------- Install Spotify TUI -------------";
