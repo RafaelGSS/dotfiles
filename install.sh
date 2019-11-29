@@ -85,6 +85,13 @@ echo "------------- Installing FiraCode Fonts ------------";
 sudo apt install fonts-firacode -y;
 
 echo "------------ Install I3 WM ---------------";
-sudo apt install i3 i3status;
+sudo apt install i3 i3status -y;
 # Todo copy i3 folder to current user folder .config/i3
+
+echo "------------ Install Neovim --------------";
+sudo apt install neovim -y;
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+echo "----------- Install Spotify TUI -------------";
+sudo snap install spt --channel=edge;
 
