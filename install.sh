@@ -85,7 +85,7 @@ echo "------------- Installing FiraCode Fonts ------------";
 sudo apt install fonts-firacode -y;
 
 echo "------------ Install I3 WM ---------------";
-sudo apt install i3 i3status -y;
+sudo apt install i3 i3status i3lock -y;
 # Todo copy i3 folder to current user folder .config/i3
 
 echo "------------ Install Neovim --------------";
