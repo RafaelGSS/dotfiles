@@ -2,7 +2,7 @@ git pull origin master;
 
 reloadNvim () {
   echo "Reloading Nvim..."
-  nvim -u ${HOME}/.config/nvim/init.vim +PlugInstall +qa
+  nvim -u ~/.config/nvim/init.vim +PlugInstall +qa
   echo "Reloaded!"
 }
 
@@ -12,6 +12,10 @@ reloadI3 () {
   echo "Reloaded!"
 }
 
+reloadBash () {
+  source ~/.bashrc
+}
+
 reloadNvim
 reloadI3
-
+reloadBash
