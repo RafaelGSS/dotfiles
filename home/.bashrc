@@ -140,6 +140,7 @@ alias editor="nvim"
 alias vim="nvim"
 alias vi="nvim"
 alias oldvim="vim"
+alias vcfg="nvim $HOME/.config/nvim/init.vim"
 
 [ -f ~/.bashrc.private ] && source ~/.bashrc.private
 

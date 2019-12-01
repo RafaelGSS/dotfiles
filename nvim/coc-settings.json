@@ -1,0 +1,17 @@
+{
+  "tslint.autoFixOnSave": true,
+  "tslint.enable": true,
+  "tsserver.enableJavascript": false,
+  "eslint.trace.server": "verbose",
+  "eslint.autoFixOnSave": true,
+  "eslint.filetypes": [
+    "javascript",
+    "vue"
+  ],
+  "emmet.excludeLanguages": [
+    "css",
+    "scss"
+  ],
+  "vetur.validation.template": true,
+  "vetur.experimental.templateInterpolationService": false
+}
