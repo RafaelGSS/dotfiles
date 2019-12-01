@@ -28,7 +28,8 @@ deps:
 			unzip \
       git \
       htop \
-			snapd
+			snapd \
+			xclip
 
 tools:
 		sudo apt-get install fonts-firacode -y
@@ -42,6 +43,7 @@ i3:
 
 nvim:
 		sudo apt-get install neovim -y
+		sudo apt-get install silversearcher-ag -y
 		rm -rf ${HOME}/.config/nvim
 		ln -s $(realpath ./nvim/) ${HOME}/.config/nvim
 		curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
