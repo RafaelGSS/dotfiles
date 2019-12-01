@@ -101,5 +101,5 @@ lang: nvm rvm asdf
 		asdf global erlang 22.0.7;
 		asdf global elixir 1.9.1-otp-22;
 
-install: deps docker lang tools i3 nvim
+install: deps docker homefiles lang tools i3 nvim
 
