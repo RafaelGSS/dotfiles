@@ -29,7 +29,13 @@ deps:
       git \
       htop \
 			snapd \
+			sshpass \
 			xclip
+
+homefiles:
+		rm -f ${HOME}/.bashrc
+		ln -s $(realpath ./home/.bashrc) ${HOME}/.bashrc
+		if [ -f "$(realpath ./home/)/.bashrc.private" ]; then rm -f ${HOME}/.bashrc.private; ln -s $(realpath ./home/.bashrc.private) ${HOME}/.bashrc.private; fi;
 
 tools:
 		sudo apt-get install fonts-firacode -y
