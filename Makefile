@@ -48,7 +48,7 @@ i3:
 		i3-msg reload
 
 nvim:
-		sudo apt-get install neovim -y
+		sudo apt install neovim -y
 		sudo apt-get install silversearcher-ag -y
 		rm -rf ${HOME}/.config/nvim
 		ln -s $(realpath ./nvim/) ${HOME}/.config/nvim
