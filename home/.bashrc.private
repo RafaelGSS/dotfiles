@@ -1,3 +1,0 @@
-alias ssh-autoexpertise-app='sshpass -p "leo123pass" ssh root@165.227.65.140'
-alias ssh-autoexpertise-storage='sshpass -p "leo123pass" ssh root@157.245.126.61'
-
