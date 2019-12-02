@@ -3,6 +3,7 @@ RVM_DIR := $(HOME)/.rvm
 ASDF_DIR := $(HOME)/.asdf
 
 deps:
+		sudo apt update -y && apt upgrade -y
 		sudo apt-get install -y \
       build-essential \
       pkg-config \
@@ -24,13 +25,14 @@ deps:
       libjpeg-dev \
       libpng-dev \
       libpspell-dev \
-      libreadline-dev \
+			libreadline-dev \
 			unzip \
       git \
       htop \
 			snapd \
 			sshpass \
-			xclip
+			xclip \
+			arandr
 
 homefiles:
 		rm -f ${HOME}/.bashrc
