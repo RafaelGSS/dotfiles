@@ -12,6 +12,7 @@ Plug 'junegunn/fzf.vim'
 
 " interfaces
 Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
 
 " languages
 Plug 'pangloss/vim-javascript'
@@ -327,3 +328,7 @@ let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
 
 let g:multi_cursor_exit_from_visual_mode=1
+
+" vim-airline
+
+let g:airline#extensions#tabline#enabled = 1
