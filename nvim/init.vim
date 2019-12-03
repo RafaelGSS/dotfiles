@@ -100,7 +100,7 @@ nnoremap <c-F> :Ag<cr>
 " NERDTree
 nnoremap <C-e> :NERDTreeToggle<CR>
 
-nnoremap <leader>e :NERDTreeFind<cr>
+nnoremap <leader>m :NERDTreeFind<cr>
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
