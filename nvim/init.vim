@@ -78,8 +78,6 @@ set softtabstop=2
 set tags=tags
 
 " update neovim
-nnoremap <leader>sv :source ~/.config/nvim/init.vim<cr>
-
 " navigate between buffers
 nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bprev<CR>
