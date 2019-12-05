@@ -28,6 +28,9 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'vim-ruby/vim-ruby'
 
+" utils
+Plug 'heavenshell/vim-jsdoc'
+
 " lint
 Plug 'dense-analysis/ale'
 
