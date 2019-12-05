@@ -54,6 +54,7 @@ set backupcopy=yes
 set inccommand=split
 filetype plugin indent on
 set colorcolumn=120
+command! -nargs=* Vcfg execute "vsplit $MYVIMRC"
 
 " hidden characters
 set hidden
