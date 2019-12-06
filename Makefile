@@ -38,6 +38,8 @@ homefiles:
 		rm -f ${HOME}/.bashrc
 		ln -s $(realpath ./home/.bashrc) ${HOME}/.bashrc
 		if [ -f "$(realpath ./home/)/.bashrc.private" ]; then rm -f ${HOME}/.bashrc.private; ln -s $(realpath ./home/.bashrc.private) ${HOME}/.bashrc.private; fi;
+		rm -f ${HOME}/.ctags
+		ln -s $(realpath ./home/.ctags) ${HOME}/.ctags
 
 tools:
 		sudo apt-get install fonts-firacode -y
@@ -52,7 +54,7 @@ i3:
 nvim:
 		sudo add-apt-repository ppa:neovim-ppa/stable -y
 		sudo apt update
-		sudo apt install neovim -y
+		sudo apt install neovim ctags -y
 		sudo apt-get install silversearcher-ag -y
 		rm -rf ${HOME}/.config/nvim
 		ln -s $(realpath ./nvim/) ${HOME}/.config/nvim
