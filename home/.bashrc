@@ -136,11 +136,12 @@ alias docker-kill='docker kill $(docker ps -q)'
 alias dkc='docker-compose'
 alias dkc-run='dkc run --service-ports --use-alias --rm'
 
-alias editor="nvim"
-alias vim="nvim"
-alias vi="nvim"
-alias oldvim="vim"
-alias vcfg="nvim $HOME/.config/nvim/init.vim"
+alias editor='nvim'
+alias vim='nvim'
+alias vi='nvim'
+alias oldvim='vim'
+alias vcfg='nvim $HOME/.config/nvim/init.vim'
+alias tmux-kill="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
 
 [ -f ~/.bashrc.private ] && source ~/.bashrc.private
 
