@@ -28,9 +28,6 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'vim-ruby/vim-ruby'
 
-" utils
-Plug 'heavenshell/vim-jsdoc'
-
 " lint
 Plug 'dense-analysis/ale'
 
@@ -335,3 +332,7 @@ let g:multi_cursor_exit_from_visual_mode=1
 " vim-airline
 
 let g:airline#extensions#tabline#enabled = 1
+
+" AutoPairs
+
+let g:AutoPairsFlyMode = 0
