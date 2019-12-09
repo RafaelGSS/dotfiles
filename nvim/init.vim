@@ -13,6 +13,7 @@ Plug 'junegunn/fzf.vim'
 " interfaces
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
+Plug 'majutsushi/tagbar'
 
 " languages
 Plug 'pangloss/vim-javascript'
@@ -80,6 +81,9 @@ command! -nargs=* Vcfg execute "vsplit $MYVIMRC"
 "navigate between buffers
 nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bprev<CR>
+
+" remap go to definition
+nnoremap <C-]> g<C-]>
 
 """"""""""""""""""""""""""""""""""""""
 " Plugin git
@@ -309,4 +313,9 @@ noremap <leader>6 6gt
 noremap <leader>7 7gt
 noremap <leader>8 8gt
 noremap <leader>9 9gt
-noremap <leader>0 :tablast<cr>typescript
+noremap <leader>0 :tablast<cr>
+
+""""""""""""""""""""""""""""""""
+" Plugin Tagbar
+""""""""""""""""""""""""""""""""
+nmap <F8> :TagbarToggle<CR>
