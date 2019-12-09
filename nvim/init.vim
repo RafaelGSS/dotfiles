@@ -31,6 +31,9 @@ Plug 'vim-ruby/vim-ruby'
 " lint
 Plug 'dense-analysis/ale'
 
+" utils
+Plug 'tpope/vim-commentary'
+
 " git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
