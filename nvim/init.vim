@@ -97,8 +97,8 @@ nnoremap <leader>dp :diffput<CR>
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 nnoremap <c-P> :Files<cr>
 nnoremap <c-F> :Ag<cr>
-nnoremap <leader> t :BTags<CR>
-nnoremap <leader> T :Tags<CR>
+nnoremap <leader>t :BTags<CR>
+nnoremap <leader>T :Tags<CR>
 
 """"""""""""""""""""""""""""""""""""""
 " Plugin NERDTree
