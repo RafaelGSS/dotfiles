@@ -11,6 +11,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " interfaces
+Plug 'lifepillar/vim-gruvbox8'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'majutsushi/tagbar'
@@ -39,7 +40,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'shumphrey/fugitive-gitlab.vim'
 call plug#end()
 
-colorscheme gruvbox
+colorscheme gruvbox8
 set background=dark
 
 """""""""""""""""""""""""""""""""""
