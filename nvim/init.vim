@@ -12,9 +12,7 @@ Plug 'junegunn/fzf.vim'
 
 " interfaces
 Plug 'lifepillar/vim-gruvbox8'
-Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
-Plug 'majutsushi/tagbar'
 
 " languages
 Plug 'pangloss/vim-javascript'
@@ -316,7 +314,3 @@ noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
 
-""""""""""""""""""""""""""""""""
-" Plugin Tagbar
-""""""""""""""""""""""""""""""""
-nmap <F8> :TagbarToggle<CR>
