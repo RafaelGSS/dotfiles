@@ -21,6 +21,7 @@ reloadBash () {
 reloadTmux () {
   echo "Reloading Tmux..."
   sh ~/.tmux/plugins/tpm/scripts/install_plugins.sh;
+  source-file ~/.tmux.conf
   echo "Reloaded!"
 }
 
