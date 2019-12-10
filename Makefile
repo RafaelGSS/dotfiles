@@ -42,6 +42,7 @@ homefiles:
 		if [ -f "$(realpath ./home/)/.bashrc.private" ]; then rm -f ${HOME}/.bashrc.private; ln -s $(realpath ./home/.bashrc.private) ${HOME}/.bashrc.private; fi;
 		rm -f ${HOME}/.ctags
 		ln -s $(realpath ./home/.ctags) ${HOME}/.ctags
+		git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 		rm -f ${HOME}/.tmux.conf
 		ln -s $(realpath ./home/.tmux.conf) ${HOME}/.tmux.conf
 

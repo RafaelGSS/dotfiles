@@ -1,17 +1,9 @@
 {
-  "tslint.autoFixOnSave": true,
-  "tslint.enable": true,
-  "tsserver.enableJavascript": false,
-  "eslint.trace.server": "verbose",
-  "eslint.autoFixOnSave": true,
-  "eslint.filetypes": [
-    "javascript",
-    "vue"
-  ],
-  "emmet.excludeLanguages": [
-    "css",
-    "scss"
-  ],
-  "vetur.validation.template": true,
-  "vetur.experimental.templateInterpolationService": false
+	  "suggest.echodocSupport": true,
+	  "suggest.maxCompleteItemCount": 20,
+	  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact", "json", "javascriptreact"],
+	  "eslint.filetypes": ["javascript", "typescript", "vue"],
+    "vetur.validation.template": true,
+    "vetur.experimental.templateInterpolationService": false
 }
+
