@@ -13,9 +13,18 @@ reloadI3 () {
 }
 
 reloadBash () {
+  echo "Reloading Bash..."
   source ~/.bashrc
+  echo "Reloaded!"
+}
+
+reloadTmux () {
+  echo "Reloading Tmux..."
+  sh ~/.tmux/plugins/tpm/scripts/install_plugins.sh;
+  echo "Reloaded!"
 }
 
 reloadNvim
 reloadI3
 reloadBash
+reloadTmux
