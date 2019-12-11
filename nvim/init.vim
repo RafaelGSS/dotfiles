@@ -33,6 +33,7 @@ Plug 'dense-analysis/ale'
 
 " utils
 Plug 'tpope/vim-commentary'
+Plug 'vimwiki/vimwiki'
 
 " git
 Plug 'airblade/vim-gitgutter'
@@ -286,6 +287,12 @@ let g:airline#extensions#tabline#enabled = 1
 """"""""""""""""""""""""""""""""""
 
 let g:AutoPairsFlyMode = 0
+
+""""""""""""""""""""""""""""""""""
+" VimWiki
+""""""""""""""""""""""""""""""""""
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
 """"""""""""""""""""""""""""""""""
 " Remaps
