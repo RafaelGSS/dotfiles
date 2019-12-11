@@ -29,3 +29,12 @@ and decrease
 ```sh
 light -U 10
 ```
+
+## VimWatch
+
+I recommend of use gitwatch to not conflict things between workplace.
+
+usage:
+```sh
+gitwatch -r origin -m "Autocommit on change (%d)" -b sync .dotfiles/
+```
