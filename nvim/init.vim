@@ -83,6 +83,7 @@ command! -nargs=* Vcfg execute "vsplit $MYVIMRC"
 "navigate between buffers
 nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bprev<CR>
+nnoremap <leader>b :Buffers<CR>
 
 " remap go to definition
 nnoremap <C-]> g<C-]>
@@ -234,12 +235,6 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-" Remap for do codeAction of current line
-nmap <leader>ac  <Plug>(coc-codeaction)
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
 
