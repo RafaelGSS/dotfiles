@@ -12,7 +12,6 @@
 --exclude=tests
 --exclude=.tmp
 --exclude=*bundle.*
---exclude=priv
 
 --sort=no
 
