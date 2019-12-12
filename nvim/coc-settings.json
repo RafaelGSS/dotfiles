@@ -3,7 +3,6 @@
   /* "coc.preferences.enableFloatHighlight": false, */
   "coc.preferences.formatOnType": true,
   "coc.preferences.formatOnSaveFiletypes": [
-    "go",
     "javascript",
     "typescript",
     "json",
@@ -28,7 +27,7 @@
   "list.insertMappings": {
     "<C-c>": "do:exit"
   },
-  "eslint.autoFixOnSave": true,
+  "eslint.autoFixOnSave": false,
   "eslint.filetypes": [
     "javascript",
     "typescript",
