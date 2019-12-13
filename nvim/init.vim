@@ -66,6 +66,7 @@ set relativenumber
 " encoding
 set fileencoding=utf-8
 set encoding=utf-8
+set spell
 " spaces
 set expandtab
 set tabstop=2
@@ -117,12 +118,9 @@ nnoremap <leader>m :NERDTreeFind<cr>
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-let NERDTreeWinSize=20
+let NERDTreeWinSize=30
 
 setlocal indentkeys+=0.
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
-
 """"""""""""""""""""""""""""""""""""""
 " Plugin vue
 """"""""""""""""""""""""""""""""""""""
@@ -158,8 +156,6 @@ let g:ale_linters = {'javascript': ['eslint'], 'ruby': ['rubocop']}
 """"""""""""""""""""""""""""""""""""""
 " Plugin COC
 """"""""""""""""""""""""""""""""""""""
-
-" Some servers have issues with backup files, see #649
 set nobackup
 set nowritebackup
 
