@@ -118,7 +118,7 @@ nnoremap <leader>m :NERDTreeFind<cr>
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-let NERDTreeWinSize=330
+let NERDTreeWinSize=30
 
 setlocal indentkeys+=0.
 """"""""""""""""""""""""""""""""""""""
