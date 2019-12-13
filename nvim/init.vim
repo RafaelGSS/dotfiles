@@ -118,7 +118,7 @@ nnoremap <leader>m :NERDTreeFind<cr>
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-let NERDTreeWinSize=20
+let NERDTreeWinSize=330
 
 setlocal indentkeys+=0.
 autocmd QuickFixCmdPost [^l]* nested cwindow
