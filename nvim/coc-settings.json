@@ -1,13 +1,4 @@
 {
-  /* "coc.preferences.hoverTarget": "echo", */
-  /* "coc.preferences.enableFloatHighlight": false, */
-  "coc.preferences.formatOnType": false,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "javascript",
-    "typescript",
-    "json",
-    "jsonc"
-  ],
   "codeLens.enable": true,
   "diagnostic.virtualText": true,
   "diagnostic.checkCurrentLine": true,
