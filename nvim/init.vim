@@ -156,8 +156,6 @@ let g:ale_linters = {'javascript': ['eslint'], 'ruby': ['rubocop']}
 """"""""""""""""""""""""""""""""""""""
 " Plugin COC
 """"""""""""""""""""""""""""""""""""""
-
-" Some servers have issues with backup files, see #649
 set nobackup
 set nowritebackup
 
