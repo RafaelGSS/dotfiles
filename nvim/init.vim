@@ -121,9 +121,6 @@ let NERDTreeDirArrows = 1
 let NERDTreeWinSize=330
 
 setlocal indentkeys+=0.
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
-
 """"""""""""""""""""""""""""""""""""""
 " Plugin vue
 """"""""""""""""""""""""""""""""""""""
