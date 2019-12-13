@@ -1,5 +1,6 @@
 {
   "codeLens.enable": true,
+  "coc.preferences.diagnostic.displayByAle": true,
   "diagnostic.virtualText": true,
   "diagnostic.checkCurrentLine": true,
   "git.addGBlameToVirtualText": true,
