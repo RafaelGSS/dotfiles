@@ -1,8 +1,4 @@
 {
-  "codeLens.enable": true,
-  "diagnostic.virtualText": true,
-  "diagnostic.checkCurrentLine": true,
-  "git.addGBlameToVirtualText": true,
   "signature.target": "echo",
   "snippets.extends": {
     "javascriptreact": [
