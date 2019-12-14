@@ -4,7 +4,7 @@
 --exclude=resources
 --exclude=gulp
 --exclude=www
---exlucde=priv
+--exclude=priv
 
 --languages=javascript
 --languages=python
