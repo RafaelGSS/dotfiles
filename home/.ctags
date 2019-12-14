@@ -12,7 +12,7 @@
 --exclude=tests
 --exclude=.tmp
 --exclude=*bundle.*
-
+--exclude=priv
 --sort=no
 
 --langmap=vim:+(vimrc)
@@ -32,7 +32,6 @@
 --regex-Elixir=/^[ \t]*test[ \t]+\"([a-z_][a-zA-Z0-9_?! ]*)\"*/\1/t,tests,tests (test ...)/
 
 --langmap=javascript:.js.es6.es.jsx
---javascript-kinds=-c-f-m-p-v
 
 --regex-javascript=/^[ \t]*var[ \t]\{1,\}\([A-Za-z0-9_$]\{1,\}\)[ \t]*=[ \t]*\[/\1/A,Array,Arrays/b
 --regex-javascript=/^[ \t]*let[ \t]\{1,\}\([A-Za-z0-9_$]\{1,\}\)[ \t]*=[ \t]*\[/\1/A,Array,Arrays/b
