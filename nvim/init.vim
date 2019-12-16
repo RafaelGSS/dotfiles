@@ -43,7 +43,7 @@ Plug 'shumphrey/fugitive-gitlab.vim'
 call plug#end()
 
 colorscheme gruvbox8
-"set background=dark
+set background=dark
 
 """""""""""""""""""""""""""""""""""
 " Commons Config
