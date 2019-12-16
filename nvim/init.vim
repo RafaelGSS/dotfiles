@@ -278,7 +278,7 @@ let g:multi_cursor_exit_from_visual_mode=1
 let g:airline#extensions#tabline#enabled = 1
 
 """"""""""""""""""""""""""""""""""
-" AutoPairs
+" Plugin AutoPairs
 """"""""""""""""""""""""""""""""""
 
 let g:AutoPairsFlyMode = 0
