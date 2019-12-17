@@ -288,7 +288,13 @@ let g:AutoPairsFlyMode = 0
 """"""""""""""""""""""""""""""""""
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
+""""""""""""""""""""""""""""""""""
+" Typescript
+""""""""""""""""""""""""""""""""""
+" You can use something like this in your .vimrc to make the QuickFix window automatically appear if :make has any errors.
 
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
 """"""""""""""""""""""""""""""""""
 " Remaps
 """"""""""""""""""""""""""""""""""
