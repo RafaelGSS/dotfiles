@@ -35,6 +35,7 @@ Plug 'dense-analysis/ale'
 " utils
 Plug 'tpope/vim-commentary'
 Plug 'vimwiki/vimwiki'
+Plug 'ludovicchabant/vim-gutentags'
 
 " git
 Plug 'airblade/vim-gitgutter'
