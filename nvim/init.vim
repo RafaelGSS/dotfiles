@@ -57,6 +57,7 @@ set clipboard=unnamedplus
 set backupcopy=yes
 set inccommand=split
 set colorcolumn=120
+set nowrap
 " hidden characters
 set hidden
 set list
