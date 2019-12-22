@@ -1584,7 +1584,6 @@ NERDTreeFocus	nvim/plugged/nerdtree/plugin/NERD_tree.vim	/^function! NERDTreeFoc
 NERDTreeHijackNetrw	nvim/plugged/nerdtree/plugin/NERD_tree.vim	/^    augroup NERDTreeHijackNetrw$/;"	a
 NERDTreeListNode	nvim/plugged/nerdtree/nerdtree_plugin/fs_menu.vim	/^function! NERDTreeListNode()$/;"	f
 NERDTreeListNodeWin32	nvim/plugged/nerdtree/nerdtree_plugin/fs_menu.vim	/^function! NERDTreeListNodeWin32()$/;"	f
-NERDTreeMapOpenVSplit	nvim/init.vim	/^let NERDTreeMapOpenVSplit='v'$/;"	v
 NERDTreeMinimalUI	nvim/init.vim	/^let NERDTreeMinimalUI = 1$/;"	v
 NERDTreeMoveNode	nvim/plugged/nerdtree/nerdtree_plugin/fs_menu.vim	/^function! NERDTreeMoveNode()$/;"	f
 NERDTreeQuickLook	nvim/plugged/nerdtree/nerdtree_plugin/fs_menu.vim	/^function! NERDTreeQuickLook()$/;"	f
@@ -7449,6 +7448,7 @@ g:NERDTreeFileNode	nvim/plugged/nerdtree/lib/nerdtree/tree_file_node.vim	/^let g
 g:NERDTreeFlagSet	nvim/plugged/nerdtree/lib/nerdtree/flag_set.vim	/^let g:NERDTreeFlagSet = s:FlagSet$/;"	v
 g:NERDTreeIgnore	nvim/plugged/nerdtree/plugin/NERD_tree.vim	/^    let g:NERDTreeIgnore = ['\\~$']$/;"	v
 g:NERDTreeKeyMap	nvim/plugged/nerdtree/lib/nerdtree/key_map.vim	/^let g:NERDTreeKeyMap = s:KeyMap$/;"	v
+g:NERDTreeMapOpenVSplit	nvim/init.vim	/^let g:NERDTreeMapOpenVSplit='v'$/;"	v
 g:NERDTreeMenuController	nvim/plugged/nerdtree/lib/nerdtree/menu_controller.vim	/^let g:NERDTreeMenuController = s:MenuController$/;"	v
 g:NERDTreeMenuItem	nvim/plugged/nerdtree/lib/nerdtree/menu_item.vim	/^let g:NERDTreeMenuItem = s:MenuItem$/;"	v
 g:NERDTreeOldSortOrder	nvim/plugged/nerdtree/plugin/NERD_tree.vim	/^let g:NERDTreeOldSortOrder = []$/;"	v
