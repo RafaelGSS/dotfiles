@@ -1584,6 +1584,7 @@ NERDTreeFocus	nvim/plugged/nerdtree/plugin/NERD_tree.vim	/^function! NERDTreeFoc
 NERDTreeHijackNetrw	nvim/plugged/nerdtree/plugin/NERD_tree.vim	/^    augroup NERDTreeHijackNetrw$/;"	a
 NERDTreeListNode	nvim/plugged/nerdtree/nerdtree_plugin/fs_menu.vim	/^function! NERDTreeListNode()$/;"	f
 NERDTreeListNodeWin32	nvim/plugged/nerdtree/nerdtree_plugin/fs_menu.vim	/^function! NERDTreeListNodeWin32()$/;"	f
+NERDTreeMapOpenVSplit	nvim/init.vim	/^let NERDTreeMapOpenVSplit='v'$/;"	v
 NERDTreeMinimalUI	nvim/init.vim	/^let NERDTreeMinimalUI = 1$/;"	v
 NERDTreeMoveNode	nvim/plugged/nerdtree/nerdtree_plugin/fs_menu.vim	/^function! NERDTreeMoveNode()$/;"	f
 NERDTreeQuickLook	nvim/plugged/nerdtree/nerdtree_plugin/fs_menu.vim	/^function! NERDTreeQuickLook()$/;"	f
