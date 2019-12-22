@@ -7448,7 +7448,6 @@ g:NERDTreeFileNode	nvim/plugged/nerdtree/lib/nerdtree/tree_file_node.vim	/^let g
 g:NERDTreeFlagSet	nvim/plugged/nerdtree/lib/nerdtree/flag_set.vim	/^let g:NERDTreeFlagSet = s:FlagSet$/;"	v
 g:NERDTreeIgnore	nvim/plugged/nerdtree/plugin/NERD_tree.vim	/^    let g:NERDTreeIgnore = ['\\~$']$/;"	v
 g:NERDTreeKeyMap	nvim/plugged/nerdtree/lib/nerdtree/key_map.vim	/^let g:NERDTreeKeyMap = s:KeyMap$/;"	v
-g:NERDTreeMapOpenVSplit	nvim/init.vim	/^let g:NERDTreeMapOpenVSplit='v'$/;"	v
 g:NERDTreeMenuController	nvim/plugged/nerdtree/lib/nerdtree/menu_controller.vim	/^let g:NERDTreeMenuController = s:MenuController$/;"	v
 g:NERDTreeMenuItem	nvim/plugged/nerdtree/lib/nerdtree/menu_item.vim	/^let g:NERDTreeMenuItem = s:MenuItem$/;"	v
 g:NERDTreeOldSortOrder	nvim/plugged/nerdtree/plugin/NERD_tree.vim	/^let g:NERDTreeOldSortOrder = []$/;"	v
