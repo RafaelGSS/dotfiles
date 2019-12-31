@@ -4,7 +4,7 @@ call plug#begin()
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() } }
-Plug 'terryma/vim-multiple-cursors'
+" Plug 'terryma/vim-multiple-cursors'
 
 " File explorer
 Plug 'scrooloose/nerdtree'
@@ -265,17 +265,17 @@ let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-eslint', 'coc-hi
 " Plugin multiple-cursors
 """"""""""""""""""""""""""""""""
 
-" Default mapping
-let g:multi_cursor_start_word_key      = '<C-d>'
-let g:multi_cursor_select_all_word_key = '<A-d>'
-let g:multi_cursor_start_key           = 'g<C-d>'
-let g:multi_cursor_select_all_key      = 'g<A-d>'
-let g:multi_cursor_next_key            = '<C-d>'
-let g:multi_cursor_prev_key            = '<C-p>'
-let g:multi_cursor_skip_key            = '<C-x>'
-let g:multi_cursor_quit_key            = '<Esc>'
+" " Default mapping
+" let g:multi_cursor_start_word_key      = '<C-d>'
+" let g:multi_cursor_select_all_word_key = '<A-d>'
+" let g:multi_cursor_start_key           = 'g<C-d>'
+" let g:multi_cursor_select_all_key      = 'g<A-d>'
+" let g:multi_cursor_next_key            = '<C-d>'
+" let g:multi_cursor_prev_key            = '<C-p>'
+" let g:multi_cursor_skip_key            = '<C-x>'
+" let g:multi_cursor_quit_key            = '<Esc>'
 
-let g:multi_cursor_exit_from_visual_mode=1
+" let g:multi_cursor_exit_from_visual_mode=1
 
 """"""""""""""""""""""""""""""""""
 " Plugin vim-airline

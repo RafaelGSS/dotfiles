@@ -7820,16 +7820,7 @@ g:loaded_vimwiki_html_auto	nvim/plugged/vimwiki/autoload/vimwiki/html.vim	/^let 
 g:loaded_vimwiki_list_auto	nvim/plugged/vimwiki/autoload/vimwiki/lst.vim	/^let g:loaded_vimwiki_list_auto = 1$/;"	v
 g:loaded_vimwiki_tbl_auto	nvim/plugged/vimwiki/autoload/vimwiki/tbl.vim	/^let g:loaded_vimwiki_tbl_auto = 1$/;"	v
 g:mapleader	nvim/plugged/ale/test/.config/nvim/init.vim	/^let g:mapleader=','$/;"	v
-g:multi_cursor_exit_from_visual_mode	nvim/init.vim	/^let g:multi_cursor_exit_from_visual_mode=1$/;"	v
-g:multi_cursor_next_key	nvim/init.vim	/^let g:multi_cursor_next_key            = '<C-d>'$/;"	v
 g:multi_cursor_normal_maps	nvim/plugged/vim-multiple-cursors/plugin/multiple_cursors.vim	/^let g:multi_cursor_normal_maps =$/;"	v
-g:multi_cursor_prev_key	nvim/init.vim	/^let g:multi_cursor_prev_key            = '<C-p>'$/;"	v
-g:multi_cursor_quit_key	nvim/init.vim	/^let g:multi_cursor_quit_key            = '<Esc>'$/;"	v
-g:multi_cursor_select_all_key	nvim/init.vim	/^let g:multi_cursor_select_all_key      = 'g<A-d>'$/;"	v
-g:multi_cursor_select_all_word_key	nvim/init.vim	/^let g:multi_cursor_select_all_word_key = '<A-d>'$/;"	v
-g:multi_cursor_skip_key	nvim/init.vim	/^let g:multi_cursor_skip_key            = '<C-x>'$/;"	v
-g:multi_cursor_start_key	nvim/init.vim	/^let g:multi_cursor_start_key           = 'g<C-d>'$/;"	v
-g:multi_cursor_start_word_key	nvim/init.vim	/^let g:multi_cursor_start_word_key      = '<C-d>'$/;"	v
 g:multi_cursor_start_word_key	nvim/plugged/vim-multiple-cursors/plugin/multiple_cursors.vim	/^    let g:multi_cursor_start_word_key = g:multi_cursor_next_key$/;"	v
 g:multi_cursor_visual_maps	nvim/plugged/vim-multiple-cursors/plugin/multiple_cursors.vim	/^let g:multi_cursor_visual_maps =$/;"	v
 g:niji_dark_colours	nvim/plugged/gruvbox/colors/gruvbox.vim	/^let g:niji_dark_colours = g:rbpt_colorpairs$/;"	v
