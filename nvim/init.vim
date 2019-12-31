@@ -28,6 +28,7 @@ Plug 'digitaltoad/vim-pug'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'vim-ruby/vim-ruby'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 " lint
 Plug 'dense-analysis/ale'
@@ -57,6 +58,8 @@ set clipboard=unnamedplus
 set backupcopy=yes
 set inccommand=split
 set colorcolumn=120
+set nowrap
+set cursorline
 " hidden characters
 set hidden
 set list
@@ -121,6 +124,7 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeWinSize=30
 
+let g:NERDTreeMapOpenVSplit = "v"
 setlocal indentkeys+=0.
 """"""""""""""""""""""""""""""""""""""
 " Plugin vue
