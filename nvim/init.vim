@@ -28,6 +28,7 @@ Plug 'digitaltoad/vim-pug'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'vim-ruby/vim-ruby'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 " lint
 Plug 'dense-analysis/ale'

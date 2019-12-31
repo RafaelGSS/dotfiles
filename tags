@@ -433,6 +433,7 @@ Balanced	nvim/plugged/vim-javascript/indent/javascript.vim	/^function s:Balanced
 Bar	nvim/plugged/vim-jsdoc/test/test.ts	/^class Bar extends Foo implements IFoo {$/;"	c
 Base	nvim/plugged/ale/rplugin/python3/deoplete/sources/ale.py	/^    class Base(object):$/;"	c
 BaseApi	nvim/plugged/coc.nvim/build/index.js	/^class BaseApi extends events_1.EventEmitter {$/;"	C
+BaseCalss	nvim/plugged/vim-cpp-enhanced-highlight/test/color.cpp	/^class BaseCalss:$/;"	c	file:
 BaseLanguageClient	nvim/plugged/coc.nvim/build/index.js	/^class BaseLanguageClient {$/;"	C
 BaseLanguageClient	nvim/plugged/coc.nvim/src/language-client/client.ts	/^export abstract class BaseLanguageClient {$/;"	c
 BasicList	nvim/plugged/coc.nvim/build/index.js	/^class BasicList {$/;"	C
@@ -554,6 +555,9 @@ Choice	nvim/plugged/coc.nvim/build/index.js	/^class Choice extends Marker {$/;"	
 Choice	nvim/plugged/coc.nvim/src/snippets/parser.ts	/^export class Choice extends Marker {$/;"	c
 ChompDefault	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ChompDefault(default, ...) abort$/;"	f
 ChompError	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ChompError(...) abort$/;"	f
+Class	nvim/plugged/vim-cpp-enhanced-highlight/test/color2.cpp	/^    Class(T val, typename std::enable_if<std::is_floating_point<T>::value, T>::type* = 0)$/;"	f	class:Class
+Class	nvim/plugged/vim-cpp-enhanced-highlight/test/color2.cpp	/^    Class(int val): value(val) {$/;"	f	class:Class	file:
+Class	nvim/plugged/vim-cpp-enhanced-highlight/test/color2.cpp	/^class Class {$/;"	c	file:
 CleanUp	nvim/plugged/vim-gutentags/plat/unix/update_scopedb.sh	/^CleanUp() {$/;"	f
 Client	nvim/plugged/coc.nvim/build/index.js	/^function Client(options) {$/;"	F
 ClientState	nvim/plugged/coc.nvim/build/index.js	/^var ClientState;$/;"	V
@@ -1151,6 +1155,7 @@ FugitiveVimPath	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! Fugiti
 FugitiveWorkTree	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! FugitiveWorkTree(...) abort$/;"	f
 FullTextDocument	nvim/plugged/coc.nvim/build/index.js	/^    function FullTextDocument(uri, languageId, version, content) {$/;"	F
 FullTextDocument	nvim/plugged/coc.nvim/build/index.js	/^var FullTextDocument = \/** @class *\/ (function () {$/;"	V
+Function	nvim/plugged/vim-cpp-enhanced-highlight/test/color2.cpp	/^void Class::Function(double variable) {$/;"	f	class:Class
 GF	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:GF(mode) abort$/;"	f
 GIT_SOURCES	nvim/plugged/html5.vim/Makefile	/^GIT_SOURCES=$/;"	m
 GUNZIP	nvim/plugged/coc.nvim/build/index.js	/^  GUNZIP: 4,$/;"	P
@@ -1262,6 +1267,8 @@ Header	nvim/plugged/coc.nvim/build/index.js	/^class Header {$/;"	C
 Helper	nvim/plugged/coc.nvim/src/__tests__/helper.ts	/^export class Helper extends Emitter {$/;"	c
 HiLink	nvim/plugged/typescript-vim/syntax/typescript.vim	/^    command -nargs=+ HiLink hi def link <args>$/;"	c
 HiLink	nvim/plugged/typescript-vim/syntax/typescript.vim	/^    command -nargs=+ HiLink hi link <args>$/;"	c
+HiLink	nvim/plugged/vim-cpp-enhanced-highlight/after/syntax/cpp.vim	/^    command -nargs=+ HiLink hi def link <args>$/;"	c
+HiLink	nvim/plugged/vim-cpp-enhanced-highlight/after/syntax/cpp.vim	/^    command -nargs=+ HiLink hi link <args>$/;"	c
 HiLink	nvim/plugged/vim-javascript/extras/flow.vim	/^    command -nargs=+ HiLink hi def link <args>$/;"	c
 HiLink	nvim/plugged/vim-javascript/extras/flow.vim	/^    command -nargs=+ HiLink hi link <args>$/;"	c
 HiLink	nvim/plugged/vim-javascript/extras/jsdoc.vim	/^    command -nargs=+ HiLink hi def link <args>$/;"	c
@@ -2896,7 +2903,9 @@ _workspaceEdit	nvim/plugged/coc.nvim/build/index.js	/^                this._work
 _workspaceFolders	nvim/plugged/coc.nvim/src/workspace.ts	/^  private _workspaceFolders: WorkspaceFolder[] = []$/;"	m
 _write	nvim/plugged/coc.nvim/build/index.js	/^  _write(chunk, encoding, callback) {$/;"	M
 a	nvim/plugged/ale/ftplugin/ale-preview-selection.vim	/^noremap <buffer> a <NOP>$/;"	m
+a	nvim/plugged/vim-cpp-enhanced-highlight/test/color.cpp	/^    return b > a;$/;"	v
 a2	nvim/plugged/coc.nvim/build/index.js	/^    var a2 = new Array(keys.length)$/;"	V
+aClass	nvim/plugged/vim-cpp-enhanced-highlight/test/color.cpp	/^Aclass<T> aClass = bClass->getThing();$/;"	v	typeref:class:BaseCalss
 aH	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^onoremap <silent><buffer> aH :<C-U>call vimwiki#base#TO_header(0, 1, v:count1)<CR>$/;"	m
 aH	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^vnoremap <silent><buffer> aH :<C-U>call vimwiki#base#TO_header(0, 1, v:count1)<CR>$/;"	m
 aM	nvim/plugged/vim-ruby/ftplugin/ruby.vim	/^    onoremap <silent> <buffer> aM :<C-U>call <SID>wrap_a('[[','][')<CR>$/;"	m
@@ -4619,6 +4628,7 @@ autoHide	nvim/plugged/coc.nvim/src/model/floatFactory.ts	/^    private autoHide 
 autocmdMaxId	nvim/plugged/coc.nvim/src/workspace.ts	/^  private autocmdMaxId = 0$/;"	m
 autocmds	nvim/plugged/coc.nvim/src/workspace.ts	/^  private autocmds: Map<number, Autocmd> = new Map()$/;"	m
 autofill_tokens	nvim/plugged/html5.vim/autoload/xml/html5.vim	/^let autofill_tokens = ['on', 'off', 'name', 'honorific-prefix', 'given-name', 'additional-name', 'family-name', 'honorific-suffix', 'nickname', 'organization-title', 'username', 'new-password', 'current-password', 'organization', 'street-address', 'address-line1', 'address-line2', 'address-line3', 'address-level4', 'address-level3', 'address-level2', 'address-level1', 'country', 'country-name', 'postal-code', 'cc-name', 'cc-given-name', 'cc-additional-name', 'cc-family-name', 'cc-number', 'cc-exp', 'cc-exp-month', 'cc-exp-year', 'cc-csc', 'cc-type', 'transaction-currency', 'transaction-amount', 'language', 'bday', 'bday-day', 'bday-month', 'bday-year', 'sex', 'url', 'photo', 'tel', 'tel-country-code', 'tel-national', 'tel-area-code', 'tel-local', 'tel-local-prefix', 'tel-local-suffix', 'tel-extension', 'email', 'impp']$/;"	v
+b	nvim/plugged/vim-cpp-enhanced-highlight/test/color2.cpp	/^uint32_t b = static_cast<uint8_t>(a);$/;"	v
 b.get_posttitle	nvim/plugged/vim-airline/autoload/airline/extensions/tabline/buffers.vim	/^    function! b.get_posttitle(i) dict$/;"	f
 b.get_pretitle	nvim/plugged/vim-airline/autoload/airline/extensions/tabline/buffers.vim	/^    function! b.get_pretitle(i) dict$/;"	f
 b.get_title	nvim/plugged/vim-airline/autoload/airline/extensions/tabline/buffers.vim	/^  function! b.get_title(i) dict$/;"	f
@@ -6079,6 +6089,7 @@ didCloseTextDocument	nvim/plugged/coc.nvim/build/index.js	/^        didCloseText
 didOpen	nvim/plugged/coc.nvim/build/index.js	/^                let didOpen = (textDocument) => {$/;"	F
 didOpenTextDocument	nvim/plugged/coc.nvim/build/index.js	/^        didOpenTextDocument: (params) => connection.sendNotification(vscode_languageserver_protocol_1.DidOpenTextDocumentNotification.type, params),$/;"	M
 didSaveTextDocument	nvim/plugged/coc.nvim/build/index.js	/^        didSaveTextDocument: (params) => connection.sendNotification(vscode_languageserver_protocol_1.DidSaveTextDocumentNotification.type, params),$/;"	M
+did_cpp_syntax_inits	nvim/plugged/vim-cpp-enhanced-highlight/after/syntax/cpp.vim	/^    let did_cpp_syntax_inits = 1$/;"	v
 did_javascript_syn_inits	nvim/plugged/vim-javascript/extras/flow.vim	/^    let did_javascript_syn_inits = 1$/;"	v
 did_javascript_syn_inits	nvim/plugged/vim-javascript/extras/jsdoc.vim	/^    let did_javascript_syn_inits = 1$/;"	v
 did_javascript_syn_inits	nvim/plugged/vim-javascript/syntax/javascript.vim	/^    let did_javascript_syn_inits = 1$/;"	v
@@ -6882,6 +6893,12 @@ extractSync	nvim/plugged/coc.nvim/build/index.js	/^const extractSync = opt => {$
 extract_name	nvim/autoload/plug.vim	/^function! s:extract_name(str, prefix, suffix)$/;"	f
 extract_return_type	nvim/plugged/vim-jsdoc/autoload/jsdoc.vim	/^function! s:extract_return_type(line)$/;"	f
 f	nvim/plugged/coc.nvim/build/index.js	/^    f: fileName,$/;"	P
+f	nvim/plugged/vim-cpp-enhanced-highlight/test/color.cpp	/^AClass<T>(Fred f);$/;"	v
+f	nvim/plugged/vim-cpp-enhanced-highlight/test/color.cpp	/^AClass<T>(Fred<T> f);$/;"	v
+f	nvim/plugged/vim-cpp-enhanced-highlight/test/color.cpp	/^AClass<T>(Fred<T>::List f);$/;"	v
+f	nvim/plugged/vim-cpp-enhanced-highlight/test/color.cpp	/^getThing<T>(Fred f);$/;"	v
+f	nvim/plugged/vim-cpp-enhanced-highlight/test/color.cpp	/^getThing<T>(Fred<T> f);$/;"	v
+f	nvim/plugged/vim-cpp-enhanced-highlight/test/color.cpp	/^getThing<T>(Fred<T>::List f);$/;"	v
 f	nvim/plugged/vim-elixir/spec/indent/blocks_spec.rb	/^  def f do$/;"	f	class:name.name
 f	nvim/plugged/vim-elixir/spec/indent/blocks_spec.rb	/^  def f do$/;"	f	class:name.name.f
 factory	nvim/plugged/coc.nvim/build/index.js	/^  function factory(name, bigendian, unsigned) {$/;"	F
@@ -7293,6 +7310,7 @@ fun	nvim/plugged/vim-elixir/spec/indent/lists_spec.rb	/^    def fun do$/;"	f	cla
 func	nvim/plugged/coc.nvim/build/index.js	/^    function func(value) {$/;"	F
 func	nvim/plugged/coc.nvim/build/index.js	/^function func(value) {$/;"	F
 func	nvim/plugged/coc.nvim/src/util/is.ts	/^export function func(value: any): value is Function {$/;"	f
+func	nvim/plugged/vim-cpp-enhanced-highlight/test/color2.cpp	/^void func<std::map<std::string, std::string<double>>>() {$/;"	f
 funcs	nvim/plugged/coc.nvim/src/util/callSequence.ts	/^  private funcs: Set<Function> = new Set()$/;"	m
 funcs.buf_add_highlight	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.buf_add_highlight(bufnr, srcId, hlGroup, line, colStart, colEnd) abort$/;"	f
 funcs.buf_attach	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^function! s:funcs.buf_attach(...)$/;"	f
@@ -9454,6 +9472,7 @@ items	nvim/plugged/coc.nvim/src/list/ui.ts	/^  private items: ListItem[] = []$/;
 items	nvim/plugged/coc.nvim/src/model/status.ts	/^  private items: Map<string, StatusBarItem> = new Map()$/;"	m
 iterator	nvim/plugged/coc.nvim/build/index.js	/^  function iterator(value, filter) {$/;"	F
 j	nvim/plugged/coc.nvim/build/index.js	/^formatters.j = function (v) {$/;"	M
+j	nvim/plugged/vim-cpp-enhanced-highlight/test/color2.cpp	/^char j = reinterpret_cast<char>(k);$/;"	v
 jQuery	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^				jQuery( "option", this ).each(function(){$/;"	M
 jQuery	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^			jQuery( "*", this ).add(this).each(function(){$/;"	M
 jQuery	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^jQuery(window).bind("unload", function() {$/;"	M
@@ -10587,6 +10606,7 @@ openVSplit	nvim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:ope
 open_hunk_preview_window	nvim/plugged/vim-gitgutter/autoload/gitgutter/hunk.vim	/^function! s:open_hunk_preview_window()$/;"	f
 open_wiki_buffer	nvim/plugged/vimwiki/autoload/vimwiki/base.vim	/^function! s:open_wiki_buffer(item)$/;"	f
 opera	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^	opera: \/opera\/.test( userAgent ),$/;"	P
+operator <	nvim/plugged/vim-cpp-enhanced-highlight/test/color2.cpp	/^bool operator<(const ConnectionString& other) const {$/;"	f
 ops	nvim/plugged/coc.nvim/build/index.js	/^    const ops = {$/;"	O
 option	nvim/plugged/coc.nvim/src/completion/index.ts	/^  public get option(): CompleteOption {$/;"	m
 option	nvim/plugged/vim-gitgutter/autoload/gitgutter/debug.vim	/^function! s:option(name)$/;"	f
@@ -12569,6 +12589,9 @@ s:names	nvim/plugged/vim-ruby/syntax/ruby.vim	/^let s:names = { '~': 'Tilde', '`
 s:namespace_cache	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^let s:namespace_cache = {}$/;"	v
 s:namespace_id	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^let s:namespace_id = 1$/;"	v
 s:nbs	nvim/plugged/fzf.vim/autoload/fzf/vim.vim	/^let s:nbs = nr2char(0x2007)$/;"	v
+s:needs_cppstructure_match	nvim/plugged/vim-cpp-enhanced-highlight/after/syntax/cpp.vim	/^	let s:needs_cppstructure_match += 1$/;"	v
+s:needs_cppstructure_match	nvim/plugged/vim-cpp-enhanced-highlight/after/syntax/cpp.vim	/^	let s:needs_cppstructure_match += 2$/;"	v
+s:needs_cppstructure_match	nvim/plugged/vim-cpp-enhanced-highlight/after/syntax/cpp.vim	/^let s:needs_cppstructure_match = 0$/;"	v
 s:nested	nvim/plugged/vimwiki/syntax/vimwiki.vim	/^  let s:nested = extend(s:nested, vimwiki#base#detect_nested_syntax(), "keep")$/;"	v
 s:nested	nvim/plugged/vimwiki/syntax/vimwiki.vim	/^let s:nested = vimwiki#vars#get_wikilocal('nested_syntaxes')$/;"	v
 s:new_log_session	nvim/plugged/vim-gitgutter/autoload/gitgutter/debug.vim	/^let s:new_log_session = 1$/;"	v
