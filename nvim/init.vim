@@ -10,6 +10,7 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() } }
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'terryma/vim-smooth-scroll'
 
 " interfaces
 Plug 'lifepillar/vim-gruvbox8'
