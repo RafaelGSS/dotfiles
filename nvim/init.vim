@@ -295,6 +295,14 @@ let g:AutoPairsFlyMode = 0
 """"""""""""""""""""""""""""""""""
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
+
+""""""""""""""""""""""""""""""""""
+" Plugin Smooth Scroll
+""""""""""""""""""""""""""""""""""
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+
+
 """"""""""""""""""""""""""""""""""
 " Typescript
 """"""""""""""""""""""""""""""""""
