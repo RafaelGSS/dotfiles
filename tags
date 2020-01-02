@@ -250,7 +250,9 @@ $updateConfigurationOption	nvim/plugged/coc.nvim/src/configuration/shape.ts	/^  
 <Tab>	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^   inoremap <expr> <buffer> <Tab> vimwiki#tbl#kbd_tab()$/;"	m
 <c-F>	nvim/init.vim	/^nnoremap <c-F> :Ag<cr>$/;"	m
 <c-P>	nvim/init.vim	/^nnoremap <c-P> :Files<cr>$/;"	m
+<c-d>	nvim/init.vim	/^noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>$/;"	m
 <c-space>	nvim/init.vim	/^inoremap <silent><expr> <c-space> coc#refresh()$/;"	m
+<c-u>	nvim/init.vim	/^noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>$/;"	m
 <cr>	nvim/init.vim	/^inoremap <expr> <cr> pumvisible() ? "\\<C-y>" : "\\<C-g>u\\<CR>"$/;"	m
 <leader>0	nvim/init.vim	/^noremap <leader>0 :tablast<cr>$/;"	m
 <leader>1	nvim/init.vim	/^noremap <leader>1 1gt$/;"	m
@@ -406,6 +408,7 @@ AutoPairsReturn	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsR
 AutoPairsSpace	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsSpace()$/;"	f
 AutoPairsToggle	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsToggle()$/;"	f
 AutoPairsTryInit	nvim/plugged/auto-pairs/plugin/auto-pairs.vim	/^func! AutoPairsTryInit()$/;"	f
+AutoUpdate	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:AutoUpdate(fname, force, ...) abort$/;"	f
 Autocmd	nvim/plugged/coc.nvim/plugin/coc.vim	/^function! s:Autocmd(...) abort$/;"	f
 Autocmd	nvim/plugged/coc.nvim/src/types.ts	/^export interface Autocmd {$/;"	i
 B	nvim/plugged/vim-elixir/large_file.ex	/^      defmodule B do$/;"	m
@@ -536,6 +539,7 @@ CancellationTokenSource	nvim/plugged/coc.nvim/build/index.js	/^class Cancellatio
 Cd	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Cd(...) abort$/;"	f
 Change	nvim/plugged/coc.nvim/src/util/diff.ts	/^interface Change {$/;"	i
 ChangeCallback	nvim/plugged/coc.nvim/src/watchman.ts	/^export type ChangeCallback = (FileChange) => void$/;"	t
+ChangeFoldLevel	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ChangeFoldLevel(diff, force) abort$/;"	f
 ChangeInfo	nvim/plugged/coc.nvim/src/types.ts	/^export interface ChangeInfo {$/;"	i
 ChangeItem	nvim/plugged/coc.nvim/src/types.ts	/^export interface ChangeItem {$/;"	i
 ChangedLines	nvim/plugged/coc.nvim/src/types.ts	/^export interface ChangedLines {$/;"	i
@@ -545,7 +549,11 @@ Chars	nvim/plugged/coc.nvim/src/model/chars.ts	/^export class Chars {$/;"	c
 CheckBlockTag	nvim/plugged/html5.vim/indent/html.vim	/^func! s:CheckBlockTag(blocktag, ind)$/;"	f
 CheckCustomTag	nvim/plugged/html5.vim/indent/html.vim	/^func! s:CheckCustomTag(ctag)$/;"	f
 CheckDefined	nvim/plugged/vim-airline/autoload/airline/highlighter.vim	/^function! s:CheckDefined(colors)$/;"	f
+CheckExCtagsVersion	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:CheckExCtagsVersion(output) abort$/;"	f
+CheckFTCtags	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:CheckFTCtags(bin, ftype) abort$/;"	f
 CheckForBadConfig	nvim/plugged/ale/autoload/ale/handlers/eslint.vim	/^function! s:CheckForBadConfig(buffer, lines) abort$/;"	f
+CheckForExCtags	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:CheckForExCtags(silent) abort$/;"	f
+CheckMouseClick	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:CheckMouseClick() abort$/;"	f
 CheckTag	nvim/plugged/html5.vim/indent/html.vim	/^func! s:CheckTag(itag)$/;"	f
 CheckWithLSP	nvim/plugged/ale/autoload/ale/lsp_linter.vim	/^function! s:CheckWithLSP(linter, details) abort$/;"	f
 ChildProcessInfo	nvim/plugged/coc.nvim/build/index.js	/^var ChildProcessInfo;$/;"	V
@@ -564,6 +572,8 @@ ClientState	nvim/plugged/coc.nvim/build/index.js	/^var ClientState;$/;"	V
 ClientState	nvim/plugged/coc.nvim/src/language-client/client.ts	/^export enum ClientState {$/;"	e
 CloseAction	nvim/plugged/coc.nvim/build/index.js	/^var CloseAction;$/;"	V
 CloseAction	nvim/plugged/coc.nvim/src/language-client/client.ts	/^export enum CloseAction {$/;"	e
+CloseFold	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:CloseFold() abort$/;"	f
+CloseWindow	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:CloseWindow() abort$/;"	f
 CloseWindowIfNeeded	nvim/plugged/ale/autoload/ale/list.vim	/^function! s:CloseWindowIfNeeded(buffer) abort$/;"	f
 ClosingBracketOnEmptyLine	nvim/plugged/vim-ruby/indent/ruby.vim	/^function! s:ClosingBracketOnEmptyLine(cline_info) abort$/;"	f
 ClosingHeredocDelimiter	nvim/plugged/vim-ruby/indent/ruby.vim	/^function! s:ClosingHeredocDelimiter(cline_info) abort$/;"	f
@@ -721,8 +731,10 @@ ContentLength	nvim/plugged/coc.nvim/build/index.js	/^let ContentLength = 'Conten
 ContinuedHangingOperator	nvim/plugged/vim-ruby/indent/ruby.vim	/^function! s:ContinuedHangingOperator(msl_info) abort$/;"	f
 ContinuedLine	nvim/plugged/vim-ruby/indent/ruby.vim	/^function! s:ContinuedLine(pline_info) abort$/;"	f
 Continues	nvim/plugged/vim-javascript/indent/javascript.vim	/^function s:Continues()$/;"	f
+CorrectFocusOnStartup	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:CorrectFocusOnStartup() abort$/;"	f
 CountITags	nvim/plugged/html5.vim/indent/html.vim	/^func! s:CountITags(text)$/;"	f
 CountTagsAndState	nvim/plugged/html5.vim/indent/html.vim	/^func! s:CountTagsAndState(text)$/;"	f
+CreateAutocommands	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:CreateAutocommands() abort$/;"	f
 CreateCountDict	nvim/plugged/ale/autoload/ale/statusline.vim	/^function! s:CreateCountDict() abort$/;"	f
 CreateFile	nvim/plugged/coc.nvim/build/index.js	/^var CreateFile;$/;"	V
 CreateParamsSignature	nvim/plugged/coc.nvim/src/language-client/client.ts	/^interface CreateParamsSignature<E, P> {$/;"	i
@@ -754,6 +766,7 @@ Creator.toggleTabTree	nvim/plugged/nerdtree/lib/nerdtree/creator.vim	/^function!
 CssFirstUnfinished	nvim/plugged/html5.vim/indent/html.vim	/^func! s:CssFirstUnfinished(lnum, min_lnum)$/;"	f
 CssPrevNonComment	nvim/plugged/html5.vim/indent/html.vim	/^func! s:CssPrevNonComment(lnum, stopline)$/;"	f
 CssUnfinished	nvim/plugged/html5.vim/indent/html.vim	/^func! s:CssUnfinished(text)$/;"	f
+CtagsErrMsg	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:CtagsErrMsg(errmsg, infomsg, silent, ...) abort$/;"	f
 Cursor.column	nvim/plugged/vim-multiple-cursors/autoload/multiple_cursors.vim	/^function! s:Cursor.column() dict$/;"	f
 Cursor.line	nvim/plugged/vim-multiple-cursors/autoload/multiple_cursors.vim	/^function! s:Cursor.line() dict$/;"	f
 Cursor.move	nvim/plugged/vim-multiple-cursors/autoload/multiple_cursors.vim	/^function! s:Cursor.move(line, column) dict$/;"	f
@@ -835,6 +848,7 @@ Delayer	nvim/plugged/coc.nvim/src/language-client/utils/async.ts	/^export class 
 DeleteFile	nvim/plugged/coc.nvim/build/index.js	/^var DeleteFile;$/;"	V
 DeopleteSourceTest	nvim/plugged/ale/test/python/test_deoplete_source.py	/^class DeopleteSourceTest(unittest.TestCase):$/;"	c
 DetectElixir	nvim/plugged/vim-elixir/ftdetect/elixir.vim	/^function! s:DetectElixir()$/;"	f
+DetectFiletype	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:DetectFiletype(bufnr) abort$/;"	f
 Diagnostic	nvim/plugged/coc.nvim/build/index.js	/^var Diagnostic;$/;"	V
 DiagnosticBuffer	nvim/plugged/coc.nvim/build/index.js	/^class DiagnosticBuffer {$/;"	C
 DiagnosticBuffer	nvim/plugged/coc.nvim/src/diagnostic/buffer.ts	/^export class DiagnosticBuffer implements Disposable {$/;"	c
@@ -1001,6 +1015,7 @@ ErrorItem	nvim/plugged/coc.nvim/src/types.ts	/^export interface ErrorItem {$/;"	
 ErrorList	nvim/plugged/coc.nvim/src/__tests__/list/worker.test.ts	/^class ErrorList extends BasicList {$/;"	c
 ErrorTaskList	nvim/plugged/coc.nvim/src/__tests__/list/worker.test.ts	/^class ErrorTaskList extends BasicList {$/;"	c
 ErubyAtCursor	nvim/plugged/vim-ruby/ftplugin/eruby.vim	/^function! ErubyAtCursor() abort$/;"	f
+EscapeCtagsCmd	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:EscapeCtagsCmd(ctags_bin, args, ...) abort$/;"	f
 EscapeSignText	nvim/plugged/ale/autoload/ale/sign.vim	/^function! s:EscapeSignText(sign_text) abort$/;"	f
 Event	nvim/plugged/coc.nvim/build/index.js	/^var Event;$/;"	V
 Event.New	nvim/plugged/nerdtree/lib/nerdtree/event.vim	/^function! s:Event.New(nerdtree, subject, action, params) abort$/;"	f
@@ -1018,6 +1033,8 @@ Executable	nvim/plugged/coc.nvim/src/language-client/index.ts	/^namespace Execut
 ExecuteCommandFeature	nvim/plugged/coc.nvim/build/index.js	/^class ExecuteCommandFeature {$/;"	C
 ExecuteCommandFeature	nvim/plugged/coc.nvim/src/language-client/client.ts	/^class ExecuteCommandFeature$/;"	c
 ExecuteCommandRequest	nvim/plugged/coc.nvim/build/index.js	/^var ExecuteCommandRequest;$/;"	V
+ExecuteCtags	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ExecuteCtags(ctags_cmd) abort$/;"	f
+ExecuteCtagsOnFile	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ExecuteCtagsOnFile(fname, realfname, typeinfo) abort$/;"	f
 ExecuteRename	nvim/plugged/ale/autoload/ale/rename.vim	/^function! s:ExecuteRename(linter, old_name, new_name) abort$/;"	f
 ExitCallback	nvim/plugged/ale/autoload/ale/command.vim	/^function! s:ExitCallback(buffer, line_list, Callback, data) abort$/;"	f
 ExitNotification	nvim/plugged/coc.nvim/build/index.js	/^var ExitNotification;$/;"	V
@@ -1181,6 +1198,7 @@ GetEelixirIndent	nvim/plugged/vim-elixir/indent/eelixir.vim	/^function! GetEelix
 GetErrMsg	nvim/plugged/ale/ale_linters/prolog/swipl.vim	/^function! s:GetErrMsg(i, lines, text) abort$/;"	f
 GetErubyIndent	nvim/plugged/vim-ruby/indent/eruby.vim	/^function! GetErubyIndent(...)$/;"	f
 GetExecutable	nvim/plugged/ale/autoload/ale/handlers/sml.vim	/^function! s:GetExecutable(buffer, source) abort$/;"	f
+GetFileWinnr	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:GetFileWinnr(fileinfo) abort$/;"	f
 GetFiletypeValue	nvim/plugged/ale/autoload/ale/completion.vim	/^function! s:GetFiletypeValue(map, filetype) abort$/;"	f
 GetFirstProblems	nvim/plugged/ale/autoload/ale/statusline.vim	/^function! s:GetFirstProblems(buffer) abort$/;"	f
 GetHiCmd	nvim/plugged/vim-airline/autoload/airline/highlighter.vim	/^function! s:GetHiCmd(list)$/;"	f
@@ -1191,6 +1209,7 @@ GetLinterNames	nvim/plugged/ale/autoload/ale/linter.vim	/^function! s:GetLinterN
 GetLinterVariables	nvim/plugged/ale/autoload/ale/debugging.vim	/^function! s:GetLinterVariables(filetype, exclude_linter_names) abort$/;"	f
 GetLookupFromCompileCommandsFile	nvim/plugged/ale/autoload/ale/c.vim	/^function! s:GetLookupFromCompileCommandsFile(compile_commands_file) abort$/;"	f
 GetMSL	nvim/plugged/vim-ruby/indent/ruby.vim	/^function! s:GetMSL(lnum) abort$/;"	f
+GetNearbyTag	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:GetNearbyTag(all, forcecurrent, ...) abort$/;"	f
 GetPair	nvim/plugged/typescript-vim/indent/typescript.vim	/^  function s:GetPair(start,end,flags,skip,...)$/;"	f
 GetPair	nvim/plugged/typescript-vim/indent/typescript.vim	/^  function s:GetPair(start,end,flags,skip,time,...)$/;"	f
 GetPair	nvim/plugged/vim-javascript/indent/javascript.vim	/^  function s:GetPair(start,end,flags,skip)$/;"	f
@@ -1199,6 +1218,8 @@ GetRubyIndent	nvim/plugged/vim-ruby/indent/ruby.vim	/^function! GetRubyIndent(..
 GetRubyVarType	nvim/plugged/vim-ruby/autoload/rubycomplete.vim	/^function! s:GetRubyVarType(v)$/;"	f
 GetSCSSIndent	nvim/plugged/scss-syntax.vim/indent/scss.vim	/^function GetSCSSIndent()$/;"	f
 GetScriptType	nvim/plugged/html5.vim/indent/html.vim	/^func! s:GetScriptType(str)$/;"	f
+GetSupportedFiletypes	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:GetSupportedFiletypes() abort$/;"	f
+GetTagInfo	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:GetTagInfo(linenr, ignorepseudo) abort$/;"	f
 GetTypescriptIndent	nvim/plugged/typescript-vim/indent/typescript.vim	/^function GetTypescriptIndent()$/;"	f
 GetVars	nvim/plugged/vim-javascript/indent/javascript.vim	/^function s:GetVars()$/;"	f
 GetVersion	nvim/plugged/ale/ale_linters/java/eclipselsp.vim	/^function! s:GetVersion(executable, version_lines) abort$/;"	f
@@ -1238,6 +1259,10 @@ GlobComplete	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:GlobC
 GlobSync	nvim/plugged/coc.nvim/build/index.js	/^function GlobSync (pattern, options) {$/;"	F
 GlobalChange	nvim/plugged/coc.nvim/autoload/coc.vim	/^function! s:GlobalChange(dict, key, val)$/;"	f
 GoToLSPDefinition	nvim/plugged/ale/autoload/ale/definition.vim	/^function! s:GoToLSPDefinition(linter, options, capability) abort$/;"	f
+GotoFileWindow	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:GotoFileWindow(fileinfo, ...) abort$/;"	f
+GotoNextFold	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:GotoNextFold() abort$/;"	f
+GotoNextToplevelTag	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:GotoNextToplevelTag(direction) abort$/;"	f
+GotoPrevFold	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:GotoPrevFold() abort$/;"	f
 GrepParseLine	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:GrepParseLine(prefix, name_only, dir, line) abort$/;"	f
 GrepSubcommand	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:GrepSubcommand(line1, line2, range, bang, mods, args) abort$/;"	f
 GroupCmd	nvim/plugged/ale/autoload/ale/sign.vim	/^function! s:GroupCmd() abort$/;"	f
@@ -1250,6 +1275,8 @@ GutentagsToggleFake	nvim/plugged/vim-gutentags/plugin/gutentags.vim	/^    comman
 GutentagsToggleTrace	nvim/plugged/vim-gutentags/plugin/gutentags.vim	/^    command! GutentagsToggleTrace   :call gutentags#toggletrace()$/;"	c
 Gzip	nvim/plugged/coc.nvim/build/index.js	/^class Gzip extends Zlib {$/;"	C
 HL	nvim/plugged/gruvbox/colors/gruvbox.vim	/^function! s:HL(group, fg, ...)$/;"	f
+HandleBufDelete	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:HandleBufDelete(bufname, bufnr) abort$/;"	f
+HandleBufWrite	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:HandleBufWrite(fname) abort$/;"	f
 HandleDiagnosticsSignature	nvim/plugged/coc.nvim/src/language-client/client.ts	/^export interface HandleDiagnosticsSignature {$/;"	i
 HandleESLintOutput	nvim/plugged/ale/autoload/ale/handlers/eslint.vim	/^function! s:HandleESLintOutput(buffer, lines, type) abort$/;"	f
 HandleExit	nvim/plugged/ale/autoload/ale/engine.vim	/^function! s:HandleExit(job_info, buffer, output, data) abort$/;"	f
@@ -1257,11 +1284,13 @@ HandleExit	nvim/plugged/ale/autoload/ale/fix.vim	/^function! s:HandleExit(job_in
 HandleLSPDiagnostics	nvim/plugged/ale/autoload/ale/lsp_linter.vim	/^function! s:HandleLSPDiagnostics(conn_id, response) abort$/;"	f
 HandleLSPErrorMessage	nvim/plugged/ale/autoload/ale/lsp_linter.vim	/^function! s:HandleLSPErrorMessage(linter_name, response) abort$/;"	f
 HandleLSPResponseToCustomRequests	nvim/plugged/ale/autoload/ale/lsp_linter.vim	/^function! s:HandleLSPResponseToCustomRequests(conn_id, response) abort$/;"	f
+HandleOnlyWindow	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:HandleOnlyWindow() abort$/;"	f
 HandleSyntaxError	nvim/plugged/ale/autoload/ale/handlers/ruby.vim	/^function! s:HandleSyntaxError(buffer, lines) abort$/;"	f
 HandleTSServerDiagnostics	nvim/plugged/ale/autoload/ale/lsp_linter.vim	/^function! s:HandleTSServerDiagnostics(response, error_type) abort$/;"	f
 HandleUnixFormat	nvim/plugged/ale/autoload/ale/handlers/unix.vim	/^function! s:HandleUnixFormat(buffer, lines, type) abort$/;"	f
 Handler	nvim/plugged/coc.nvim/build/index.js	/^class Handler {$/;"	C
 Handler	nvim/plugged/coc.nvim/src/handler/index.ts	/^export default class Handler {$/;"	c
+HasOpenFileWindows	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:HasOpenFileWindows() abort$/;"	f
 HasOpt	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:HasOpt(args, ...) abort$/;"	f
 Header	nvim/plugged/coc.nvim/build/index.js	/^class Header {$/;"	C
 Helper	nvim/plugged/coc.nvim/src/__tests__/helper.ts	/^export class Helper extends Emitter {$/;"	c
@@ -1277,6 +1306,7 @@ HiLink	nvim/plugged/vim-javascript/syntax/javascript.vim	/^    command -nargs=+ 
 HiLink	nvim/plugged/vim-javascript/syntax/javascript.vim	/^    command -nargs=+ HiLink hi link <args>$/;"	c
 Highlight	nvim/plugged/coc.nvim/src/util/highlight.ts	/^export interface Highlight {$/;"	i
 HighlightItem	nvim/plugged/coc.nvim/src/model/highligher.ts	/^export interface HighlightItem {$/;"	i
+HighlightTag	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:HighlightTag(openfolds, ...) abort$/;"	f
 Highlighter	nvim/plugged/coc.nvim/build/index.js	/^class Highlighter {$/;"	C
 Highlighter	nvim/plugged/coc.nvim/src/handler/highlighter.ts	/^export default class Highlighter implements Disposable {$/;"	c
 Highlighter	nvim/plugged/coc.nvim/src/model/highligher.ts	/^export default class Highlighter {$/;"	c
@@ -1342,7 +1372,10 @@ IndentingKeywordInMSL	nvim/plugged/vim-ruby/indent/ruby.vim	/^function! s:Indent
 Inflate	nvim/plugged/coc.nvim/build/index.js	/^class Inflate extends Zlib {$/;"	C
 InflateRaw	nvim/plugged/coc.nvim/build/index.js	/^class InflateRaw extends Zlib {$/;"	C
 Info	nvim/plugged/coc.nvim/src/model/extension.ts	/^export interface Info {$/;"	i
+Init	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:Init(silent) abort$/;"	f
 InitCwds	nvim/plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^function! s:InitCwds()$/;"	f
+InitTypes	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:InitTypes() abort$/;"	f
+InitWindow	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:InitWindow(autoclose) abort$/;"	f
 InitializationFailedHandler	nvim/plugged/coc.nvim/src/language-client/client.ts	/^export interface InitializationFailedHandler {$/;"	i
 InitializeError	nvim/plugged/coc.nvim/build/index.js	/^var InitializeError;$/;"	V
 InitializeRequest	nvim/plugged/coc.nvim/build/index.js	/^var InitializeRequest;$/;"	V
@@ -1376,8 +1409,10 @@ IsPosInClassDef	nvim/plugged/vim-ruby/autoload/rubycomplete.vim	/^function! s:Is
 IsSbt	nvim/plugged/ale/ale_linters/scala/fsc.vim	/^function! s:IsSbt(buffer) abort$/;"	f
 IsSbt	nvim/plugged/ale/ale_linters/scala/scalac.vim	/^function! s:IsSbt(buffer) abort$/;"	f
 IsSwitch	nvim/plugged/vim-javascript/indent/javascript.vim	/^function s:IsSwitch()$/;"	f
+IsValidFile	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:IsValidFile(fname, ftype) abort$/;"	f
 JsDoc	nvim/plugged/vim-jsdoc/ftplugin/javascript/jsdoc.vim	/^command! -nargs=0 -buffer -complete=customlist,jsdoc#insert JsDoc call jsdoc#insert()$/;"	c
 JsDoc	nvim/plugged/vim-jsdoc/ftplugin/typescript/jsdoc.vim	/^command! -nargs=0 -buffer -complete=customlist,jsdoc#insert JsDoc call jsdoc#insert()$/;"	c
+JumpToTag	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:JumpToTag(stay_in_tagbar) abort$/;"	f
 K	nvim/init.vim	/^nnoremap <silent> K :call <SID>show_documentation()<CR>$/;"	m
 K	nvim/plugged/coc.nvim/build/index.js	/^    K: 1024,$/;"	P
 KeyMap.Add	nvim/plugged/nerdtree/lib/nerdtree/key_map.vim	/^function! s:KeyMap.Add(keymap)$/;"	f
@@ -1437,6 +1472,7 @@ ListUI	nvim/plugged/coc.nvim/build/index.js	/^class ListUI {$/;"	C
 ListUI	nvim/plugged/coc.nvim/src/list/ui.ts	/^export default class ListUI {$/;"	c
 LoadArgCount	nvim/plugged/ale/autoload/ale/util.vim	/^function! s:LoadArgCount(function) abort$/;"	f
 LoadRepos	nvim/plugged/vim-elixir/autoload/db/adapter/get_repos.exs	/^defmodule LoadRepos do$/;"	m
+LoadUserTypeDefs	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:LoadUserTypeDefs(...) abort$/;"	f
 Location	nvim/plugged/coc.nvim/build/index.js	/^var Location;$/;"	V
 LocationLink	nvim/plugged/coc.nvim/build/index.js	/^var LocationLink;$/;"	V
 LocationList	nvim/plugged/coc.nvim/build/index.js	/^class LocationList extends basic_1.default {$/;"	C
@@ -1474,6 +1510,7 @@ Manager	nvim/plugged/coc.nvim/build/index.js	/^class Manager {$/;"	C
 Manager	nvim/plugged/coc.nvim/src/provider/manager.ts	/^export default class Manager<T> {$/;"	c
 Map	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Map(mode, lhs, rhs, ...) abort$/;"	f
 Map	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! s:Map(mode, lhs, rhs, ...) abort$/;"	f
+MapKeys	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:MapKeys() abort$/;"	f
 MapMode	nvim/plugged/coc.nvim/src/types.ts	/^export type MapMode = 'n' | 'i' | 'v' | 'x' | 's' | 'o'$/;"	t
 MapMotion	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:MapMotion(lhs, rhs) abort$/;"	f
 Mappings	nvim/plugged/coc.nvim/build/index.js	/^class Mappings {$/;"	C
@@ -1526,6 +1563,7 @@ MessageWriter	nvim/plugged/coc.nvim/build/index.js	/^var MessageWriter;$/;"	V
 Middleware	nvim/plugged/coc.nvim/src/language-client/client.ts	/^export type Middleware = _Middleware &$/;"	t
 Minimatch	nvim/plugged/coc.nvim/build/index.js	/^  m.Minimatch = function Minimatch (pattern, options) {$/;"	M
 Minimatch	nvim/plugged/coc.nvim/build/index.js	/^function Minimatch (pattern, options) {$/;"	F
+MinimizeMaxFoldLevel	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:MinimizeMaxFoldLevel(fileinfo, tags) abort$/;"	f
 MixProject	nvim/plugged/ale/test/command_callback/elixir_paths/mix_project/mix.exs	/^defmodule Test.MixProject do$/;"	m
 ModifierFlags	nvim/plugged/vim-airline/autoload/airline/extensions/fugitiveline.vim	/^function! s:ModifierFlags()$/;"	f
 Mods	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Mods(mods, ...) abort$/;"	f
@@ -1670,8 +1708,11 @@ OneScope	nvim/plugged/vim-javascript/indent/javascript.vim	/^function s:OneScope
 Open	nvim/plugged/ale/autoload/ale/preview.vim	/^function! s:Open(open_in_tab) abort$/;"	f
 OpenConfig	nvim/plugged/coc.nvim/plugin/coc.vim	/^function! s:OpenConfig()$/;"	f
 OpenExec	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:OpenExec(cmd, mods, args, ...) abort$/;"	f
+OpenFold	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:OpenFold() abort$/;"	f
 OpenLocalConfig	nvim/plugged/coc.nvim/plugin/coc.vim	/^function! s:OpenLocalConfig()$/;"	f
+OpenParents	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:OpenParents(...) abort$/;"	f
 OpenParse	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:OpenParse(args, wants_cmd) abort$/;"	f
+OpenWindow	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:OpenWindow(flags) abort$/;"	f
 Opener.New	nvim/plugged/nerdtree/lib/nerdtree/opener.vim	/^function! s:Opener.New(path, opts)$/;"	f
 Opener._bufInWindows	nvim/plugged/nerdtree/lib/nerdtree/opener.vim	/^function! s:Opener._bufInWindows(bnum)$/;"	f
 Opener._checkToCloseTree	nvim/plugged/nerdtree/lib/nerdtree/opener.vim	/^function! s:Opener._checkToCloseTree(newtab)$/;"	f
@@ -1714,6 +1755,7 @@ ParseCino	nvim/plugged/vim-javascript/indent/javascript.vim	/^function s:ParseCi
 ParseInlinedFunctionProblems	nvim/plugged/ale/autoload/ale/handlers/gcc.vim	/^function! s:ParseInlinedFunctionProblems(buffer, lines) abort$/;"	f
 ParseOptions	nvim/plugged/coc.nvim/build/index.js	/^var ParseOptions;$/;"	V
 ParseProblemsInHeaders	nvim/plugged/ale/autoload/ale/handlers/gcc.vim	/^function! s:ParseProblemsInHeaders(buffer, lines) abort$/;"	f
+ParseTagline	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ParseTagline(part1, part2, typeinfo, fileinfo) abort$/;"	f
 PatchSearchExpr	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:PatchSearchExpr(reverse) abort$/;"	f
 Path.AbsolutePathFor	nvim/plugged/nerdtree/lib/nerdtree/path.vim	/^function! s:Path.AbsolutePathFor(pathStr)$/;"	f
 Path.CopyingSupported	nvim/plugged/nerdtree/lib/nerdtree/path.vim	/^function! s:Path.CopyingSupported()$/;"	f
@@ -1796,9 +1838,14 @@ PreviousSection	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:Pr
 PreviousSectionEnd	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:PreviousSectionEnd(count) abort$/;"	f
 PreviousToken	nvim/plugged/vim-javascript/indent/javascript.vim	/^function s:PreviousToken(...)$/;"	f
 Primitives	nvim/plugged/coc.nvim/build/index.js	/^  function Primitives(key, value) {$/;"	F
+PrintHelp	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:PrintHelp() abort$/;"	f
+PrintKinds	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:PrintKinds(typeinfo, fileinfo) abort$/;"	f
+PrintTag	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:PrintTag(tag, depth, output, fileinfo, typeinfo) abort$/;"	f
 Printer	nvim/plugged/vim-elixir/large_file.ex	/^      defmodule Printer do$/;"	m
 PriorityCmd	nvim/plugged/ale/autoload/ale/sign.vim	/^function! s:PriorityCmd() abort$/;"	f
 ProcessDeferredCommands	nvim/plugged/ale/autoload/ale/assert.vim	/^function! s:ProcessDeferredCommands(initial_result) abort$/;"	f
+ProcessFile	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ProcessFile(fname, ftype) abort$/;"	f
+ProcessTag	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ProcessTag(name, filename, pattern, fields, is_split, typeinfo, fileinfo) abort$/;"	f
 ProgressCancelNotification	nvim/plugged/coc.nvim/build/index.js	/^    let ProgressCancelNotification;$/;"	V
 ProgressCancelNotification	nvim/plugged/coc.nvim/build/index.js	/^var ProgressCancelNotification;$/;"	V
 ProgressDoneNotification	nvim/plugged/coc.nvim/build/index.js	/^    let ProgressDoneNotification;$/;"	V
@@ -1911,6 +1958,9 @@ RenameManager	nvim/plugged/coc.nvim/build/index.js	/^class RenameManager extends
 RenameManager	nvim/plugged/coc.nvim/src/provider/renameManager.ts	/^export default class RenameManager extends Manager<RenameProvider> implements Disposable {$/;"	c
 RenameProvider	nvim/plugged/coc.nvim/src/provider/index.ts	/^export interface RenameProvider {$/;"	i
 RenameRequest	nvim/plugged/coc.nvim/build/index.js	/^var RenameRequest;$/;"	V
+RenderContent	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:RenderContent(...) abort$/;"	f
+RenderKeepView	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:RenderKeepView(...) abort$/;"	f
+ReopenWindow	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ReopenWindow(delbufname) abort$/;"	f
 ReplaceCmd	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:ReplaceCmd(cmd) abort$/;"	f
 ReplaceCompletionOptions	nvim/plugged/ale/autoload/ale/completion.vim	/^function! s:ReplaceCompletionOptions() abort$/;"	f
 Request	nvim/plugged/coc.nvim/build/index.js	/^class Request {$/;"	C
@@ -1935,6 +1985,7 @@ Resolver	nvim/plugged/coc.nvim/build/index.js	/^class Resolver {$/;"	C
 Resolver	nvim/plugged/coc.nvim/src/model/resolver.ts	/^export default class Resolver {$/;"	c
 ResourceOperationKind	nvim/plugged/coc.nvim/build/index.js	/^var ResourceOperationKind;$/;"	V
 ResponseError	nvim/plugged/coc.nvim/build/index.js	/^class ResponseError extends Error {$/;"	C
+RestoreSession	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:RestoreSession() abort$/;"	f
 RestoreViewIfNeeded	nvim/plugged/ale/autoload/ale/list.vim	/^function! s:RestoreViewIfNeeded(buffer) abort$/;"	f
 Result	nvim/plugged/coc.nvim/src/events.ts	/^export type Result = void | Promise<void>$/;"	t
 RevealOutputChannelOn	nvim/plugged/coc.nvim/build/index.js	/^var RevealOutputChannelOn;$/;"	V
@@ -1996,7 +2047,10 @@ ServiceStat	nvim/plugged/coc.nvim/src/types.ts	/^export enum ServiceStat {$/;"	e
 ServicesList	nvim/plugged/coc.nvim/build/index.js	/^class ServicesList extends basic_1.default {$/;"	C
 ServicesList	nvim/plugged/coc.nvim/src/list/source/services.ts	/^export default class ServicesList extends BasicList {$/;"	c
 SetDefault	nvim/plugged/vim-airline/autoload/airline/extensions/vimtex.vim	/^function! s:SetDefault(var, val)$/;"	f
+SetFoldLevel	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:SetFoldLevel(level, force) abort$/;"	f
+SetFoldLevelRecursive	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:SetFoldLevelRecursive(fileinfo, tags, level) abort$/;"	f
 SetListsImpl	nvim/plugged/ale/autoload/ale/list.vim	/^function! s:SetListsImpl(timer_id, buffer, loclist) abort$/;"	f
+SetStatusLine	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:SetStatusLine() abort$/;"	f
 SetTraceNotification	nvim/plugged/coc.nvim/build/index.js	/^var SetTraceNotification;$/;"	V
 SetUp	nvim/plugged/vim-gitgutter/test/test_gitgutter.vim	/^function SetUp()$/;"	f
 SettingMonitor	nvim/plugged/coc.nvim/build/index.js	/^class SettingMonitor {$/;"	C
@@ -2007,11 +2061,14 @@ ShouldOpen	nvim/plugged/ale/autoload/ale/list.vim	/^function! s:ShouldOpen(buffe
 ShouldSuggestForType	nvim/plugged/ale/autoload/ale/fix/registry.vim	/^function! s:ShouldSuggestForType(suggested_filetypes, type_list) abort$/;"	f
 ShowCursorDetailForItem	nvim/plugged/ale/autoload/ale/cursor.vim	/^function! s:ShowCursorDetailForItem(loc, options) abort$/;"	f
 ShowError	nvim/plugged/coc.nvim/src/configuration/util.ts	/^export type ShowError = (errors: ErrorItem[]) => void$/;"	t
+ShowInPreviewWin	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ShowInPreviewWin() abort$/;"	f
 ShowInfo	nvim/plugged/coc.nvim/plugin/coc.vim	/^function! s:ShowInfo()$/;"	f
 ShowMessageNotification	nvim/plugged/coc.nvim/build/index.js	/^var ShowMessageNotification;$/;"	V
 ShowMessageRequest	nvim/plugged/coc.nvim/build/index.js	/^var ShowMessageRequest;$/;"	V
+ShowPrototype	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ShowPrototype(short) abort$/;"	f
 ShowUsage	nvim/plugged/vim-gutentags/plat/unix/update_scopedb.sh	/^ShowUsage() {$/;"	f
 ShowUsage	nvim/plugged/vim-gutentags/plat/unix/update_tags.sh	/^ShowUsage() {$/;"	f
+ShrinkIfExpanded	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ShrinkIfExpanded() abort$/;"	f
 Shuffle	nvim/plugged/vim-gitgutter/test/runner.vim	/^function Shuffle(list)$/;"	f
 ShutdownRequest	nvim/plugged/coc.nvim/build/index.js	/^var ShutdownRequest;$/;"	V
 SignatureHelpFeature	nvim/plugged/coc.nvim/build/index.js	/^class SignatureHelpFeature extends TextDocumentFeature {$/;"	C
@@ -2074,6 +2131,10 @@ StartWithAddress	nvim/plugged/ale/autoload/ale/lsp_linter.vim	/^function! s:Star
 StartWithCommand	nvim/plugged/ale/autoload/ale/lsp_linter.vim	/^function! s:StartWithCommand(options, executable, command) abort$/;"	f
 State	nvim/plugged/coc.nvim/build/index.js	/^var State;$/;"	V
 State	nvim/plugged/coc.nvim/src/language-client/client.ts	/^export enum State {$/;"	e
+State.New	nvim/plugged/tagbar/autoload/tagbar/state.vim	/^function! s:State.New() abort dict$/;"	f
+State.getCurrent	nvim/plugged/tagbar/autoload/tagbar/state.vim	/^function! s:State.getCurrent(force_current) abort dict$/;"	f
+State.setCurrentFile	nvim/plugged/tagbar/autoload/tagbar/state.vim	/^function! s:State.setCurrentFile(fileinfo) abort dict$/;"	f
+State.setPaused	nvim/plugged/tagbar/autoload/tagbar/state.vim	/^function! s:State.setPaused() abort dict$/;"	f
 StateChangeEvent	nvim/plugged/coc.nvim/src/language-client/client.ts	/^export interface StateChangeEvent {$/;"	i
 StaticFeature	nvim/plugged/coc.nvim/src/language-client/client.ts	/^export interface StaticFeature {$/;"	i
 StatusBarItem	nvim/plugged/coc.nvim/src/types.ts	/^export interface StatusBarItem {$/;"	i
@@ -2125,6 +2186,21 @@ TRACE	nvim/plugged/coc.nvim/build/index.js	/^  TRACE: { value: 5000, colour: 'bl
 TTCC_CONVERSION_PATTERN	nvim/plugged/coc.nvim/build/index.js	/^  const TTCC_CONVERSION_PATTERN = '%r %p %c - %m%n';$/;"	V
 TabBuffers	nvim/plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^function! s:TabBuffers()$/;"	f
 Tabpage	nvim/plugged/coc.nvim/build/index.js	/^class Tabpage extends Base_1.BaseApi {$/;"	C
+Tagbar	nvim/plugged/tagbar/plugin/tagbar.vim	/^command! -nargs=0 Tagbar              call tagbar#ToggleWindow()$/;"	c
+TagbarBalloonExpr	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! TagbarBalloonExpr() abort$/;"	f
+TagbarBufName	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:TagbarBufName() abort$/;"	f
+TagbarClose	nvim/plugged/tagbar/plugin/tagbar.vim	/^command! -nargs=0 TagbarClose         call tagbar#CloseWindow()$/;"	c
+TagbarCurrentTag	nvim/plugged/tagbar/plugin/tagbar.vim	/^command! -nargs=? TagbarCurrentTag    echo tagbar#currenttag('%s', 'No current tag', <f-args>)$/;"	c
+TagbarDebug	nvim/plugged/tagbar/plugin/tagbar.vim	/^command! -nargs=? TagbarDebug         call tagbar#debug#start_debug(<f-args>)$/;"	c
+TagbarDebugEnd	nvim/plugged/tagbar/plugin/tagbar.vim	/^command! -nargs=0 TagbarDebugEnd      call tagbar#debug#stop_debug()$/;"	c
+TagbarGetTypeConfig	nvim/plugged/tagbar/plugin/tagbar.vim	/^command! -nargs=1 TagbarGetTypeConfig call tagbar#gettypeconfig(<f-args>)$/;"	c
+TagbarOpen	nvim/plugged/tagbar/plugin/tagbar.vim	/^command! -nargs=? TagbarOpen          call tagbar#OpenWindow(<f-args>)$/;"	c
+TagbarOpenAutoClose	nvim/plugged/tagbar/plugin/tagbar.vim	/^command! -nargs=0 TagbarOpenAutoClose call tagbar#OpenWindow('fcj')$/;"	c
+TagbarSession	nvim/plugged/tagbar/plugin/tagbar.vim	/^augroup TagbarSession$/;"	a
+TagbarSetFoldlevel	nvim/plugged/tagbar/plugin/tagbar.vim	/^command! -nargs=1 -bang TagbarSetFoldlevel  call tagbar#SetFoldLevel(<args>, <bang>0)$/;"	c
+TagbarShowTag	nvim/plugged/tagbar/plugin/tagbar.vim	/^command! -nargs=0 TagbarShowTag       call tagbar#highlighttag(1, 1)$/;"	c
+TagbarToggle	nvim/plugged/tagbar/plugin/tagbar.vim	/^command! -nargs=0 TagbarToggle        call tagbar#ToggleWindow()$/;"	c
+TagbarTogglePause	nvim/plugged/tagbar/plugin/tagbar.vim	/^command! -nargs=0 TagbarTogglePause   call tagbar#toggle_pause()$/;"	c
 Task	nvim/plugged/coc.nvim/build/index.js	/^class Task extends events_1.EventEmitter {$/;"	C
 Task	nvim/plugged/coc.nvim/build/index.js	/^class Task {$/;"	C
 Task	nvim/plugged/coc.nvim/src/handler/search.ts	/^class Task extends EventEmitter {$/;"	c
@@ -2223,7 +2299,15 @@ TextmateSnippet	nvim/plugged/coc.nvim/build/index.js	/^class TextmateSnippet ext
 TextmateSnippet	nvim/plugged/coc.nvim/src/snippets/parser.ts	/^export class TextmateSnippet extends Marker {$/;"	c
 Thenable	nvim/plugged/coc.nvim/src/types.ts	/^export interface Thenable<T> {$/;"	i
 TimerHandler	nvim/plugged/ale/autoload/ale/completion.vim	/^function! s:TimerHandler(...) abort$/;"	f
+ToggleAutoclose	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ToggleAutoclose() abort$/;"	f
+ToggleCaseInsensitive	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ToggleCaseInsensitive() abort$/;"	f
+ToggleFold	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ToggleFold() abort$/;"	f
+ToggleHelp	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ToggleHelp() abort$/;"	f
+ToggleHideNonPublicTags	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ToggleHideNonPublicTags() abort$/;"	f
+TogglePause	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:TogglePause() abort$/;"	f
+ToggleSort	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ToggleSort() abort$/;"	f
 ToggleTabTreeVCS	nvim/plugged/nerdtree/nerdtree_plugin/vcs.vim	/^function! s:ToggleTabTreeVCS(name)$/;"	f
+ToggleWindow	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ToggleWindow(flags) abort$/;"	f
 Token	nvim/plugged/coc.nvim/src/snippets/parser.ts	/^export interface Token {$/;"	i
 Token	nvim/plugged/vim-javascript/indent/javascript.vim	/^function s:Token()$/;"	f
 Touch	nvim/plugged/coc.nvim/build/index.js	/^var Touch;$/;"	V
@@ -2231,6 +2315,7 @@ Trace	nvim/plugged/coc.nvim/build/index.js	/^var Trace;$/;"	V
 TraceFormat	nvim/plugged/coc.nvim/build/index.js	/^var TraceFormat;$/;"	V
 Transform	nvim/plugged/coc.nvim/build/index.js	/^class Transform extends Marker {$/;"	C
 Transform	nvim/plugged/coc.nvim/src/snippets/parser.ts	/^export class Transform extends Marker {$/;"	c
+TransformUserTypeDef	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:TransformUserTypeDef(def) abort$/;"	f
 TransformableMarker	nvim/plugged/coc.nvim/build/index.js	/^class TransformableMarker extends Marker {$/;"	C
 TransformableMarker	nvim/plugged/coc.nvim/src/snippets/parser.ts	/^export abstract class TransformableMarker extends Marker {$/;"	c
 Transport	nvim/plugged/coc.nvim/build/index.js	/^class Transport extends events_1.EventEmitter {$/;"	C
@@ -2547,6 +2632,7 @@ Z_STREAM_END	nvim/plugged/coc.nvim/build/index.js	/^  Z_STREAM_END: 1,$/;"	P
 Z_SYNC_FLUSH	nvim/plugged/coc.nvim/build/index.js	/^  Z_SYNC_FLUSH: 2,$/;"	P
 Zlib	nvim/plugged/coc.nvim/build/index.js	/^class Zlib extends MiniPass {$/;"	C
 ZlibError	nvim/plugged/coc.nvim/build/index.js	/^class ZlibError extends Error {$/;"	C
+ZoomWindow	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:ZoomWindow() abort$/;"	f
 [=	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^  nmap <silent><buffer> [= <Plug>VimwikiGoToPrevSiblingHeader$/;"	m
 [M	nvim/plugged/vim-ruby/ftplugin/ruby.vim	/^  nnoremap <silent> <buffer> [M :<C-U>call <SID>searchsyn('\\<end\\>',['rubyDefine'],'b','n')<CR>$/;"	m
 [[	nvim/plugged/vim-elixir/ftplugin/elixir.vim	/^nnoremap <buffer> <silent> <expr> [[ ':silent keeppatterns ?'.b:block_begin.'<CR>'$/;"	m
@@ -2695,6 +2781,7 @@ _flush	nvim/plugged/coc.nvim/build/index.js	/^EncodeStream.prototype._flush = fu
 _folderConfigurations	nvim/plugged/coc.nvim/src/configuration/index.ts	/^  private _folderConfigurations: Map<string, ConfigurationModel> = new Map()$/;"	m
 _forceDebug	nvim/plugged/coc.nvim/src/language-client/index.ts	/^  private _forceDebug: boolean$/;"	m
 _fzf_statusline	nvim/plugged/fzf.vim/plugin/fzf.vim	/^  augroup _fzf_statusline$/;"	a
+_getPrefix	nvim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:_getPrefix() abort dict$/;"	f
 _getServerWorkingDir	nvim/plugged/coc.nvim/build/index.js	/^    _getServerWorkingDir(options) {$/;"	M
 _getServerWorkingDir	nvim/plugged/coc.nvim/src/language-client/index.ts	/^  private _getServerWorkingDir(options?: { cwd?: string }): Promise<string | undefined> {$/;"	m
 _handleOldOptions	nvim/plugged/vim-gutentags/autoload/gutentags/ctags.vim	/^function! s:_handleOldOptions() abort$/;"	f
@@ -2989,6 +3076,7 @@ addAction	nvim/plugged/coc.nvim/src/list/basic.ts	/^  protected addAction(name: 
 addCallback	nvim/plugged/coc.nvim/build/index.js	/^    addCallback(callback, thisArg, clientId) {$/;"	M
 addCallback	nvim/plugged/coc.nvim/src/model/willSaveHandler.ts	/^  public addCallback(callback: Callback, thisArg: any, clientId: string): Disposable {$/;"	m
 addCategoryInheritance	nvim/plugged/coc.nvim/build/index.js	/^function addCategoryInheritance(config) {$/;"	F
+addChild	nvim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:addChild(tag) abort dict$/;"	f
 addClass	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^	addClass: function( classNames ) {$/;"	M
 addColors	nvim/plugged/coc.nvim/build/index.js	/^    addColors(colors) {$/;"	M
 addColors	nvim/plugged/coc.nvim/src/handler/highlighter.ts	/^  private addColors(colors: Color[]): void {$/;"	m
@@ -3059,6 +3147,7 @@ addSource	nvim/plugged/coc.nvim/build/index.js	/^    addSource(source) {$/;"	M
 addSource	nvim/plugged/coc.nvim/src/sources.ts	/^  public addSource(source: ISource): Disposable {$/;"	m
 addSymbols	nvim/plugged/coc.nvim/build/index.js	/^            function addSymbols(symbols, level = 0) {$/;"	F
 addSymbols	nvim/plugged/coc.nvim/src/list/source/outline.ts	/^      function addSymbols(symbols: DocumentSymbol[], level = 0): void {$/;"	f
+addTag	nvim/plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim	/^function! s:addTag(tag) abort dict$/;"	f
 addText	nvim/plugged/coc.nvim/build/index.js	/^    addText(text) {$/;"	M
 addText	nvim/plugged/coc.nvim/build/index.js	/^    addText(text, hlGroup) {$/;"	M
 addText	nvim/plugged/coc.nvim/src/list/prompt.ts	/^  private addText(text: string): void {$/;"	m
@@ -3071,6 +3160,14 @@ addZero	nvim/plugged/coc.nvim/build/index.js	/^function addZero(vNumber) {$/;"	F
 add_db	nvim/plugged/vim-gutentags/autoload/gutentags/gtags_cscope.vim	/^function! s:add_db(db_file) abort$/;"	f
 add_methods	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:add_methods(namespace, method_names) abort$/;"	f
 add_section	nvim/plugged/vim-airline/autoload/airline/extensions/default.vim	/^  function! s:add_section(builder, context, key)$/;"	f
+add_snr	nvim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:add_snr(funcname) abort$/;"	f
+add_snr	nvim/plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim	/^function! s:add_snr(funcname) abort$/;"	f
+add_snr	nvim/plugged/tagbar/autoload/tagbar/prototypes/kindheadertag.vim	/^function! s:add_snr(funcname) abort$/;"	f
+add_snr	nvim/plugged/tagbar/autoload/tagbar/prototypes/normaltag.vim	/^function! s:add_snr(funcname) abort$/;"	f
+add_snr	nvim/plugged/tagbar/autoload/tagbar/prototypes/pseudotag.vim	/^function! s:add_snr(funcname) abort$/;"	f
+add_snr	nvim/plugged/tagbar/autoload/tagbar/prototypes/splittag.vim	/^function! s:add_snr(funcname) abort$/;"	f
+add_snr	nvim/plugged/tagbar/autoload/tagbar/prototypes/typeinfo.vim	/^function! s:add_snr(funcname) abort$/;"	f
+add_tag_recursive	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:add_tag_recursive(parent, taginfo, pathlist) abort$/;"	f
 add_target_syntax_OFF	nvim/plugged/vimwiki/syntax/vimwiki.vim	/^function! s:add_target_syntax_OFF(target)$/;"	f
 add_target_syntax_OFF	nvim/plugged/vimwiki/syntax/vimwiki_markdown_custom.vim	/^function! s:add_target_syntax_OFF(target, type)$/;"	f
 add_target_syntax_ON	nvim/plugged/vimwiki/syntax/vimwiki.vim	/^function! s:add_target_syntax_ON(target, type)$/;"	f
@@ -4645,6 +4742,7 @@ b:current_syntax	nvim/plugged/ale/syntax/ale-fix-suggest.vim	/^let b:current_syn
 b:current_syntax	nvim/plugged/ale/syntax/ale-preview-selection.vim	/^let b:current_syntax = 'ale-preview-selection'$/;"	v
 b:current_syntax	nvim/plugged/scss-syntax.vim/syntax/scss.vim	/^let b:current_syntax = "scss"$/;"	v
 b:current_syntax	nvim/plugged/svg.vim/syntax/svg.vim	/^let b:current_syntax = "svg"$/;"	v
+b:current_syntax	nvim/plugged/tagbar/syntax/tagbar.vim	/^let b:current_syntax = 'tagbar'$/;"	v
 b:current_syntax	nvim/plugged/typescript-vim/syntax/typescript.vim	/^let b:current_syntax = "typescript"$/;"	v
 b:current_syntax	nvim/plugged/vim-elixir/syntax/eelixir.vim	/^let b:current_syntax = 'eelixir'$/;"	v
 b:current_syntax	nvim/plugged/vim-elixir/syntax/elixir.vim	/^let b:current_syntax = "elixir"$/;"	v
@@ -5093,6 +5191,7 @@ clearHighlight	nvim/plugged/coc.nvim/src/handler/highlighter.ts	/^  public clear
 clearMatchIds	nvim/plugged/coc.nvim/build/index.js	/^    clearMatchIds(ids) {$/;"	M
 clearMatchIds	nvim/plugged/coc.nvim/src/model/document.ts	/^  public clearMatchIds(ids: Set<number> | number[]): void {$/;"	m
 clearNamespace	nvim/plugged/coc.nvim/build/index.js	/^    clearNamespace(id, lineStart = 0, lineEnd = -1) {$/;"	M
+clearOldFolds	nvim/plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim	/^function! s:clearOldFolds() abort dict$/;"	f
 clearPartialMessageTimer	nvim/plugged/coc.nvim/build/index.js	/^    clearPartialMessageTimer() {$/;"	M
 clearSelection	nvim/plugged/coc.nvim/build/index.js	/^    clearSelection() {$/;"	M
 clearSelection	nvim/plugged/coc.nvim/src/list/ui.ts	/^  public clearSelection(): void {$/;"	m
@@ -5144,8 +5243,11 @@ close	nvim/plugged/coc.nvim/src/model/floatFactory.ts	/^  public close(cancel = 
 closeChildren	nvim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:closeChildren(node)$/;"	f
 closeCurrentDir	nvim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:closeCurrentDir(node)$/;"	f
 closeEmitter	nvim/plugged/coc.nvim/build/index.js	/^    let closeEmitter = new events_1.Emitter();$/;"	V
+closeFold	nvim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:closeFold() abort dict$/;"	f
+closeFold	nvim/plugged/tagbar/autoload/tagbar/prototypes/kindheadertag.vim	/^function! s:closeFold() abort dict$/;"	f
 closeHandler	nvim/plugged/coc.nvim/build/index.js	/^        let closeHandler = () => {$/;"	F
 closeHandler	nvim/plugged/coc.nvim/build/index.js	/^    function closeHandler() {$/;"	F
+closeKindFold	nvim/plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim	/^function! s:closeKindFold(kind) abort dict$/;"	f
 closeSync	nvim/plugged/coc.nvim/build/index.js	/^    function closeSync (fd) {$/;"	F
 closeSync	nvim/plugged/coc.nvim/build/index.js	/^  fs.closeSync = (function (fs$closeSync) {$/;"	M
 closeSync	nvim/plugged/coc.nvim/build/index.js	/^module.exports.closeSync = (function (fs$closeSync) { return function (fd) {$/;"	M
@@ -5398,6 +5500,8 @@ compareMain	nvim/plugged/coc.nvim/build/index.js	/^SemVer.prototype.compareMain 
 comparePosition	nvim/plugged/coc.nvim/build/index.js	/^function comparePosition(position, other) {$/;"	F
 comparePosition	nvim/plugged/coc.nvim/src/util/position.ts	/^export function comparePosition(position: Position, other: Position): number {$/;"	f
 comparePre	nvim/plugged/coc.nvim/build/index.js	/^SemVer.prototype.comparePre = function (other) {$/;"	M
+compare_by_kind	nvim/plugged/tagbar/autoload/tagbar/sorting.vim	/^function! s:compare_by_kind(tag1, tag2) abort$/;"	f
+compare_by_line	nvim/plugged/tagbar/autoload/tagbar/sorting.vim	/^function! s:compare_by_line(tag1, tag2) abort$/;"	f
 compare_git_uri	nvim/autoload/plug.vim	/^function! s:compare_git_uri(a, b)$/;"	f
 compare_pos	nvim/plugged/vim-multiple-cursors/autoload/multiple_cursors.vim	/^function! s:compare_pos(l, r)$/;"	f
 compileInSandbox	nvim/plugged/coc.nvim/build/index.js	/^function compileInSandbox(sandbox) {$/;"	F
@@ -5729,6 +5833,7 @@ createFileSystemWatcher	nvim/plugged/coc.nvim/src/workspace.ts	/^  public create
 createFromLines	nvim/plugged/coc.nvim/src/handler/refactor.ts	/^  public static async createFromLines(lines: string[]): Promise<Refactor> {$/;"	m
 createFromLocations	nvim/plugged/coc.nvim/src/handler/refactor.ts	/^  public static async createFromLocations(locations: Location[], filetype?: string): Promise<Refactor> {$/;"	m
 createFromWorkspaceEdit	nvim/plugged/coc.nvim/src/handler/refactor.ts	/^  public static async createFromWorkspaceEdit(edit: WorkspaceEdit, filetype?: string): Promise<Refactor> {$/;"	m
+createKinddict	nvim/plugged/tagbar/autoload/tagbar/prototypes/typeinfo.vim	/^function! s:createKinddict() abort dict$/;"	f
 createLink	nvim/plugged/coc.nvim/build/index.js	/^function createLink (srcpath, dstpath, callback) {$/;"	F
 createLinkSync	nvim/plugged/coc.nvim/build/index.js	/^function createLinkSync (srcpath, dstpath) {$/;"	F
 createLogger	nvim/plugged/coc.nvim/build/index.js	/^function createLogger(name) {$/;"	F
@@ -5791,6 +5896,7 @@ create_empty_row	nvim/plugged/vimwiki/autoload/vimwiki/tbl.vim	/^function! s:cre
 create_highlight	nvim/plugged/vim-css-color/autoload/css_color.vim	/^	function! s:create_highlight(color, is_bright)$/;"	f
 create_marker	nvim/plugged/vimwiki/autoload/vimwiki/lst.vim	/^function! s:create_marker(lnum)$/;"	f
 create_matches	nvim/plugged/vim-css-color/autoload/css_color.vim	/^function! s:create_matches()$/;"	f
+create_pseudotag	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:create_pseudotag(name, parent, kind, typeinfo, fileinfo) abort$/;"	f
 create_row_sep	nvim/plugged/vimwiki/autoload/vimwiki/tbl.vim	/^function! s:create_row_sep(cols)$/;"	f
 create_syn_match	nvim/plugged/vim-css-color/autoload/css_color.vim	/^function! s:create_syn_match()$/;"	f
 create_temporary_wiki	nvim/plugged/vimwiki/plugin/vimwiki.vim	/^function! s:create_temporary_wiki()$/;"	f
@@ -6294,6 +6400,7 @@ doRename	nvim/plugged/coc.nvim/build/index.js	/^function doRename (src, dest, ov
 doResolve	nvim/plugged/coc.nvim/src/language-client/utils/async.ts	/^  private doResolve: ((value?: any | Thenable<any>) => void) | null$/;"	m
 doScroll	nvim/plugged/coc.nvim/src/list/mappings.ts	/^  private async doScroll(key: string): Promise<void> {$/;"	m
 doWriteMessage	nvim/plugged/coc.nvim/build/index.js	/^    doWriteMessage(msg) {$/;"	M
+do_delayed_update	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:do_delayed_update() abort$/;"	f
 do_handle_pattern_match_block	nvim/plugged/vim-elixir/autoload/elixir/indent.vim	/^function! s:do_handle_pattern_match_block(relative_line, context)$/;"	f
 do_query	nvim/plugged/vim-elixir/spec/indent/ecto_queries_spec.rb	/^    def do_query do$/;"	f
 do_query	nvim/plugged/vim-elixir/spec/indent/ecto_queries_spec.rb	/^  def do_query do$/;"	f	class:smth
@@ -7813,6 +7920,7 @@ g:loaded_nerdtree_ui_glue_autoload	nvim/plugged/nerdtree/autoload/nerdtree/ui_gl
 g:loaded_plug	nvim/autoload/plug.vim	/^let g:loaded_plug = 1$/;"	v
 g:loaded_rhubarb	nvim/plugged/vim-rhubarb/plugin/rhubarb.vim	/^let g:loaded_rhubarb = 1$/;"	v
 g:loaded_syntastic_vue_eslint_checker	nvim/plugged/vim-vue/syntax_checkers/vue/eslint.vim	/^let g:loaded_syntastic_vue_eslint_checker = 1$/;"	v
+g:loaded_tagbar	nvim/plugged/tagbar/autoload/tagbar.vim	/^let g:loaded_tagbar = 1$/;"	v
 g:loaded_vimwiki	nvim/plugged/vimwiki/plugin/vimwiki.vim	/^let g:loaded_vimwiki = 1$/;"	v
 g:loaded_vimwiki_auto	nvim/plugged/vimwiki/autoload/vimwiki/base.vim	/^let g:loaded_vimwiki_auto = 1$/;"	v
 g:loaded_vimwiki_diary_auto	nvim/plugged/vimwiki/autoload/vimwiki/diary.vim	/^let g:loaded_vimwiki_diary_auto = 1$/;"	v
@@ -7894,6 +8002,10 @@ g:rubycomplete_include_object	nvim/plugged/vim-ruby/autoload/rubycomplete.vim	/^
 g:rubycomplete_include_objectspace	nvim/plugged/vim-ruby/autoload/rubycomplete.vim	/^    let g:rubycomplete_include_objectspace = 0$/;"	v
 g:rubycomplete_rails	nvim/plugged/vim-ruby/autoload/rubycomplete.vim	/^    let g:rubycomplete_rails = 0$/;"	v
 g:taboo_tabline	nvim/plugged/vim-airline/autoload/airline/extensions/tabline.vim	/^  let g:taboo_tabline = 0$/;"	v
+g:tagbar#icon_closed	nvim/plugged/tagbar/autoload/tagbar.vim	/^let g:tagbar#icon_closed = g:tagbar_iconchars[0]$/;"	v
+g:tagbar#icon_open	nvim/plugged/tagbar/autoload/tagbar.vim	/^let g:tagbar#icon_open   = g:tagbar_iconchars[1]$/;"	v
+g:tagbar_iconchars	nvim/plugged/tagbar/plugin/tagbar.vim	/^        let g:tagbar_iconchars = ['+', '-']$/;"	v
+g:tagbar_iconchars	nvim/plugged/tagbar/plugin/tagbar.vim	/^        let g:tagbar_iconchars = ['▶', '▼']$/;"	v
 g:terminal_ansi_colors	nvim/plugged/vim-gruvbox8/colors/gruvbox8.vim	/^    let g:terminal_ansi_colors = ['#282828', '#cc241d', '#98971a', '#d79921',$/;"	v
 g:terminal_ansi_colors	nvim/plugged/vim-gruvbox8/colors/gruvbox8.vim	/^  let g:terminal_ansi_colors = ['#fbf1c7', '#cc241d', '#98971a', '#d79921',$/;"	v
 g:terminal_ansi_colors	nvim/plugged/vim-gruvbox8/colors/gruvbox8_hard.vim	/^    let g:terminal_ansi_colors = ['#1d2021', '#cc241d', '#98971a', '#d79921',$/;"	v
@@ -8072,6 +8184,7 @@ get	nvim/plugged/coc.nvim/src/diagnostic/collection.ts	/^  public get(uri: strin
 get	nvim/plugged/coc.nvim/src/list/configuration.ts	/^  public get<T>(key: string, defaultValue?: T): T {$/;"	m
 get	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^	get: function( num ) {$/;"	M
 get	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^	get: function( url, data, callback, type ) {$/;"	M
+get	nvim/plugged/tagbar/autoload/tagbar/state.vim	/^function! s:get() abort$/;"	f
 getAgent	nvim/plugged/coc.nvim/build/index.js	/^function getAgent(endpoint) {$/;"	F
 getAgent	nvim/plugged/coc.nvim/src/model/fetch.ts	/^export function getAgent(endpoint: UrlWithStringQuery): Agent {$/;"	f
 getArgs	nvim/plugged/coc.nvim/build/index.js	/^    getArgs(args) {$/;"	M
@@ -8089,6 +8202,9 @@ getChangedPosition	nvim/plugged/coc.nvim/src/util/position.ts	/^export function 
 getCharCodes	nvim/plugged/coc.nvim/build/index.js	/^function getCharCodes(str) {$/;"	F
 getCharCodes	nvim/plugged/coc.nvim/src/util/fuzzy.ts	/^export function getCharCodes(str: string): number[] {$/;"	f
 getCharMap	nvim/plugged/coc.nvim/src/list/manager.ts	/^  private async getCharMap(): Promise<void> {$/;"	m
+getChildren	nvim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:getChildren() dict abort$/;"	f
+getChildrenByName	nvim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:getChildrenByName(tagname) dict abort$/;"	f
+getClosedParentTline	nvim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:getClosedParentTline() abort dict$/;"	f
 getCmdline	nvim/plugged/coc.nvim/src/__tests__/helper.ts	/^  public async getCmdline(): Promise<string> {$/;"	m
 getCodeActions	nvim/plugged/coc.nvim/src/handler/index.ts	/^  public async getCodeActions(bufnr: number, range?: Range, only?: CodeActionKind[]): Promise<CodeAction[]> {$/;"	m
 getCodeActions	nvim/plugged/coc.nvim/src/languages.ts	/^  public async getCodeActions(document: TextDocument, range: Range, context: CodeActionContext, silent = false): Promise<Map<string, CodeAction[]>> {$/;"	m
@@ -8239,6 +8355,7 @@ getKeymapModifier	nvim/plugged/coc.nvim/build/index.js	/^function getKeymapModif
 getKeymapModifier	nvim/plugged/coc.nvim/src/util/index.ts	/^export function getKeymapModifier(mode: MapMode): string {$/;"	f
 getKeys	nvim/plugged/coc.nvim/build/index.js	/^function getKeys(obj, curr) {$/;"	F
 getKeys	nvim/plugged/coc.nvim/src/configuration/util.ts	/^export function getKeys(obj: { [key: string]: any }, curr?: string): string[] {$/;"	f
+getKind	nvim/plugged/tagbar/autoload/tagbar/prototypes/typeinfo.vim	/^function! s:getKind(kind) abort dict$/;"	f
 getLanguageServerOptions	nvim/plugged/coc.nvim/build/index.js	/^function getLanguageServerOptions(id, name, config) {$/;"	F
 getLanguageServerOptions	nvim/plugged/coc.nvim/src/services.ts	/^export function getLanguageServerOptions(id: string, name: string, config: LanguageServerConfig): [LanguageClientOptions, ServerOptions] {$/;"	f
 getLevel	nvim/plugged/coc.nvim/build/index.js	/^  static getLevel(sArg, defaultLevel) {$/;"	M
@@ -8319,6 +8436,9 @@ getPriority	nvim/plugged/coc.nvim/build/index.js	/^function getPriority(stat) {$
 getPriority	nvim/plugged/coc.nvim/src/list/source/extensions.ts	/^function getPriority(stat: string): number {$/;"	f
 getProc	nvim/plugged/coc.nvim/build/index.js	/^    getProc(pid) {$/;"	M
 getProcChildren	nvim/plugged/coc.nvim/build/index.js	/^    getProcChildren(pid) {$/;"	M
+getPrototype	nvim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:getPrototype(short) abort dict$/;"	f
+getPrototype	nvim/plugged/tagbar/autoload/tagbar/prototypes/kindheadertag.vim	/^function! s:getPrototype(short) abort dict$/;"	f
+getPrototype	nvim/plugged/tagbar/autoload/tagbar/prototypes/normaltag.vim	/^function! s:getPrototype(short) abort dict$/;"	f
 getProvider	nvim/plugged/coc.nvim/build/index.js	/^    getProvider(document) {$/;"	M
 getProvider	nvim/plugged/coc.nvim/build/index.js	/^    getProvider(document, triggerCharacter) {$/;"	M
 getProvider	nvim/plugged/coc.nvim/src/provider/manager.ts	/^  protected getProvider(document: TextDocument): ProviderItem<T> {$/;"	m
@@ -8384,6 +8504,8 @@ getSymbolKind	nvim/plugged/coc.nvim/src/util/convert.ts	/^export function getSym
 getSymbolRanges	nvim/plugged/coc.nvim/build/index.js	/^    getSymbolRanges(word) {$/;"	M
 getSymbolRanges	nvim/plugged/coc.nvim/src/model/document.ts	/^  public getSymbolRanges(word: string): Range[] {$/;"	m
 getSymbolsRanges	nvim/plugged/coc.nvim/src/handler/index.ts	/^  public async getSymbolsRanges(): Promise<Range[]> {$/;"	m
+getTags	nvim/plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim	/^function! s:getTags() dict abort$/;"	f
+getTagsByName	nvim/plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim	/^function! s:getTagsByName(tagname) dict abort$/;"	f
 getText	nvim/plugged/coc.nvim/build/index.js	/^    FullTextDocument.prototype.getText = function (range) {$/;"	M
 getText	nvim/plugged/coc.nvim/build/index.js	/^    getText() {$/;"	M
 getText	nvim/plugged/coc.nvim/build/index.js	/^    getText(level, data, meta) {$/;"	M
@@ -8481,8 +8603,10 @@ get_last_line_of_item_incl_children	nvim/plugged/vimwiki/autoload/vimwiki/lst.vi
 get_latest_release	nvim/plugged/coc.nvim/install.sh	/^get_latest_release() {$/;"	f
 get_level	nvim/plugged/vimwiki/autoload/vimwiki/lst.vim	/^function! s:get_level(lnum)$/;"	f
 get_links	nvim/plugged/vimwiki/autoload/vimwiki/base.vim	/^function! s:get_links(wikifile, idx)$/;"	f
+get_map_str	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:get_map_str(map) abort$/;"	f
 get_mode	nvim/plugged/vim-airline/autoload/airline/extensions/cursormode.vim	/^function! s:get_mode()$/;"	f
 get_month_name	nvim/plugged/vimwiki/autoload/vimwiki/diary.vim	/^function! s:get_month_name(month)$/;"	f
+get_ms_since	nvim/plugged/vim-smooth-scroll/autoload/smooth_scroll.vim	/^function! s:get_ms_since(time)$/;"	f
 get_next_child_item	nvim/plugged/vimwiki/autoload/vimwiki/lst.vim	/^function! s:get_next_child_item(parent, child)$/;"	f
 get_next_line	nvim/plugged/vimwiki/autoload/vimwiki/lst.vim	/^function! s:get_next_line(lnum, ...)$/;"	f
 get_next_list_item	nvim/plugged/vimwiki/autoload/vimwiki/lst.vim	/^function! s:get_next_list_item(item, ignore_kind)$/;"	f
@@ -8516,6 +8640,7 @@ getline	nvim/plugged/coc.nvim/build/index.js	/^    getline(line) {$/;"	M
 getline	nvim/plugged/coc.nvim/build/index.js	/^    getline(line, current = true) {$/;"	M
 getline	nvim/plugged/coc.nvim/src/model/document.ts	/^  public getline(line: number, current = true): string {$/;"	m
 getline	nvim/plugged/coc.nvim/src/model/highligher.ts	/^  public getline(line: number): string {$/;"	m
+gettime	nvim/plugged/tagbar/autoload/tagbar/debug.vim	/^    function! s:gettime() abort$/;"	f
 gg	nvim/plugged/vim-gitgutter/test/test_gitgutter.vim	/^  normal gg$/;"	m
 gi	nvim/init.vim	/^nmap <silent> gi <Plug>(coc-implementation)$/;"	m
 gitCheck	nvim/plugged/coc.nvim/build/index.js	/^    gitCheck() {$/;"	M
@@ -8662,7 +8787,10 @@ gotoDefinition	nvim/plugged/coc.nvim/src/handler/index.ts	/^  public async gotoD
 gotoImplementation	nvim/plugged/coc.nvim/src/handler/index.ts	/^  public async gotoImplementation(openCommand?: string): Promise<boolean> {$/;"	m
 gotoReferences	nvim/plugged/coc.nvim/src/handler/index.ts	/^  public async gotoReferences(openCommand?: string): Promise<boolean> {$/;"	m
 gotoTypeDefinition	nvim/plugged/coc.nvim/src/handler/index.ts	/^  public async gotoTypeDefinition(openCommand?: string): Promise<boolean> {$/;"	m
+goto_markedwin	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:goto_markedwin(...) abort$/;"	f
 goto_original_window	nvim/plugged/vim-gitgutter/autoload/gitgutter/hunk.vim	/^function! s:goto_original_window()$/;"	f
+goto_tagbar	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:goto_tagbar(...) abort$/;"	f
+goto_win	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:goto_win(winnr, ...) abort$/;"	f
 gqq	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^nnoremap <buffer> gqq :VimwikiTableAlignQ<CR>$/;"	m
 gr	nvim/init.vim	/^nmap <silent> gr <Plug>(coc-references)$/;"	m
 graphic_role	nvim/plugged/html5.vim/autoload/xml/aria.vim	/^let graphic_role = [$/;"	v
@@ -9150,6 +9278,7 @@ init	nvim/plugged/vim-elixir/large_file.ex	/^      def init(args) do$/;"	f
 init	nvim/plugged/vim-elixir/spec/indent/lists_spec.rb	/^  def init(_) do$/;"	f	class:example.project.config.test.test.test.project.test.create.double.double.double.test_another_feature
 init	nvim/plugged/vim-elixir/spec/syntax/atom_spec.rb	/^          def init(args) do$/;"	f
 initCustomOpenArgs	nvim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:initCustomOpenArgs()$/;"	f
+initFoldState	nvim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:initFoldState(known_files) abort dict$/;"	f
 initParams	nvim/plugged/coc.nvim/build/index.js	/^        let initParams = {$/;"	O
 initVariable	nvim/plugged/nerdtree/plugin/NERD_tree.vim	/^function! s:initVariable(var, value)$/;"	f
 init_buffer	nvim/plugged/vim-airline/autoload/airline/extensions/branch.vim	/^function! s:init_buffer()$/;"	f
@@ -9159,6 +9288,7 @@ init_token	nvim/plugged/coc.nvim/build/index.js	/^function init_token() {$/;"	F
 init_token	nvim/plugged/coc.nvim/build/index.js	/^function init_token(format) {$/;"	F
 init_uint8array	nvim/plugged/coc.nvim/build/index.js	/^function init_uint8array() {$/;"	F
 init_useraw	nvim/plugged/coc.nvim/build/index.js	/^function init_useraw(format) {$/;"	F
+init_var	nvim/plugged/tagbar/plugin/tagbar.vim	/^function! s:init_var(var, value) abort$/;"	f
 initialIndentLevel	nvim/plugged/coc.nvim/build/index.js	/^    var initialIndentLevel;$/;"	V
 initialize	nvim/plugged/coc.nvim/build/index.js	/^        initialize: (params) => connection.sendRequest(vscode_languageserver_protocol_1.InitializeRequest.type, params),$/;"	M
 initialize	nvim/plugged/coc.nvim/build/index.js	/^    initialize() {$/;"	M
@@ -9310,6 +9440,10 @@ isEqualTo	nvim/plugged/coc.nvim/build/index.js	/^  isEqualTo(otherLevel) {$/;"	M
 isFile	nvim/plugged/coc.nvim/build/index.js	/^function isFile(uri) {$/;"	F
 isFile	nvim/plugged/coc.nvim/src/util/fs.ts	/^export function isFile(uri: string): boolean {$/;"	f
 isFinalTabstop	nvim/plugged/coc.nvim/src/snippets/parser.ts	/^  public get isFinalTabstop(): boolean {$/;"	m
+isFoldable	nvim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:isFoldable() abort dict$/;"	f
+isFoldable	nvim/plugged/tagbar/autoload/tagbar/prototypes/kindheadertag.vim	/^function! s:isFoldable() abort dict$/;"	f
+isFolded	nvim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:isFolded() abort dict$/;"	f
+isFolded	nvim/plugged/tagbar/autoload/tagbar/prototypes/kindheadertag.vim	/^function! s:isFolded() abort dict$/;"	f
 isFunction	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^	isFunction: function( fn ) {$/;"	M
 isGitIgnored	nvim/plugged/coc.nvim/build/index.js	/^async function isGitIgnored(fullpath) {$/;"	F
 isGitIgnored	nvim/plugged/coc.nvim/src/util/fs.ts	/^export async function isGitIgnored(fullpath: string): Promise<boolean> {$/;"	f
@@ -9326,6 +9460,8 @@ isKeywordChar	nvim/plugged/coc.nvim/build/index.js	/^    isKeywordChar(ch) {$/;"
 isKeywordChar	nvim/plugged/coc.nvim/src/model/chars.ts	/^  public isKeywordChar(ch: string): boolean {$/;"	m
 isKeywordCode	nvim/plugged/coc.nvim/build/index.js	/^    isKeywordCode(code) {$/;"	M
 isKeywordCode	nvim/plugged/coc.nvim/src/model/chars.ts	/^  public isKeywordCode(code: number): boolean {$/;"	m
+isKindheader	nvim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:isKindheader() abort dict$/;"	f
+isKindheader	nvim/plugged/tagbar/autoload/tagbar/prototypes/kindheadertag.vim	/^function! s:isKindheader() abort dict$/;"	f
 isLSPMessage	nvim/plugged/coc.nvim/build/index.js	/^            isLSPMessage: true,$/;"	P
 isLessThanOrEqualTo	nvim/plugged/coc.nvim/build/index.js	/^  isLessThanOrEqualTo(otherLevel) {$/;"	M
 isLevelEnabled	nvim/plugged/coc.nvim/build/index.js	/^  isLevelEnabled(otherLevel) {$/;"	M
@@ -9342,6 +9478,8 @@ isMessageReader	nvim/plugged/coc.nvim/build/index.js	/^function isMessageReader(
 isMessageWriter	nvim/plugged/coc.nvim/build/index.js	/^function isMessageWriter(value) {$/;"	F
 isName	nvim/plugged/coc.nvim/build/index.js	/^    var isName = "is" + name;$/;"	V
 isNative	nvim/plugged/coc.nvim/src/util/platform.ts	/^export const isNative = _isNative$/;"	v
+isNormalTag	nvim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:isNormalTag() abort dict$/;"	f
+isNormalTag	nvim/plugged/tagbar/autoload/tagbar/prototypes/normaltag.vim	/^function! s:isNormalTag() abort dict$/;"	f
 isNotificationMessage	nvim/plugged/coc.nvim/build/index.js	/^function isNotificationMessage(message) {$/;"	F
 isNumber	nvim/plugged/coc.nvim/build/index.js	/^function isNumber (x) {$/;"	F
 isNumericSequence	nvim/plugged/coc.nvim/build/index.js	/^  var isNumericSequence = \/^-?\\d+\\.\\.-?\\d+(?:\\.\\.-?\\d+)?$\/.test(m.body);$/;"	V
@@ -9353,6 +9491,8 @@ isParentFolder	nvim/plugged/coc.nvim/src/util/fs.ts	/^export function isParentFo
 isPlainText	nvim/plugged/coc.nvim/build/index.js	/^    isPlainText(text) {$/;"	M
 isPlainText	nvim/plugged/coc.nvim/src/snippets/manager.ts	/^  public isPlainText(text: string): boolean {$/;"	m
 isPlainText	nvim/plugged/coc.nvim/src/snippets/snippet.ts	/^  public get isPlainText(): boolean {$/;"	m
+isPseudoTag	nvim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:isPseudoTag() abort dict$/;"	f
+isPseudoTag	nvim/plugged/tagbar/autoload/tagbar/prototypes/pseudotag.vim	/^function! s:isPseudoTag() abort dict$/;"	f
 isQuoted	nvim/plugged/coc.nvim/build/index.js	/^function isQuoted (val) {$/;"	F
 isReady	nvim/plugged/coc.nvim/src/plugin.ts	/^  public get isReady(): boolean {$/;"	m
 isReady	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^	isReady: false,$/;"	P
@@ -9368,6 +9508,8 @@ isSnippet	nvim/plugged/coc.nvim/src/model/source.ts	/^  public readonly isSnippe
 isSocket	nvim/plugged/coc.nvim/build/index.js	/^    function isSocket(value) {$/;"	F
 isSocket	nvim/plugged/coc.nvim/src/language-client/index.ts	/^  export function isSocket(value: Transport): value is SocketTransport {$/;"	f
 isSpecificValue	nvim/plugged/coc.nvim/build/index.js	/^function isSpecificValue(val) {$/;"	F
+isSplitTag	nvim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:isSplitTag() abort dict$/;"	f
+isSplitTag	nvim/plugged/tagbar/autoload/tagbar/prototypes/splittag.vim	/^function! s:isSplitTag() abort dict$/;"	f
 isSrcSubdir	nvim/plugged/coc.nvim/build/index.js	/^function isSrcSubdir (src, dest) {$/;"	F
 isTest	nvim/plugged/coc.nvim/build/index.js	/^const isTest = "none" == 'test';$/;"	V
 isText	nvim/plugged/coc.nvim/build/index.js	/^                            let isText = \/^[\\w-\\s.,\\t]+$\/.test(detail);$/;"	V
@@ -9523,6 +9665,10 @@ keys	nvim/plugged/coc.nvim/build/index.js	/^webpackEmptyContext.keys = function(
 keyword	nvim/plugged/vim-elixir/autoload/elixir/indent.vim	/^function! s:keyword(expr)$/;"	f
 kind	nvim/plugged/coc.nvim/build/index.js	/^            kind: kind,$/;"	P
 kinds	nvim/plugged/coc.nvim/build/index.js	/^            kinds: codeActionKinds,$/;"	P
+known_files.get	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:known_files.get(fname) abort dict$/;"	f
+known_files.has	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:known_files.has(fname) abort dict$/;"	f
+known_files.put	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:known_files.put(fileinfo, ...) abort dict$/;"	f
+known_files.rm	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:known_files.rm(fname) abort dict$/;"	f
 l	nvim/plugged/coc.nvim/build/index.js	/^        let l = 0;$/;"	V
 l	nvim/plugged/coc.nvim/build/index.js	/^    l: lineNumber,$/;"	P
 label	nvim/plugged/Dockerfile.vim/ftplugin/Dockerfile.vim	/^inoreabbr <silent> <buffer> label <C-R>=DockerfileReplaceInstruction("label", "LABEL")<CR>$/;"	m
@@ -9873,6 +10019,7 @@ mappings	nvim/plugged/coc.nvim/src/list/manager.ts	/^  private mappings: Mapping
 mark	nvim/plugged/coc.nvim/build/index.js	/^    mark(name) {$/;"	M
 mark	nvim/plugged/coc.nvim/build/index.js	/^function mark (self, p) {$/;"	F
 mark_sink	nvim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:mark_sink(lines)$/;"	f
+mark_window	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:mark_window() abort$/;"	f
 match	nvim/plugged/coc.nvim/build/index.js	/^    match(selector, document) {$/;"	M
 match	nvim/plugged/coc.nvim/build/index.js	/^  var match = \/^(-?(?:\\d+)?\\.?\\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|years?|yrs?|y)?$\/i.exec($/;"	V
 match	nvim/plugged/coc.nvim/build/index.js	/^function match (f, partial) {$/;"	F
@@ -10586,11 +10733,15 @@ openClose	nvim/plugged/coc.nvim/build/index.js	/^                        openClo
 openClose	nvim/plugged/coc.nvim/build/index.js	/^                        openClose: true,$/;"	P
 openExplorer	nvim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:openExplorer(node)$/;"	f
 openFloatWindow	nvim/plugged/coc.nvim/build/index.js	/^    openFloatWindow(buffer, enter, options) {$/;"	M
+openFold	nvim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:openFold() abort dict$/;"	f
+openFold	nvim/plugged/tagbar/autoload/tagbar/prototypes/kindheadertag.vim	/^function! s:openFold() abort dict$/;"	f
 openHSplit	nvim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:openHSplit(target)$/;"	f
 openInNewTab	nvim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:openInNewTab(target)$/;"	f
 openInNewTabSilent	nvim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:openInNewTabSilent(target)$/;"	f
+openKindFold	nvim/plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim	/^function! s:openKindFold(kind) abort dict$/;"	f
 openLink	nvim/plugged/coc.nvim/src/handler/index.ts	/^  public async openLink(): Promise<boolean> {$/;"	m
 openNodeRecursively	nvim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:openNodeRecursively(node)$/;"	f
+openParents	nvim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:openParents() abort dict$/;"	f
 openResource	nvim/plugged/coc.nvim/src/workspace.ts	/^  public async openResource(uri: string): Promise<void> {$/;"	m
 openTheStream	nvim/plugged/coc.nvim/build/index.js	/^function openTheStream(file, fileSize, numFiles, options) {$/;"	F
 openVSplit	nvim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:openVSplit(target)$/;"	f
@@ -11423,6 +11574,7 @@ remove	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^	remove: functio
 removeAhead	nvim/plugged/coc.nvim/build/index.js	/^    removeAhead() {$/;"	M
 removeAhead	nvim/plugged/coc.nvim/src/list/prompt.ts	/^  public removeAhead(): void {$/;"	m
 removeAttr	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^	removeAttr: function( name ) {$/;"	M
+removeChild	nvim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:removeChild(tag) dict abort$/;"	f
 removeClass	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^	removeClass: function( classNames ) {$/;"	M
 removeContext	nvim/plugged/coc.nvim/build/index.js	/^  removeContext(key) {$/;"	M
 removeData	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^	removeData: function( elem, name ) {$/;"	M
@@ -11441,6 +11593,7 @@ removeProperty	nvim/plugged/coc.nvim/build/index.js	/^function removeProperty(te
 removeSocket	nvim/plugged/coc.nvim/build/index.js	/^TunnelingAgent.prototype.removeSocket = function removeSocket(socket) {$/;"	M
 removeSource	nvim/plugged/coc.nvim/build/index.js	/^    removeSource(source) {$/;"	M
 removeSource	nvim/plugged/coc.nvim/src/sources.ts	/^  public removeSource(source: ISource | string): void {$/;"	m
+removeTag	nvim/plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim	/^function! s:removeTag(tag) dict abort$/;"	f
 removeTail	nvim/plugged/coc.nvim/build/index.js	/^    removeTail() {$/;"	M
 removeTail	nvim/plugged/coc.nvim/src/list/prompt.ts	/^  public removeTail(): void {$/;"	m
 removeValue	nvim/plugged/coc.nvim/build/index.js	/^    removeValue(key) {$/;"	M
@@ -11585,6 +11738,7 @@ reset	nvim/plugged/coc.nvim/src/list/manager.ts	/^  public reset(): void {$/;"	m
 reset	nvim/plugged/coc.nvim/src/list/prompt.ts	/^  public reset(): void {$/;"	m
 reset	nvim/plugged/coc.nvim/src/list/ui.ts	/^  public reset(): void {$/;"	m
 reset	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^			reset: function(a){return "reset"==a.type;},$/;"	M
+reset	nvim/plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim	/^function! s:reset() abort dict$/;"	f
 reset_summary	nvim/plugged/vim-gitgutter/autoload/gitgutter/hunk.vim	/^function! s:reset_summary(bufnr) abort$/;"	f
 reset_tick	nvim/plugged/vim-gitgutter/autoload/gitgutter.vim	/^function! s:reset_tick(bufnr) abort$/;"	f
 reset_untracked_cache	nvim/plugged/vim-airline/autoload/airline/extensions/branch.vim	/^function! s:reset_untracked_cache(shellcmdpost)$/;"	f
@@ -11920,6 +12074,7 @@ s:SEVERITY_ERROR	nvim/plugged/ale/autoload/ale/lsp/response.vim	/^let s:SEVERITY
 s:SEVERITY_HINT	nvim/plugged/ale/autoload/ale/lsp/response.vim	/^let s:SEVERITY_HINT = 4$/;"	v
 s:SEVERITY_INFORMATION	nvim/plugged/ale/autoload/ale/lsp/response.vim	/^let s:SEVERITY_INFORMATION = 3$/;"	v
 s:SEVERITY_WARNING	nvim/plugged/ale/autoload/ale/lsp/response.vim	/^let s:SEVERITY_WARNING = 2$/;"	v
+s:State	nvim/plugged/tagbar/autoload/tagbar/state.vim	/^let s:State = {$/;"	v
 s:TAGS_METADATA_FILE_NAME	nvim/plugged/vimwiki/autoload/vimwiki/tags.vim	/^let s:TAGS_METADATA_FILE_NAME = '.tags'$/;"	v
 s:TYPE	nvim/autoload/plug.vim	/^let s:TYPE = {$/;"	v
 s:TYPE	nvim/plugged/fzf.vim/autoload/fzf/vim.vim	/^let s:TYPE = {'dict': type({}), 'funcref': type(function('call')), 'string': type(''), 'list': type([])}$/;"	v
@@ -11977,6 +12132,7 @@ s:aqua	nvim/plugged/gruvbox/colors/gruvbox.vim	/^  let s:aqua   = s:gb.faded_aqu
 s:aqua	nvim/plugged/gruvbox/colors/gruvbox.vim	/^  let s:aqua[1]   = 14$/;"	v
 s:attr_pattern	nvim/plugged/vim-vue/syntax/vue.vim	/^  let s:attr_pattern = has_key(s:language, 'attr_pattern') ? s:language.attr_pattern : s:attr('lang', s:language.name)$/;"	v
 s:attributes	nvim/plugged/vim-pug/indent/pug.vim	/^let s:attributes = '\\%((.\\{-\\})\\)'$/;"	v
+s:autocommands_done	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:autocommands_done = 0$/;"	v
 s:available	nvim/plugged/vim-gitgutter/autoload/gitgutter/async.vim	/^let s:available = has('nvim') || ($/;"	v
 s:backslash_continuation_regex	nvim/plugged/vim-ruby/indent/ruby.vim	/^let s:backslash_continuation_regex = '%\\@<!\\\\\\s*$'$/;"	v
 s:bad_input	nvim/plugged/vim-multiple-cursors/autoload/multiple_cursors.vim	/^let s:bad_input = 0$/;"	v
@@ -12034,6 +12190,7 @@ s:buf_nr_format	nvim/plugged/vim-airline/autoload/airline/extensions/tabline/for
 s:buf_nr_show	nvim/plugged/vim-airline/autoload/airline/extensions/tabline/formatters/default.vim	/^let s:buf_nr_show = get(g:, 'airline#extensions#tabline#buffer_nr_show', 0)$/;"	v
 s:buffer_data	nvim/plugged/ale/autoload/ale/command.vim	/^    let s:buffer_data = {}$/;"	v
 s:buffer_prototype	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:buffer_prototype = {}$/;"	v
+s:buffer_seqno	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:buffer_seqno = 0$/;"	v
 s:bufnr	nvim/plugged/vim-gitgutter/test/test_gitgutter.vim	/^let s:bufnr       = bufnr('')$/;"	v
 s:builder	nvim/plugged/vim-airline/t/builder.vim	/^    let s:builder = airline#builder#new({'active': 0})$/;"	v
 s:builder	nvim/plugged/vim-airline/t/builder.vim	/^    let s:builder = airline#builder#new({'active': 1})$/;"	v
@@ -12053,6 +12210,8 @@ s:channel_map	nvim/plugged/coc.nvim/autoload/coc/terminal.vim	/^    let s:channe
 s:channel_map	nvim/plugged/coc.nvim/autoload/coc/terminal.vim	/^    let s:channel_map[bufnr] = job_id$/;"	v
 s:channel_map	nvim/plugged/coc.nvim/autoload/coc/terminal.vim	/^let s:channel_map = {}$/;"	v
 s:char	nvim/plugged/vim-multiple-cursors/autoload/multiple_cursors.vim	/^let s:char = ''$/;"	v
+s:checked_ctags	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:checked_ctags       = 0$/;"	v
+s:checked_ctags_types	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:checked_ctags_types = 0$/;"	v
 s:classpath_sep	nvim/plugged/ale/ale_linters/java/javac.vim	/^let s:classpath_sep = has('unix') ? ':' : ';'$/;"	v
 s:classpath_sep	nvim/plugged/ale/ale_linters/kotlin/kotlinc.vim	/^let s:classpath_sep = has('unix') ? ':' : ';'$/;"	v
 s:clean_jobs	nvim/plugged/vim-airline/autoload/airline/async.vim	/^let s:clean_jobs     = {}$/;"	v
@@ -12074,6 +12233,7 @@ s:column_width	nvim/plugged/vim-airline/autoload/airline/extensions/tabline/tabs
 s:command_output	nvim/plugged/ale/autoload/ale/assert.vim	/^let s:command_output = []$/;"	v
 s:common_efm	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:common_efm = ''$/;"	v
 s:commondirs	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:commondirs = {}$/;"	v
+s:compare_typeinfo	nvim/plugged/tagbar/autoload/tagbar/sorting.vim	/^let s:compare_typeinfo = {}$/;"	v
 s:compile_commands_cache	nvim/plugged/ale/autoload/ale/c.vim	/^    let s:compile_commands_cache = {}$/;"	v
 s:conceal	nvim/plugged/vimwiki/syntax/vimwiki.vim	/^let s:conceal = exists("+conceallevel") ? ' conceal' : ''$/;"	v
 s:config	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:config = {}$/;"	v
@@ -12110,6 +12270,7 @@ s:cpo_save	nvim/plugged/vim-ruby/ftplugin/ruby.vim	/^let s:cpo_save = &cpo$/;"	v
 s:cpo_save	nvim/plugged/vim-ruby/indent/ruby.vim	/^let s:cpo_save = &cpo$/;"	v
 s:ctagmap	nvim/plugged/vim-ruby/ftplugin/eruby.vim	/^  let s:ctagmap = {}$/;"	v
 s:ctagmap	nvim/plugged/vim-ruby/ftplugin/eruby.vim	/^let s:ctagmap = v:version >= 704 ? maparg('<Plug><ctag>', 'c', 0, 1) : {}$/;"	v
+s:ctags_is_uctags	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:ctags_is_uctags     = 0$/;"	v
 s:ctrlspace	nvim/plugged/vim-airline/autoload/airline/extensions/tabline.vim	/^let s:ctrlspace = get(g:, 'CtrlSpaceLoaded', 0)$/;"	v
 s:cubergb	nvim/plugged/vim-css-color/autoload/css_color.vim	/^	let s:cubergb = [ 0x00, 0x5F, 0x87, 0xAF, 0xD7, 0xFF ]$/;"	v
 s:current_ale_version	nvim/plugged/ale/autoload/ale.vim	/^let s:current_ale_version = [2, 6, 0]$/;"	v
@@ -12141,6 +12302,8 @@ s:cursor_timer	nvim/plugged/ale/autoload/ale/cursor.vim	/^let s:cursor_timer = -
 s:cursor_timer	nvim/plugged/ale/autoload/ale/virtualtext.vim	/^let s:cursor_timer = -1$/;"	v
 s:custom_handlers_map	nvim/plugged/ale/autoload/ale/lsp_linter.vim	/^let s:custom_handlers_map = get(s:, 'custom_handlers_map', {})$/;"	v
 s:debug	nvim/plugged/vim-ruby/spec/vim/plugin/syntax_test.vim	/^let s:debug = 0$/;"	v
+s:debug_enabled	nvim/plugged/tagbar/autoload/tagbar/debug.vim	/^let s:debug_enabled = 0$/;"	v
+s:debug_file	nvim/plugged/tagbar/autoload/tagbar/debug.vim	/^let s:debug_file = ''$/;"	v
 s:decimal_group	nvim/plugged/vim-airline/autoload/airline/extensions/wordcount/formatters/default.vim	/^  let s:decimal_group = ''$/;"	v
 s:decimal_group	nvim/plugged/vim-airline/autoload/airline/extensions/wordcount/formatters/default.vim	/^  let s:decimal_group = ','$/;"	v
 s:decimal_group	nvim/plugged/vim-airline/autoload/airline/extensions/wordcount/formatters/default.vim	/^  let s:decimal_group = '.'$/;"	v
@@ -12192,6 +12355,7 @@ s:default_syntax	nvim/plugged/vimwiki/syntax/vimwiki_default.vim	/^let s:default
 s:default_syntax	nvim/plugged/vimwiki/syntax/vimwiki_default.vim	/^let s:default_syntax.tag_search = '\\(^\\|\\s\\)\\zs:\\([^:''[:space:]]\\+:\\)\\+\\ze\\(\\s\\|$\\)'$/;"	v
 s:default_syntax	nvim/plugged/vimwiki/syntax/vimwiki_default.vim	/^let s:default_syntax.wikilink = '\\[\\[\\zs[^\\\\\\]|]\\+\\ze\\%(|[^\\\\\\]]\\+\\)\\?\\]\\]'$/;"	v
 s:default_visual_maps	nvim/plugged/vim-multiple-cursors/plugin/multiple_cursors.vim	/^let s:default_visual_maps = {'i':1, 'a':1, 'f':1, 'F':1, 't':1, 'T':1}$/;"	v
+s:delayed_update_files	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:delayed_update_files = []$/;"	v
 s:delimiter	nvim/plugged/vim-ruby/syntax/ruby.vim	/^    let s:delimiter = '\\' . s:delimiter$/;"	v
 s:denite_ver	nvim/plugged/vim-airline/autoload/airline/extensions/denite.vim	/^let s:denite_ver = (exists('*denite#get_status_mode') ? 2 : 3)$/;"	v
 s:diagnostics	nvim/plugged/vim-airline/autoload/airline/extensions/languageclient.vim	/^let s:diagnostics = {}$/;"	v
@@ -12233,6 +12397,7 @@ s:executable_cache_map	nvim/plugged/ale/autoload/ale/engine.vim	/^    let s:exec
 s:executables	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:executables = {}$/;"	v
 s:exists	nvim/plugged/emmet-vim/autoload/emmet/lang.vim	/^let s:exists = {}$/;"	v
 s:expand	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:expand = '\\%(\\(' . s:var . '\\)\\(' . s:flag . '*\\)\\(:S\\)\\=\\)'$/;"	v
+s:expand_bufnr	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:expand_bufnr = -1$/;"	v
 s:ext	nvim/plugged/vim-airline/autoload/airline/extensions.vim	/^let s:ext = {}$/;"	v
 s:ext	nvim/plugged/vim-airline/autoload/airline/extensions.vim	/^let s:ext._theme_funcrefs = []$/;"	v
 s:fail	nvim/plugged/vim-gitgutter/test/runner.vim	/^      let s:fail += 1$/;"	v
@@ -12379,6 +12544,7 @@ s:html_tags	nvim/plugged/vimwiki/syntax/vimwiki.vim	/^  let s:html_tags = join(s
 s:hunk_re	nvim/plugged/vim-gitgutter/autoload/gitgutter/diff.vim	/^let s:hunk_re = '^@@ -\\(\\d\\+\\),\\?\\(\\d*\\) +\\(\\d\\+\\),\\?\\(\\d*\\) @@'$/;"	v
 s:hunk_symbols	nvim/plugged/vim-airline/autoload/airline/extensions/hunks.vim	/^let s:hunk_symbols = get(g:, 'airline#extensions#hunks#hunk_symbols', ['+', '~', '-'])$/;"	v
 s:iTerm_escape_template	nvim/plugged/vim-airline/autoload/airline/extensions/cursormode.vim	/^let s:iTerm_escape_template = '\\033]Pl%s\\033\\\\'$/;"	v
+s:ics	nvim/plugged/tagbar/syntax/tagbar.vim	/^let s:ics = escape(join(g:tagbar_iconchars, ''), ']^\\-')$/;"	v
 s:in_comm	nvim/plugged/vim-javascript/indent/javascript.vim	/^let s:in_comm = s:skip_expr[:-14] . "'comment\\\\|doc'"$/;"	v
 s:inactive_funcrefs	nvim/plugged/vim-airline/autoload/airline.vim	/^let s:inactive_funcrefs = []$/;"	v
 s:include	nvim/plugged/vim-ruby/ftplugin/eruby.vim	/^let s:include = &l:include$/;"	v
@@ -12388,6 +12554,7 @@ s:indent_access_modifier_regex	nvim/plugged/vim-ruby/indent/ruby.vim	/^let s:ind
 s:indent_tags	nvim/plugged/html5.vim/indent/html.vim	/^let s:indent_tags = {}$/;"	v
 s:indexes	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:indexes = {}$/;"	v
 s:init	nvim/plugged/vim-airline/autoload/airline/extensions/tagbar.vim	/^let s:init=0$/;"	v
+s:init_done	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:init_done = 0$/;"	v
 s:init_path	nvim/plugged/ale/autoload/ale/gradle.vim	/^let s:init_path = has('win32')$/;"	v
 s:inline_pattern	nvim/plugged/ale/autoload/ale/handlers/gcc.vim	/^let s:inline_pattern = '\\v inlined from .* at \\<stdin\\>:(\\d+):(\\d+):$'$/;"	v
 s:inverse	nvim/plugged/gruvbox/colors/gruvbox.vim	/^  let s:inverse = ''$/;"	v
@@ -12403,6 +12570,7 @@ s:is_dark	nvim/plugged/gruvbox/colors/gruvbox.vim	/^let s:is_dark=(&background =
 s:is_good	nvim/plugged/vim-airline/autoload/airline/extensions/cursormode.vim	/^let s:is_good = !has('gui_running') && !s:is_win && !s:is_AppleTerminal$/;"	v
 s:is_gvim	nvim/plugged/coc.nvim/plugin/coc.vim	/^let s:is_gvim = get(v:, 'progname', '') ==# 'gvim'$/;"	v
 s:is_iTerm	nvim/plugged/vim-airline/autoload/airline/extensions/cursormode.vim	/^let s:is_iTerm = exists('$TERM_PROGRAM') && $TERM_PROGRAM =~# 'iTerm.app'$/;"	v
+s:is_maximized	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:is_maximized    = 0$/;"	v
 s:is_vim	nvim/plugged/coc.nvim/autoload/coc.vim	/^let s:is_vim = !has('nvim')$/;"	v
 s:is_vim	nvim/plugged/coc.nvim/autoload/coc/client.vim	/^let s:is_vim = !has('nvim')$/;"	v
 s:is_vim	nvim/plugged/coc.nvim/autoload/coc/list.vim	/^let s:is_vim = !has('nvim')$/;"	v
@@ -12442,6 +12610,7 @@ s:jsdoc_default_tags	nvim/plugged/vim-jsdoc/autoload/jsdoc.vim	/^let s:jsdoc_def
 s:keepcpo	nvim/plugged/scss-syntax.vim/indent/scss.vim	/^let s:keepcpo= &cpoptions$/;"	v
 s:keyMaps	nvim/plugged/nerdtree/lib/nerdtree/key_map.vim	/^let s:keyMaps = {}$/;"	v
 s:known_extensions	nvim/plugged/vimwiki/plugin/vimwiki.vim	/^let s:known_extensions = s:vimwiki_get_known_extensions()$/;"	v
+s:known_files	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:known_files = {$/;"	v
 s:known_files	nvim/plugged/vim-gutentags/autoload/gutentags.vim	/^let s:known_files = []$/;"	v
 s:known_projects	nvim/plugged/vim-gutentags/autoload/gutentags.vim	/^let s:known_projects = {}$/;"	v
 s:l_O	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^  let s:l_O = matchstr(&langmap, '\\C,\\zs.\\zeO,')$/;"	v
@@ -12449,7 +12618,9 @@ s:l_o	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^  let s:l_o = matchstr(&langma
 s:language	nvim/plugged/vim-vue/indent/vue.vim	/^    let s:language.indentexpr = s:get_indentexpr(s:language.name)$/;"	v
 s:languages	nvim/plugged/vim-vue/indent/vue.vim	/^let s:languages = [$/;"	v
 s:languages	nvim/plugged/vim-vue/syntax/vue.vim	/^let s:languages = [$/;"	v
+s:last_alt_bufnr	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:last_alt_bufnr = -1$/;"	v
 s:last_done_pos	nvim/plugged/ale/autoload/ale/completion.vim	/^let s:last_done_pos = []$/;"	v
+s:last_highlight_tline	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:last_highlight_tline = 0$/;"	v
 s:last_mode	nvim/plugged/vim-airline/autoload/airline/extensions/cursormode.vim	/^let s:last_mode = ''$/;"	v
 s:last_pattern_options	nvim/plugged/ale/autoload/ale/pattern_options.vim	/^let s:last_pattern_options = {}$/;"	v
 s:last_pos	nvim/plugged/ale/autoload/ale/cursor.vim	/^let s:last_pos = [0, 0, 0]$/;"	v
@@ -12580,12 +12751,14 @@ s:names	nvim/plugged/vim-ruby/syntax/ruby.vim	/^let s:names = { '~': 'Tilde', '`
 s:namespace_cache	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^let s:namespace_cache = {}$/;"	v
 s:namespace_id	nvim/plugged/coc.nvim/autoload/coc/api.vim	/^let s:namespace_id = 1$/;"	v
 s:nbs	nvim/plugged/fzf.vim/autoload/fzf/vim.vim	/^let s:nbs = nr2char(0x2007)$/;"	v
+s:nearby_disabled	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:nearby_disabled = 0$/;"	v
 s:needs_cppstructure_match	nvim/plugged/vim-cpp-enhanced-highlight/after/syntax/cpp.vim	/^	let s:needs_cppstructure_match += 1$/;"	v
 s:needs_cppstructure_match	nvim/plugged/vim-cpp-enhanced-highlight/after/syntax/cpp.vim	/^	let s:needs_cppstructure_match += 2$/;"	v
 s:needs_cppstructure_match	nvim/plugged/vim-cpp-enhanced-highlight/after/syntax/cpp.vim	/^let s:needs_cppstructure_match = 0$/;"	v
 s:nested	nvim/plugged/vimwiki/syntax/vimwiki.vim	/^  let s:nested = extend(s:nested, vimwiki#base#detect_nested_syntax(), "keep")$/;"	v
 s:nested	nvim/plugged/vimwiki/syntax/vimwiki.vim	/^let s:nested = vimwiki#vars#get_wikilocal('nested_syntaxes')$/;"	v
 s:new_log_session	nvim/plugged/vim-gitgutter/autoload/gitgutter/debug.vim	/^let s:new_log_session = 1$/;"	v
+s:new_window	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:new_window      = 1$/;"	v
 s:newline	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^let s:newline = (&enc ==? 'utf-8') ? "\\u21b2 " : "  "$/;"	v
 s:next_sign_id	nvim/plugged/vim-gitgutter/autoload/gitgutter/sign.vim	/^let s:next_sign_id  = s:first_sign_id$/;"	v
 s:nomodeline	nvim/plugged/vim-airline/autoload/airline/util.vim	/^let s:nomodeline = (v:version > 703 || (v:version == 703 && has("patch438"))) ? '<nomodeline>' : ''$/;"	v
@@ -12646,7 +12819,14 @@ s:pat_for_type	nvim/plugged/vim-css-color/autoload/css_color.vim	/^let s:pat_for
 s:path	nvim/plugged/vim-elixir/autoload/db/adapter/ecto.vim	/^let s:path = expand('<sfile>:h')$/;"	v
 s:path	nvim/plugged/vim-ruby/ftplugin/eruby.vim	/^let s:path = &l:path$/;"	v
 s:pattern	nvim/plugged/ale/autoload/ale/handlers/gcc.vim	/^let s:pattern = '\\v^([a-zA-Z]?:?[^:]+):(\\d+):(\\d+)?:? ([^:]+): (.+)$'$/;"	v
+s:pattern	nvim/plugged/tagbar/syntax/tagbar.vim	/^let s:pattern = '\\(\\S\\@<![' . s:ics . ' ]\\)\\@<=#\\([^-+# ]\\)\\@='$/;"	v
+s:pattern	nvim/plugged/tagbar/syntax/tagbar.vim	/^let s:pattern = '\\(\\S\\@<![' . s:ics . ' ]\\)\\@<=+\\([^-+# ]\\)\\@='$/;"	v
+s:pattern	nvim/plugged/tagbar/syntax/tagbar.vim	/^let s:pattern = '\\(\\S\\@<![' . s:ics . ' ]\\)\\@<=-\\([^-+# ]\\)\\@='$/;"	v
+s:pattern	nvim/plugged/tagbar/syntax/tagbar.vim	/^let s:pattern = '\\(\\S\\@<![' . s:ics . '][-+# ]\\?\\)\\@<=[^*(]\\+\\(\\*\\?\\(([^)]\\+)\\)\\? :\\)\\@='$/;"	v
+s:pattern	nvim/plugged/tagbar/syntax/tagbar.vim	/^let s:pattern = '\\(^[' . s:ics . '] \\?\\)\\@3<=[^-+: ]\\+[^:]\\+$'$/;"	v
+s:pattern	nvim/plugged/tagbar/syntax/tagbar.vim	/^let s:pattern = '\\S\\@<![' . s:ics . ']\\([-+# ]\\?\\)\\@='$/;"	v
 s:pattern_color	nvim/plugged/vim-css-color/autoload/css_color.vim	/^let s:pattern_color = {}$/;"	v
+s:paused	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:paused = 0$/;"	v
 s:plug_buf	nvim/autoload/plug.vim	/^let s:plug_buf = get(s:, 'plug_buf', -1)$/;"	v
 s:plug_src	nvim/autoload/plug.vim	/^let s:plug_src = 'https:\/\/github.com\/junegunn\/vim-plug.git'$/;"	v
 s:plug_tab	nvim/autoload/plug.vim	/^let s:plug_tab = get(s:, 'plug_tab', -1)$/;"	v
@@ -12664,6 +12844,7 @@ s:prototype	nvim/plugged/vim-airline/autoload/airline/extensions/tabline/builder
 s:purple	nvim/plugged/gruvbox/colors/gruvbox.vim	/^  let s:purple = s:gb.bright_purple$/;"	v
 s:purple	nvim/plugged/gruvbox/colors/gruvbox.vim	/^  let s:purple = s:gb.faded_purple$/;"	v
 s:purple	nvim/plugged/gruvbox/colors/gruvbox.vim	/^  let s:purple[1] = 13$/;"	v
+s:pwin_by_tagbar	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:pwin_by_tagbar = 0$/;"	v
 s:quit	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^  let s:quit = "quit"$/;"	v
 s:quit	nvim/plugged/coc.nvim/autoload/coc/util.vim	/^let s:quit = ""$/;"	v
 s:rebase_abbrevs	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:rebase_abbrevs = {$/;"	v
@@ -12708,6 +12889,7 @@ s:save_cpo	nvim/plugged/vim-jsdoc/ftplugin/typescript/jsdoc.vim	/^let s:save_cpo
 s:save_cpo	nvim/plugged/vim-multiple-cursors/plugin/multiple_cursors.vim	/^let s:save_cpo = &cpo$/;"	v
 s:save_cpo	nvim/plugged/vim-pug/ftplugin/pug.vim	/^let s:save_cpo = &cpo$/;"	v
 s:save_cpo	nvim/plugged/vim-ruby/ftplugin/eruby.vim	/^let s:save_cpo = &cpo$/;"	v
+s:save_cpo	nvim/plugged/vim-smooth-scroll/autoload/smooth_scroll.vim	/^let s:save_cpo = &cpo$/;"	v
 s:saved_char	nvim/plugged/vim-multiple-cursors/autoload/multiple_cursors.vim	/^let s:saved_char = ''$/;"	v
 s:saved_cursor	nvim/plugged/coc.nvim/autoload/coc/list.vim	/^let s:saved_cursor = &guicursor$/;"	v
 s:saved_keys	nvim/plugged/vim-multiple-cursors/autoload/multiple_cursors.vim	/^let s:saved_keys = ""$/;"	v
@@ -12738,6 +12920,7 @@ s:severity_info	nvim/plugged/vim-airline/autoload/airline/extensions/languagecli
 s:severity_warning	nvim/plugged/vim-airline/autoload/airline/extensions/languageclient.vim	/^let s:severity_warning = 2$/;"	v
 s:sfile	nvim/plugged/emmet-vim/unittest.vim	/^let s:sfile = expand('<sfile>')$/;"	v
 s:sha1size	nvim/plugged/vim-airline/autoload/airline/extensions/branch.vim	/^let s:sha1size = get(g:, 'airline#extensions#branch#sha1_len', 7)$/;"	v
+s:short_help	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:short_help      = 1$/;"	v
 s:should_complete_map	nvim/plugged/ale/autoload/ale/completion.vim	/^let s:should_complete_map = {$/;"	v
 s:show_buffers	nvim/plugged/vim-airline/autoload/airline/extensions/tabline/autoshow.vim	/^let s:show_buffers = get(g:, 'airline#extensions#tabline#show_buffers', 1)$/;"	v
 s:show_line_numbers	nvim/plugged/vim-airline/autoload/airline/extensions/languageclient.vim	/^let s:show_line_numbers = get(g:, 'airline#extensions#languageclient#show_line_numbers', 1)$/;"	v
@@ -12767,6 +12950,7 @@ s:special_keys	nvim/plugged/vim-multiple-cursors/autoload/multiple_cursors.vim	/
 s:spell_cluster	nvim/plugged/vim-ruby/syntax/ruby.vim	/^let s:spell_cluster = exists('ruby_spellcheck_strings') ? ',@Spell' : ''$/;"	v
 s:splat_regex	nvim/plugged/vim-ruby/indent/ruby.vim	/^let s:splat_regex = '[[,(]\\s*\\*\\s*\\%(#.*\\)\\=$'$/;"	v
 s:start_pattern	nvim/plugged/vim-vue/syntax/vue.vim	/^  let s:start_pattern = '<' . s:language.tag . '\\>\\_[^>]*' . s:attr_pattern . '\\_[^>]*>'$/;"	v
+s:statusline_in_use	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:statusline_in_use = 0$/;"	v
 s:suffixesadd	nvim/plugged/vim-ruby/ftplugin/eruby.vim	/^let s:suffixesadd = &l:suffixesadd$/;"	v
 s:supports_sign_groups	nvim/plugged/ale/autoload/ale/sign.vim	/^let s:supports_sign_groups = has('nvim-0.4.2') || (v:version >= 801 && has('patch614'))$/;"	v
 s:supports_star	nvim/plugged/vim-gitgutter/autoload/gitgutter/sign.vim	/^let s:supports_star = v:version > 703 || (v:version == 703 && has("patch596"))$/;"	v
@@ -12808,6 +12992,7 @@ s:trees	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^let s:trees = {}$/;"	v
 s:trigger_character_map	nvim/plugged/ale/autoload/ale/completion.vim	/^let s:trigger_character_map = {$/;"	v
 s:triggers	nvim/autoload/plug.vim	/^let s:triggers = get(s:, 'triggers', {})$/;"	v
 s:type	nvim/plugged/vim-css-color/autoload/css_color.vim	/^let s:type         = [ 'none', 'hex', 'css', 'none' ] " with wraparound for index() == -1$/;"	v
+s:type_init_done	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:type_init_done    = 0$/;"	v
 s:undercurl	nvim/plugged/gruvbox/colors/gruvbox.vim	/^  let s:undercurl = ''$/;"	v
 s:undercurl	nvim/plugged/gruvbox/colors/gruvbox.vim	/^let s:undercurl = 'undercurl,'$/;"	v
 s:underline	nvim/plugged/gruvbox/colors/gruvbox.vim	/^  let s:underline = ''$/;"	v
@@ -12838,19 +13023,25 @@ s:vert_split	nvim/plugged/gruvbox/colors/gruvbox.vim	/^let s:vert_split = s:bg0$
 s:vim8	nvim/autoload/plug.vim	/^let s:vim8 = has('patch-8.0.0039') && exists('*job_start')$/;"	v
 s:vim_bg	nvim/plugged/gruvbox/colors/gruvbox.vim	/^let s:vim_bg = ['bg', 'bg']$/;"	v
 s:vim_fg	nvim/plugged/gruvbox/colors/gruvbox.vim	/^let s:vim_fg = ['fg', 'fg']$/;"	v
+s:vim_quitting	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:vim_quitting = 0$/;"	v
 s:vimwiki_autowriteall_saved	nvim/plugged/vimwiki/plugin/vimwiki.vim	/^  let s:vimwiki_autowriteall_saved = 1$/;"	v
 s:vimwiki_autowriteall_saved	nvim/plugged/vimwiki/plugin/vimwiki.vim	/^  let s:vimwiki_autowriteall_saved = g:vimwiki_autowriteall$/;"	v
 s:vimwiki_max_scan_for_caption	nvim/plugged/vimwiki/autoload/vimwiki/diary.vim	/^let s:vimwiki_max_scan_for_caption = 5$/;"	v
+s:visibility_symbols	nvim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^let s:visibility_symbols = {$/;"	v
 s:warning_sign	nvim/plugged/coc.nvim/autoload/coc.vim	/^let s:warning_sign = get(g:, 'coc_status_warning_sign', has('mac') ? '⚠️ ' : 'W')$/;"	v
 s:warning_symbol	nvim/plugged/vim-airline/autoload/airline/extensions/coc.vim	/^let s:warning_symbol = get(g:, 'airline#extensions#coc#warning_symbol', 'W:')$/;"	v
 s:warning_symbol	nvim/plugged/vim-airline/autoload/airline/extensions/languageclient.vim	/^let s:warning_symbol = get(g:, 'airline#extensions#languageclient#warning_symbol', 'W:')$/;"	v
 s:warning_symbol	nvim/plugged/vim-airline/autoload/airline/extensions/neomake.vim	/^let s:warning_symbol = get(g:, 'airline#extensions#neomake#warning_symbol', 'W:')$/;"	v
 s:warning_symbol	nvim/plugged/vim-airline/autoload/airline/extensions/syntastic.vim	/^let s:warning_symbol = get(g:, 'airline#extensions#syntastic#warning_symbol', 'W:')$/;"	v
 s:warning_symbol	nvim/plugged/vim-airline/autoload/airline/extensions/ycm.vim	/^let s:warning_symbol = get(g:, 'airline#extensions#ycm#warning_symbol', 'W:')$/;"	v
+s:warnings	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:warnings = {$/;"	v
 s:watched_keys	nvim/plugged/coc.nvim/autoload/coc.vim	/^let s:watched_keys = []$/;"	v
 s:wide	nvim/plugged/fzf.vim/autoload/fzf/vim.vim	/^let s:wide = 120$/;"	v
 s:wildignores_options_path	nvim/plugged/vim-gutentags/autoload/gutentags/ctags.vim	/^let s:wildignores_options_path = ''$/;"	v
+s:window_expanded	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:window_expanded   = 0$/;"	v
+s:window_pos	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:window_pos = {$/;"	v
 s:winid	nvim/plugged/vim-gitgutter/autoload/gitgutter/hunk.vim	/^let s:winid = 0$/;"	v
+s:winrestcmd	nvim/plugged/tagbar/autoload/tagbar.vim	/^let s:winrestcmd      = ''$/;"	v
 s:word_regex_list	nvim/plugged/ale/ale_linters/vim/vint.vim	/^let s:word_regex_list = [$/;"	v
 s:wordcount_cache	nvim/plugged/vim-airline/autoload/airline/extensions/wordcount.vim	/^let s:wordcount_cache = 0  " cache wordcount for performance when force_update=0$/;"	v
 s:worktree_for_dir	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^let s:worktree_for_dir = {}$/;"	v
@@ -13033,6 +13224,7 @@ setExtUnpackers	nvim/plugged/coc.nvim/build/index.js	/^function setExtUnpackers(
 setFiletype	nvim/plugged/coc.nvim/build/index.js	/^    setFiletype(filetype) {$/;"	M
 setFiletype	nvim/plugged/coc.nvim/src/model/document.ts	/^  public setFiletype(filetype: string): void {$/;"	m
 setFiletype	nvim/plugged/coc.nvim/src/model/popup.ts	/^  public setFiletype(filetype: string): void {$/;"	m
+setFolded	nvim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! s:setFolded(folded) abort dict$/;"	f
 setFolderConfiguration	nvim/plugged/coc.nvim/build/index.js	/^    setFolderConfiguration(uri) {$/;"	M
 setFolderConfiguration	nvim/plugged/coc.nvim/src/configuration/index.ts	/^  public setFolderConfiguration(uri: string): void {$/;"	m
 setHeader	nvim/plugged/coc.nvim/build/index.js	/^RedirectableRequest.prototype.setHeader = function (name, value) {$/;"	M
@@ -13116,7 +13308,9 @@ setupTransport	nvim/plugged/coc.nvim/build/index.js	/^    setupTransport(request
 setup_buffer_enter	nvim/plugged/vimwiki/plugin/vimwiki.vim	/^function! s:setup_buffer_enter()$/;"	f
 setup_buffer_leave	nvim/plugged/vimwiki/plugin/vimwiki.vim	/^function! s:setup_buffer_leave()$/;"	f
 setup_cleared_syntax	nvim/plugged/vimwiki/plugin/vimwiki.vim	/^function! s:setup_cleared_syntax()$/;"	f
+setup_keymaps	nvim/plugged/tagbar/plugin/tagbar.vim	/^function! s:setup_keymaps() abort$/;"	f
 setup_new_wiki_buffer	nvim/plugged/vimwiki/plugin/vimwiki.vim	/^function! s:setup_new_wiki_buffer()$/;"	f
+setup_options	nvim/plugged/tagbar/plugin/tagbar.vim	/^function! s:setup_options() abort$/;"	f
 setup_path	nvim/plugged/vim-gitgutter/autoload/gitgutter.vim	/^function! s:setup_path(bufnr, continuation)$/;"	f
 severityLevel	nvim/plugged/coc.nvim/build/index.js	/^function severityLevel(level) {$/;"	F
 severityLevel	nvim/plugged/coc.nvim/src/diagnostic/util.ts	/^export function severityLevel(level: string): number {$/;"	f
@@ -13222,6 +13416,9 @@ slideDown	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^	slideDown: f
 slideToggle	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^	slideToggle: function(speed, callback){$/;"	M
 slideUp	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^	slideUp: function(speed,callback){$/;"	M
 slow	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^		slow: 600,$/;"	P
+smooth_scroll	nvim/plugged/vim-smooth-scroll/autoload/smooth_scroll.vim	/^function! s:smooth_scroll(dir, dist, duration, speed)$/;"	f
+smooth_scroll#down	nvim/plugged/vim-smooth-scroll/autoload/smooth_scroll.vim	/^function! smooth_scroll#down(dist, duration, speed)$/;"	f
+smooth_scroll#up	nvim/plugged/vim-smooth-scroll/autoload/smooth_scroll.vim	/^function! smooth_scroll#up(dist, duration, speed)$/;"	f
 smth	nvim/plugged/vim-elixir/spec/indent/ecto_queries_spec.rb	/^  def smth do$/;"	f
 snapshot	nvim/autoload/plug.vim	/^function! s:snapshot(force, ...) abort$/;"	f
 snippet	nvim/plugged/coc.nvim/build/index.js	/^                snippet: this$/;"	P
@@ -13259,6 +13456,7 @@ sortSymbolInformations	nvim/plugged/coc.nvim/build/index.js	/^function sortSymbo
 sortSymbolInformations	nvim/plugged/coc.nvim/src/handler/index.ts	/^function sortSymbolInformations(a: SymbolInformation, b: SymbolInformation): number {$/;"	f
 sortSymbols	nvim/plugged/coc.nvim/build/index.js	/^function sortSymbols(a, b) {$/;"	F
 sortSymbols	nvim/plugged/coc.nvim/src/list/source/outline.ts	/^function sortSymbols(a: DocumentSymbol, b: DocumentSymbol): number {$/;"	f
+sortTags	nvim/plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim	/^function! s:sortTags(compare_typeinfo) abort dict$/;"	f
 sort_buffers	nvim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:sort_buffers(...)$/;"	f
 sortedObj	nvim/plugged/coc.nvim/build/index.js	/^            const sortedObj = { dependencies: {} };$/;"	O
 sortedObj	nvim/plugged/coc.nvim/build/index.js	/^        const sortedObj = { dependencies: {} };$/;"	O
@@ -13425,6 +13623,7 @@ str	nvim/plugged/coc.nvim/build/index.js	/^    let str = '';$/;"	V
 str	nvim/plugged/coc.nvim/build/index.js	/^    str: str,$/;"	P
 str	nvim/plugged/coc.nvim/build/index.js	/^  var str = ''$/;"	V
 str	nvim/plugged/coc.nvim/build/index.js	/^function str(decoder, len) {$/;"	F
+str	nvim/plugged/tagbar/autoload/tagbar/prototypes/normaltag.vim	/^function! s:str(longsig, full) abort dict$/;"	f
 strWidth	nvim/plugged/coc.nvim/build/index.js	/^    strWidth(str) {$/;"	M
 str_head_size	nvim/plugged/coc.nvim/build/index.js	/^  function str_head_size(length) {$/;"	F
 strategies	nvim/plugged/coc.nvim/build/index.js	/^const strategies = new Set([$/;"	V
@@ -13436,6 +13635,8 @@ stream	nvim/plugged/coc.nvim/build/index.js	/^  const stream = new fsm.WriteStre
 stream	nvim/plugged/coc.nvim/build/index.js	/^  const stream = new fsm.WriteStreamSync(opt.file, {$/;"	V
 stream	nvim/plugged/coc.nvim/build/index.js	/^  const stream = new streams.RollingFileStream($/;"	V
 streamSync	nvim/plugged/coc.nvim/build/index.js	/^const streamSync = (opt, p, position, fd, files) => {$/;"	F
+strfmt	nvim/plugged/tagbar/autoload/tagbar/prototypes/normaltag.vim	/^function! s:strfmt() abort dict$/;"	f
+strfmt	nvim/plugged/tagbar/autoload/tagbar/prototypes/pseudotag.vim	/^function! s:strfmt() abort dict$/;"	f
 strictIndexing	nvim/plugged/coc.nvim/build/index.js	/^                        strictIndexing: false$/;"	P
 strictIndexing	nvim/plugged/coc.nvim/build/index.js	/^                strictIndexing: false$/;"	P
 strictIndexing	nvim/plugged/coc.nvim/build/index.js	/^            strictIndexing: false$/;"	P
@@ -13537,6 +13738,39 @@ tag_todo	nvim/plugged/vimwiki/autoload/vimwiki/html.vim	/^function! s:tag_todo(v
 tag_weblink	nvim/plugged/vimwiki/autoload/vimwiki/html.vim	/^function! s:tag_weblink(value)$/;"	f
 tag_wikiincl	nvim/plugged/vimwiki/autoload/vimwiki/html.vim	/^function! s:tag_wikiincl(value)$/;"	f
 tag_wikilink	nvim/plugged/vimwiki/autoload/vimwiki/html.vim	/^function! s:tag_wikilink(value)$/;"	f
+tagbar#CloseWindow	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! tagbar#CloseWindow() abort$/;"	f
+tagbar#OpenWindow	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! tagbar#OpenWindow(...) abort$/;"	f
+tagbar#RestoreSession	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! tagbar#RestoreSession() abort$/;"	f
+tagbar#SetFoldLevel	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! tagbar#SetFoldLevel(level, force) abort$/;"	f
+tagbar#StopAutoUpdate	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! tagbar#StopAutoUpdate() abort$/;"	f
+tagbar#ToggleWindow	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! tagbar#ToggleWindow(...) abort$/;"	f
+tagbar#autoopen	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! tagbar#autoopen(...) abort$/;"	f
+tagbar#currentfile	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! tagbar#currentfile() abort$/;"	f
+tagbar#currenttag	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! tagbar#currenttag(fmt, default, ...) abort$/;"	f
+tagbar#debug#enabled	nvim/plugged/tagbar/autoload/tagbar/debug.vim	/^function! tagbar#debug#enabled() abort$/;"	f
+tagbar#debug#log	nvim/plugged/tagbar/autoload/tagbar/debug.vim	/^function! tagbar#debug#log(msg) abort$/;"	f
+tagbar#debug#log_ctags_output	nvim/plugged/tagbar/autoload/tagbar/debug.vim	/^function! tagbar#debug#log_ctags_output(output) abort$/;"	f
+tagbar#debug#start_debug	nvim/plugged/tagbar/autoload/tagbar/debug.vim	/^function! tagbar#debug#start_debug(...) abort$/;"	f
+tagbar#debug#stop_debug	nvim/plugged/tagbar/autoload/tagbar/debug.vim	/^function! tagbar#debug#stop_debug() abort$/;"	f
+tagbar#gettypeconfig	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! tagbar#gettypeconfig(type) abort$/;"	f
+tagbar#getusertypes	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! tagbar#getusertypes() abort$/;"	f
+tagbar#highlighttag	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! tagbar#highlighttag(openfolds, force) abort$/;"	f
+tagbar#inspect	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! tagbar#inspect(var) abort$/;"	f
+tagbar#is_paused	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! tagbar#is_paused() abort$/;"	f
+tagbar#prototypes#basetag#new	nvim/plugged/tagbar/autoload/tagbar/prototypes/basetag.vim	/^function! tagbar#prototypes#basetag#new(name) abort$/;"	f
+tagbar#prototypes#fileinfo#new	nvim/plugged/tagbar/autoload/tagbar/prototypes/fileinfo.vim	/^function! tagbar#prototypes#fileinfo#new(fname, ftype, typeinfo) abort$/;"	f
+tagbar#prototypes#kindheadertag#new	nvim/plugged/tagbar/autoload/tagbar/prototypes/kindheadertag.vim	/^function! tagbar#prototypes#kindheadertag#new(name) abort$/;"	f
+tagbar#prototypes#normaltag#new	nvim/plugged/tagbar/autoload/tagbar/prototypes/normaltag.vim	/^function! tagbar#prototypes#normaltag#new(name) abort$/;"	f
+tagbar#prototypes#pseudotag#new	nvim/plugged/tagbar/autoload/tagbar/prototypes/pseudotag.vim	/^function! tagbar#prototypes#pseudotag#new(name) abort$/;"	f
+tagbar#prototypes#splittag#new	nvim/plugged/tagbar/autoload/tagbar/prototypes/splittag.vim	/^function! tagbar#prototypes#splittag#new(name) abort$/;"	f
+tagbar#prototypes#typeinfo#new	nvim/plugged/tagbar/autoload/tagbar/prototypes/typeinfo.vim	/^function! tagbar#prototypes#typeinfo#new(...) abort$/;"	f
+tagbar#sorting#sort	nvim/plugged/tagbar/autoload/tagbar/sorting.vim	/^function! tagbar#sorting#sort(tags, compareby, compare_typeinfo) abort$/;"	f
+tagbar#state#get_current_file	nvim/plugged/tagbar/autoload/tagbar/state.vim	/^function! tagbar#state#get_current_file(force_current) abort$/;"	f
+tagbar#state#set_current_file	nvim/plugged/tagbar/autoload/tagbar/state.vim	/^function! tagbar#state#set_current_file(fileinfo) abort$/;"	f
+tagbar#state#set_paused	nvim/plugged/tagbar/autoload/tagbar/state.vim	/^function! tagbar#state#set_paused() abort$/;"	f
+tagbar#toggle_pause	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! tagbar#toggle_pause() abort$/;"	f
+tagbar#types#ctags#init	nvim/plugged/tagbar/autoload/tagbar/types/ctags.vim	/^function! tagbar#types#ctags#init(supported_types) abort$/;"	f
+tagbar#types#uctags#init	nvim/plugged/tagbar/autoload/tagbar/types/uctags.vim	/^function! tagbar#types#uctags#init(supported_types) abort$/;"	f
 tags_entry_cmp	nvim/plugged/vimwiki/autoload/vimwiki/tags.vim	/^function! s:tags_entry_cmp(i1, i2)$/;"	f
 tags_sink	nvim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:tags_sink(lines)$/;"	f
 tail	nvim/plugged/coc.nvim/build/index.js	/^function tail(array, n = 0) {$/;"	F
@@ -13718,6 +13952,7 @@ toggle	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^	toggle: functio
 toggle	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^	toggle: function( fn, fn2 ){$/;"	M
 toggleClass	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^	toggleClass: function( classNames ) {$/;"	M
 toggleExtension	nvim/plugged/coc.nvim/src/extensions.ts	/^  public async toggleExtension(id: string): Promise<void> {$/;"	m
+toggleFold	nvim/plugged/tagbar/autoload/tagbar/prototypes/kindheadertag.vim	/^function! s:toggleFold(fileinfo) abort dict$/;"	f
 toggleIgnoreFilter	nvim/plugged/nerdtree/autoload/nerdtree/ui_glue.vim	/^function! s:toggleIgnoreFilter()$/;"	f
 toggleLock	nvim/plugged/coc.nvim/src/extensions.ts	/^  public async toggleLock(id: string): Promise<void> {$/;"	m
 toggleMode	nvim/plugged/coc.nvim/build/index.js	/^    toggleMode() {$/;"	M
@@ -14215,6 +14450,7 @@ warn	nvim/plugged/coc.nvim/build/index.js	/^    warn: () => { },$/;"	M
 warn	nvim/plugged/coc.nvim/src/language-client/client.ts	/^  public warn(message: string): void {$/;"	m
 warn	nvim/plugged/coc.nvim/src/language-client/client.ts	/^  public warn(message: string, data?: any): void {$/;"	m
 warn	nvim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:warn(message)$/;"	f
+warning	nvim/plugged/tagbar/autoload/tagbar.vim	/^function! s:warning(msg) abort$/;"	f
 watch	nvim/plugged/coc.nvim/src/watchman.ts	/^  private watch: string | undefined$/;"	m
 watchChange	nvim/plugged/coc.nvim/build/index.js	/^                watchChange = (watcher.kind & vscode_languageserver_protocol_1.WatchKind.Change) != 0;$/;"	M
 watchCreate	nvim/plugged/coc.nvim/build/index.js	/^                watchCreate = (watcher.kind & vscode_languageserver_protocol_1.WatchKind.Create) !== 0;$/;"	M
