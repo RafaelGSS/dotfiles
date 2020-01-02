@@ -55,6 +55,7 @@ set background=dark
 let mapleader="\<space>"
 " commons
 set foldmethod=manual
+set so=7
 set clipboard=unnamedplus
 set backupcopy=yes
 set inccommand=split
