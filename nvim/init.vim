@@ -10,6 +10,7 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() } }
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'terryma/vim-smooth-scroll'
 
 " interfaces
 Plug 'lifepillar/vim-gruvbox8'
@@ -54,6 +55,7 @@ set background=dark
 let mapleader="\<space>"
 " commons
 set foldmethod=manual
+set so=7
 set clipboard=unnamedplus
 set backupcopy=yes
 set inccommand=split
@@ -294,6 +296,14 @@ let g:AutoPairsFlyMode = 0
 """"""""""""""""""""""""""""""""""
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
+
+""""""""""""""""""""""""""""""""""
+" Plugin Smooth Scroll
+""""""""""""""""""""""""""""""""""
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+
+
 """"""""""""""""""""""""""""""""""
 " Typescript
 """"""""""""""""""""""""""""""""""
