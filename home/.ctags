@@ -7,6 +7,7 @@
 --exclude=priv
 --exclude=dist
 --exclude=deps
+--exclude=_build
 
 --langmap=javascript:.js.es6.es.jsx
 --javascript-kinds=-c-f-m-p-v
