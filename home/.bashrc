@@ -145,16 +145,18 @@ alias tmux-kill="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, leng
 alias kcluster="kubectl config use-context $1"
 alias t='vim -t "$(cut -f1 tags | tail +7 | uniq | fzf)"'
 
-# See cluster in K8s
-__kube_ps1()
-{
+if [ -f ~/.kube/config ]
+then
+  # See cluster in K8s
+  __kube_ps1()
+  {
     # Get current context
     CONTEXT=$(cat ~/.kube/config | grep "current-context:" | sed "s/current-context: //")
 
     if [ -n "$CONTEXT" ]; then
-        echo "(k8s: ${CONTEXT})"
+      echo "(k8s: ${CONTEXT})"
     fi
-}
+  }
 
 # .bash_profile
 NORMAL="\[\033[00m\]"
@@ -163,6 +165,7 @@ YELLOW="\[\e[1;33m\]"
 GREEN="\[\e[1;32m\]"
 
 export PS1="${BLUE}\W ${GREEN}\u${YELLOW}\$(__kube_ps1)${NORMAL} \$ "
+fi
 
 [ -f ~/.bashrc.private ] && source ~/.bashrc.private
 
