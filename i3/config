@@ -174,8 +174,7 @@ bindsym $mod+r mode "resize"
 bar {
   status_command i3status | while :
     do
-      read line
-        LG=$(setxkbmap -print | grep xkb_symbols | awk -F"+" '{print $2}') 
+      LG=$(setxkbmap -print | grep xkb_symbols | awk -F"+" '{print $2}') 
         pycom=$(/home/user/.i3/pys.py)
         todo=$(task ls | sed -n '4s/[[:blank:]]\+/ /pg' )
         echo "TODO:$todo | LG: $LG | $pycom | $line" || exit 1
