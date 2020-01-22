@@ -2402,6 +2402,7 @@ VimwikiToggleRejectedListItem	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^comman
 VimwikiUISelect	nvim/plugged/vimwiki/plugin/vimwiki.vim	/^command! VimwikiUISelect call vimwiki#base#ui_select()$/;"	c
 VimwikiVSplitLink	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^command! -buffer -nargs=* VimwikiVSplitLink call vimwiki#base#follow_link('vsplit', <f-args>)$/;"	c
 VimwikiWikiIncludeHandler	nvim/plugged/vimwiki/plugin/vimwiki.vim	/^  function! VimwikiWikiIncludeHandler(value)$/;"	f
+W	nvim/init.vim	/^command! -nargs=* W execute "w"$/;"	c
 WARN	nvim/plugged/coc.nvim/build/index.js	/^  WARN: { value: 30000, colour: 'yellow' },$/;"	P
 WGET_OPT	nvim/plugged/html5.vim/Makefile	/^WGET_OPT=-c -nv$/;"	m
 WHITESPACE_AFTER_SET	nvim/plugged/ale/test/script/block-padding-checker	/^WHITESPACE_AFTER_SET = END_BLOCKS$/;"	v

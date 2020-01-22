@@ -88,6 +88,8 @@ set tags=tags
 filetype plugin indent on
 command! -nargs=* Vcfg execute "vsplit $MYVIMRC"
 
+command! -nargs=* W execute "w"
+
 "navigate between buffers
 nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bprev<CR>
