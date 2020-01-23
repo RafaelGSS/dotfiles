@@ -265,22 +265,6 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-eslint', 'coc-highlight', 'coc-html', 'coc-tslint', 'coc-vetur', 'coc-elixir']
 
-"""""""""""""""""""""""""""""""" 
-" Plugin multiple-cursors
-""""""""""""""""""""""""""""""""
-
-" " Default mapping
-" let g:multi_cursor_start_word_key      = '<C-d>'
-" let g:multi_cursor_select_all_word_key = '<A-d>'
-" let g:multi_cursor_start_key           = 'g<C-d>'
-" let g:multi_cursor_select_all_key      = 'g<A-d>'
-" let g:multi_cursor_next_key            = '<C-d>'
-" let g:multi_cursor_prev_key            = '<C-p>'
-" let g:multi_cursor_skip_key            = '<C-x>'
-" let g:multi_cursor_quit_key            = '<Esc>'
-
-" let g:multi_cursor_exit_from_visual_mode=1
-
 """"""""""""""""""""""""""""""""""
 " Plugin vim-airline
 """"""""""""""""""""""""""""""""""
