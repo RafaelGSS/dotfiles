@@ -114,7 +114,7 @@ nnoremap <leader>dp :diffput<CR>
 " Plugin fuzzy finder - fzf
 """"""""""""""""""""""""""""""""""""""
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
-nnoremap <c-P> :Files<cr>
+nnoremap <c-P> :call Fzf_dev()<cr>
 nnoremap <c-F> :Ag<cr>
 nnoremap <leader>t :BTags<CR>
 nnoremap <leader>T :Tags<CR>
