@@ -235,7 +235,7 @@ $updateConfigurationOption	nvim/plugged/coc.nvim/src/configuration/shape.ts	/^  
 <TAB>	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^  nmap <silent><buffer> <TAB> <Plug>VimwikiNextLink$/;"	m
 <Tab>	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^   inoremap <expr> <buffer> <Tab> vimwiki#tbl#kbd_tab()$/;"	m
 <c-F>	nvim/init.vim	/^nnoremap <c-F> :Ag<cr>$/;"	m
-<c-P>	nvim/init.vim	/^nnoremap <c-P> :Files<cr>$/;"	m
+<c-P>	nvim/init.vim	/^nnoremap <c-P> :call Fzf_dev()<cr>$/;"	m
 <c-d>	nvim/init.vim	/^noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>$/;"	m
 <c-space>	nvim/init.vim	/^inoremap <silent><expr> <c-space> coc#refresh()$/;"	m
 <c-u>	nvim/init.vim	/^noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>$/;"	m
@@ -1111,6 +1111,7 @@ FugitiveWorkTree	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! Fugit
 FullTextDocument	nvim/plugged/coc.nvim/build/index.js	/^    function FullTextDocument(uri, languageId, version, content) {$/;"	F
 FullTextDocument	nvim/plugged/coc.nvim/build/index.js	/^var FullTextDocument = \/** @class *\/ (function () {$/;"	V
 Function	nvim/plugged/vim-cpp-enhanced-highlight/test/color2.cpp	/^void Class::Function(double variable) {$/;"	f	class:Class
+Fzf_dev	nvim/init.vim	/^function! Fzf_dev()$/;"	f
 GF	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:GF(mode) abort$/;"	f
 GIT_SOURCES	nvim/plugged/html5.vim/Makefile	/^GIT_SOURCES=$/;"	m
 GUNZIP	nvim/plugged/coc.nvim/build/index.js	/^  GUNZIP: 4,$/;"	P
@@ -6329,6 +6330,7 @@ editBefore	nvim/plugged/coc.nvim/build/index.js	/^    editBefore: {$/;"	P
 editOperations	nvim/plugged/coc.nvim/build/index.js	/^    var editOperations = [];$/;"	A
 editRange	nvim/plugged/coc.nvim/build/index.js	/^function editRange(range, text, edit) {$/;"	F
 editRange	nvim/plugged/coc.nvim/src/util/position.ts	/^export function editRange(range: Range, text: string, edit: TextEdit): string {$/;"	f
+edit_file	nvim/init.vim	/^  function! s:edit_file(item)$/;"	f
 edit_file	nvim/plugged/vim-elixir/spec/spec_helper.rb	/^  def edit_file(content)$/;"	f	class:Buffer
 edits	nvim/plugged/coc.nvim/build/index.js	/^                        let edits = [];$/;"	A
 edits	nvim/plugged/coc.nvim/build/index.js	/^                    edits: edits$/;"	P
