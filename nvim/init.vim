@@ -119,6 +119,28 @@ nnoremap <c-F> :Ag<cr>
 nnoremap <leader>t :BTags<CR>
 nnoremap <leader>T :Tags<CR>
 
+" Files + devicons
+function! Fzf_dev()
+  let l:fzf_files_options = '--preview "bat --theme="OneHalfDark" --style=numbers,changes --color always {2..-1} | head -'.&lines.'"'
+
+  function! s:files()
+    let l:files = split(system($FZF_DEFAULT_COMMAND), '\n')
+    return l:files
+  endfunction
+
+  function! s:edit_file(item)
+    let l:pos = stridx(a:item, ' ')
+    let l:file_path = a:item[pos+1:-1]
+    execute 'silent e' l:file_path
+  endfunction
+
+  call fzf#run({
+        \ 'source': <sid>files(),
+        \ 'sink':   function('s:edit_file'),
+        \ 'options': '-m ' . l:fzf_files_options,
+        \ 'down':    '40%' })
+endfunction
+
 """"""""""""""""""""""""""""""""""""""
 " Plugin NERDTree
 """"""""""""""""""""""""""""""""""""""
