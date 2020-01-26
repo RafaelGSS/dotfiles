@@ -67,7 +67,7 @@ i3:
 nvim:
 		sudo add-apt-repository ppa:neovim-ppa/stable -y
 		sudo apt update
-		sudo apt install neovim ctags tmux -y
+		sudo apt install neovim ctags tmux bat -y
 		sudo apt-get install silversearcher-ag -y
 		rm -rf ${HOME}/.config/nvim
 		ln -s $(realpath ./nvim/) ${HOME}/.config/nvim
