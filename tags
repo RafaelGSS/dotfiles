@@ -356,6 +356,7 @@ AfterHangingSplat	nvim/plugged/vim-ruby/indent/ruby.vim	/^function! s:AfterHangi
 AfterIndentKeyword	nvim/plugged/vim-ruby/indent/ruby.vim	/^function! s:AfterIndentKeyword(pline_info) abort$/;"	f
 AfterLeadingOperator	nvim/plugged/vim-ruby/indent/ruby.vim	/^function! s:AfterLeadingOperator(pline_info) abort$/;"	f
 AfterUnbalancedBracket	nvim/plugged/vim-ruby/indent/ruby.vim	/^function! s:AfterUnbalancedBracket(pline_info) abort$/;"	f
+Ag	nvim/init.vim	/^command! -bang -nargs=* Ag$/;"	c
 AirlineExtensions	nvim/plugged/vim-airline/plugin/airline.vim	/^command! AirlineExtensions   call s:airline_extensions()$/;"	c
 AirlineRefresh	nvim/plugged/vim-airline/plugin/airline.vim	/^command! -bar -bang AirlineRefresh call s:airline_refresh(<q-bang>)$/;"	c
 AirlineTheme	nvim/plugged/vim-airline/plugin/airline.vim	/^command! -bar -nargs=? -complete=customlist,<sid>get_airline_themes AirlineTheme call <sid>airline_theme(<f-args>)$/;"	c
