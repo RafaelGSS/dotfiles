@@ -114,6 +114,8 @@ nnoremap <leader>dp :diffput<CR>
 " Plugin fuzzy finder - fzf
 """"""""""""""""""""""""""""""""""""""
 let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }
+let $FZF_DEFAULT_OPTS="--reverse " " top to bottom
+
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 nnoremap <c-P> :call Fzf_dev()<cr>
 nnoremap <c-F> :Ag<cr>
