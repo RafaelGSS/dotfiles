@@ -15,6 +15,7 @@ Plug 'terryma/vim-smooth-scroll'
 " interfaces
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " languages
 Plug 'pangloss/vim-javascript'
