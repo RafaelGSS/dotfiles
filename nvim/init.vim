@@ -58,6 +58,7 @@ set inccommand=split
 set colorcolumn=120
 set nowrap
 set autoread
+set cursorline
 " hidden characters
 set hidden
 set list
