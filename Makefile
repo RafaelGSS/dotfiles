@@ -3,7 +3,7 @@ RVM_DIR := $(HOME)/.rvm
 ASDF_DIR := $(HOME)/.asdf
 
 deps:
-		sudo apt update -y && sudo apt upgrade -y
+		sudo apt update -y && sudo apt upgrade -y 
 		sudo apt-get install -y \
       build-essential \
       pkg-config \
