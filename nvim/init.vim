@@ -58,7 +58,6 @@ set backupcopy=yes
 set inccommand=split
 set colorcolumn=120
 set nowrap
-set cursorline
 set autoread
 " hidden characters
 set hidden
