@@ -4,7 +4,6 @@ call plug#begin()
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() } }
-" Plug 'terryma/vim-multiple-cursors'
 
 " File explorer
 Plug 'scrooloose/nerdtree'
@@ -15,6 +14,7 @@ Plug 'terryma/vim-smooth-scroll'
 " interfaces
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'vim-airline/vim-airline'
+Plug 'chriskempson/base16-vim'
 
 " languages
 Plug 'pangloss/vim-javascript'
@@ -23,7 +23,6 @@ Plug 'posva/vim-vue'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
-Plug 'vim-scripts/svg.vim'
 Plug 'othree/html5.vim'
 Plug 'digitaltoad/vim-pug'
 Plug 'ekalinin/Dockerfile.vim'
@@ -46,9 +45,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'shumphrey/fugitive-gitlab.vim'
 call plug#end()
 
-colorscheme gruvbox8
-set background=dark
-
 """""""""""""""""""""""""""""""""""
 " Commons Config
 """""""""""""""""""""""""""""""""""
@@ -61,8 +57,9 @@ set backupcopy=yes
 set inccommand=split
 set colorcolumn=120
 set nowrap
-set cursorline
 set autoread
+set cursorline
+set termguicolors
 " hidden characters
 set hidden
 set list
@@ -95,6 +92,12 @@ command! -nargs=* W execute "w"
 nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bprev<CR>
 nnoremap <leader>b :Buffers<CR>
+
+" interface cfg
+let base16colorspace=256  " Access colors present in 256 colorspace
+colorscheme base16-default-dark
+set background=dark
+
 
 " remap go to definition
 nnoremap <C-]> g<C-]>

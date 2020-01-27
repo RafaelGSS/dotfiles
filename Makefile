@@ -3,7 +3,7 @@ RVM_DIR := $(HOME)/.rvm
 ASDF_DIR := $(HOME)/.asdf
 
 deps:
-		sudo apt update -y && sudo apt upgrade -y
+		sudo apt update -y && sudo apt upgrade -y 
 		sudo apt-get install -y \
       build-essential \
       pkg-config \
@@ -67,8 +67,9 @@ i3:
 nvim:
 		sudo add-apt-repository ppa:neovim-ppa/stable -y
 		sudo apt update
-		sudo apt install neovim ctags tmux -y
+		sudo apt install neovim ctags tmux bat -y
 		sudo apt-get install silversearcher-ag -y
+		git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 		rm -rf ${HOME}/.config/nvim
 		ln -s $(realpath ./nvim/) ${HOME}/.config/nvim
 		curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

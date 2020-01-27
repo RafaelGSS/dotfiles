@@ -52,7 +52,9 @@ $updateConfigurationOption	nvim/plugged/coc.nvim/src/configuration/shape.ts	/^  
 <CR>	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^  nmap <silent><buffer> <CR> <Plug>VimwikiFollowLink$/;"	m
 <CR>	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^  vmap <silent><buffer> <CR> <Plug>VimwikiNormalizeLinkVisualCR$/;"	m
 <D-CR>	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^  nmap <silent><buffer> <D-CR> <Plug>VimwikiTabnewLink$/;"	m
+<Down>	nvim/init.vim	/^noremap <Down> <Nop>$/;"	m
 <F3>	nvim/init.vim	/^noremap <F3> :Format<CR>$/;"	m
+<Left>	nvim/init.vim	/^noremap <Left> <Nop>$/;"	m
 <Plug>(-fzf-complete-trigger)	nvim/plugged/fzf.vim/autoload/fzf/vim.vim	/^inoremap <silent> <Plug>(-fzf-complete-trigger) <c-o>:call <sid>complete_trigger()<cr>$/;"	m
 <Plug>(GitGutterNextHunk)	nvim/plugged/vim-gitgutter/plugin/gitgutter.vim	/^nnoremap <silent> <expr> <Plug>(GitGutterNextHunk) &diff ? ']c' : ":\\<C-U>execute v:count1 . 'GitGutterNextHunk'\\<CR>"$/;"	m
 <Plug>(GitGutterPrevHunk)	nvim/plugged/vim-gitgutter/plugin/gitgutter.vim	/^nnoremap <silent> <expr> <Plug>(GitGutterPrevHunk) &diff ? '[c' : ":\\<C-U>execute v:count1 . 'GitGutterPrevHunk'\\<CR>"$/;"	m
@@ -225,6 +227,7 @@ $updateConfigurationOption	nvim/plugged/coc.nvim/src/configuration/shape.ts	/^  
 <Plug>XTablineSelectBuffer	nvim/plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^    nnoremap <unique> <script> <Plug>XTablineSelectBuffer <SID>SelectBuffer$/;"	m
 <Plug>XTablineToggleFiltering	nvim/plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^    nnoremap <unique> <script> <Plug>XTablineToggleFiltering <SID>ToggleFiltering$/;"	m
 <Plug>XTablineToggleTabs	nvim/plugged/vim-airline/autoload/airline/extensions/tabline/xtabline.vim	/^    nnoremap <unique> <script> <Plug>XTablineToggleTabs <SID>ToggleTabs$/;"	m
+<Right>	nvim/init.vim	/^noremap <Right> <Nop>$/;"	m
 <RightMouse><LeftMouse>	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^  nnoremap <silent><buffer> <RightMouse><LeftMouse> :VimwikiGoBackLink<CR>$/;"	m
 <S-2-LeftMouse>	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^  nnoremap <silent><buffer> <S-2-LeftMouse> <LeftMouse>:VimwikiSplitLink<CR>$/;"	m
 <S-CR>	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^    inoremap <silent><buffer> <S-CR> <Esc>:VimwikiReturn 2 2<CR>$/;"	m
@@ -248,6 +251,7 @@ $updateConfigurationOption	nvim/plugged/coc.nvim/src/configuration/shape.ts	/^  
 <TAB>	nvim/init.vim	/^inoremap <silent><expr> <TAB>$/;"	m
 <TAB>	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^  nmap <silent><buffer> <TAB> <Plug>VimwikiNextLink$/;"	m
 <Tab>	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^   inoremap <expr> <buffer> <Tab> vimwiki#tbl#kbd_tab()$/;"	m
+<Up>	nvim/init.vim	/^noremap <Up> <Nop>$/;"	m
 <c-F>	nvim/init.vim	/^nnoremap <c-F> :Ag<cr>$/;"	m
 <c-P>	nvim/init.vim	/^nnoremap <c-P> :Files<cr>$/;"	m
 <c-d>	nvim/init.vim	/^noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>$/;"	m
@@ -4864,6 +4868,7 @@ bar	nvim/plugged/vim-ruby/spec/indent/continuations_spec.rb	/^      def bar($/;"
 base	nvim/plugged/coc.nvim/build/index.js	/^                let base = 0 - highligher.length - count;$/;"	V
 base	nvim/plugged/coc.nvim/build/index.js	/^        let base = 'languageserver';$/;"	V
 base	nvim/plugged/coc.nvim/build/index.js	/^  var base;$/;"	V
+base16colorspace	nvim/init.vim	/^let base16colorspace=256  " Access colors present in 256 colorspace$/;"	v
 basicLayout	nvim/plugged/coc.nvim/build/index.js	/^function basicLayout(loggingEvent) {$/;"	F
 batchfile	nvim/autoload/plug.vim	/^  function! s:batchfile(cmd)$/;"	f
 baz	nvim/plugged/vim-jsdoc/test/test.ts	/^  public baz(arg1: string = 'foo', arg2: number = 100): void {$/;"	m
