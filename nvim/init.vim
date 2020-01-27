@@ -95,6 +95,9 @@ nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bprev<CR>
 nnoremap <leader>b :Buffers<CR>
 
+" interface cfg
+let base16colorspace=256  " Access colors present in 256 colorspace
+
 " remap go to definition
 nnoremap <C-]> g<C-]>
 
