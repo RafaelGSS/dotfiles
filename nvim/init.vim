@@ -4,7 +4,6 @@ call plug#begin()
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() } }
-" Plug 'terryma/vim-multiple-cursors'
 
 " File explorer
 Plug 'scrooloose/nerdtree'
