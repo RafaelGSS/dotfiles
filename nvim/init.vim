@@ -59,7 +59,6 @@ set colorcolumn=120
 set nowrap
 set autoread
 set cursorline
-set termguicolors
 " hidden characters
 set hidden
 set list
@@ -96,6 +95,7 @@ nnoremap <leader>b :Buffers<CR>
 " interface cfg
 let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme base16-default-dark
+set termguicolors
 set background=dark
 
 
