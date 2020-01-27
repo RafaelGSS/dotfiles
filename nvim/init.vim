@@ -59,6 +59,7 @@ set colorcolumn=120
 set nowrap
 set autoread
 set cursorline
+set termguicolors
 " hidden characters
 set hidden
 set list
