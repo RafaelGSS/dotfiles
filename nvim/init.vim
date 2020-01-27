@@ -96,7 +96,7 @@ nnoremap <leader>b :Buffers<CR>
 " interface cfg
 let base16colorspace=256  " Access colors present in 256 colorspace
 " colorscheme gruvbox8
-" set background=dark
+set background=dark
 
 
 " remap go to definition
