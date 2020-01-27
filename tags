@@ -235,7 +235,7 @@ $updateConfigurationOption	nvim/plugged/coc.nvim/src/configuration/shape.ts	/^  
 <TAB>	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^  nmap <silent><buffer> <TAB> <Plug>VimwikiNextLink$/;"	m
 <Tab>	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^   inoremap <expr> <buffer> <Tab> vimwiki#tbl#kbd_tab()$/;"	m
 <c-F>	nvim/init.vim	/^nnoremap <c-F> :Ag<cr>$/;"	m
-<c-P>	nvim/init.vim	/^nnoremap <c-P> :call Fzf_dev()<cr>$/;"	m
+<c-P>	nvim/init.vim	/^nnoremap <c-P> :Files<cr>$/;"	m
 <c-d>	nvim/init.vim	/^noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>$/;"	m
 <c-space>	nvim/init.vim	/^inoremap <silent><expr> <c-space> coc#refresh()$/;"	m
 <c-u>	nvim/init.vim	/^noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>$/;"	m
@@ -356,7 +356,6 @@ AfterHangingSplat	nvim/plugged/vim-ruby/indent/ruby.vim	/^function! s:AfterHangi
 AfterIndentKeyword	nvim/plugged/vim-ruby/indent/ruby.vim	/^function! s:AfterIndentKeyword(pline_info) abort$/;"	f
 AfterLeadingOperator	nvim/plugged/vim-ruby/indent/ruby.vim	/^function! s:AfterLeadingOperator(pline_info) abort$/;"	f
 AfterUnbalancedBracket	nvim/plugged/vim-ruby/indent/ruby.vim	/^function! s:AfterUnbalancedBracket(pline_info) abort$/;"	f
-Ag	nvim/init.vim	/^command! -bang -nargs=* Ag$/;"	c
 AirlineExtensions	nvim/plugged/vim-airline/plugin/airline.vim	/^command! AirlineExtensions   call s:airline_extensions()$/;"	c
 AirlineRefresh	nvim/plugged/vim-airline/plugin/airline.vim	/^command! -bar -bang AirlineRefresh call s:airline_refresh(<q-bang>)$/;"	c
 AirlineTheme	nvim/plugged/vim-airline/plugin/airline.vim	/^command! -bar -nargs=? -complete=customlist,<sid>get_airline_themes AirlineTheme call <sid>airline_theme(<f-args>)$/;"	c
@@ -711,7 +710,6 @@ ContinuedLine	nvim/plugged/vim-ruby/indent/ruby.vim	/^function! s:ContinuedLine(
 Continues	nvim/plugged/vim-javascript/indent/javascript.vim	/^function s:Continues()$/;"	f
 CountITags	nvim/plugged/html5.vim/indent/html.vim	/^func! s:CountITags(text)$/;"	f
 CountTagsAndState	nvim/plugged/html5.vim/indent/html.vim	/^func! s:CountTagsAndState(text)$/;"	f
-CreateCenteredFloatingWindow	nvim/init.vim	/^function! CreateCenteredFloatingWindow()$/;"	f
 CreateCountDict	nvim/plugged/ale/autoload/ale/statusline.vim	/^function! s:CreateCountDict() abort$/;"	f
 CreateFile	nvim/plugged/coc.nvim/build/index.js	/^var CreateFile;$/;"	V
 CreateParamsSignature	nvim/plugged/coc.nvim/src/language-client/client.ts	/^interface CreateParamsSignature<E, P> {$/;"	i
@@ -1113,7 +1111,6 @@ FugitiveWorkTree	nvim/plugged/vim-fugitive/plugin/fugitive.vim	/^function! Fugit
 FullTextDocument	nvim/plugged/coc.nvim/build/index.js	/^    function FullTextDocument(uri, languageId, version, content) {$/;"	F
 FullTextDocument	nvim/plugged/coc.nvim/build/index.js	/^var FullTextDocument = \/** @class *\/ (function () {$/;"	V
 Function	nvim/plugged/vim-cpp-enhanced-highlight/test/color2.cpp	/^void Class::Function(double variable) {$/;"	f	class:Class
-Fzf_dev	nvim/init.vim	/^function! Fzf_dev()$/;"	f
 GF	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:GF(mode) abort$/;"	f
 GIT_SOURCES	nvim/plugged/html5.vim/Makefile	/^GIT_SOURCES=$/;"	m
 GUNZIP	nvim/plugged/coc.nvim/build/index.js	/^  GUNZIP: 4,$/;"	P
@@ -6348,7 +6345,6 @@ editBefore	nvim/plugged/coc.nvim/build/index.js	/^    editBefore: {$/;"	P
 editOperations	nvim/plugged/coc.nvim/build/index.js	/^    var editOperations = [];$/;"	A
 editRange	nvim/plugged/coc.nvim/build/index.js	/^function editRange(range, text, edit) {$/;"	F
 editRange	nvim/plugged/coc.nvim/src/util/position.ts	/^export function editRange(range: Range, text: string, edit: TextEdit): string {$/;"	f
-edit_file	nvim/init.vim	/^  function! s:edit_file(item)$/;"	f
 edit_file	nvim/plugged/vim-elixir/spec/spec_helper.rb	/^  def edit_file(content)$/;"	f	class:Buffer
 edits	nvim/plugged/coc.nvim/build/index.js	/^                        let edits = [];$/;"	A
 edits	nvim/plugged/coc.nvim/build/index.js	/^                    edits: edits$/;"	P
@@ -8719,7 +8715,6 @@ g:fugitive_git_executable	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^  le
 g:fugitive_git_executable	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^  let g:fugitive_git_executable = 'git'$/;"	v
 g:fugitive_summary_format	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^  let g:fugitive_summary_format = '%s'$/;"	v
 g:fzf#vim#buffers	nvim/plugged/fzf.vim/plugin/fzf.vim	/^  let g:fzf#vim#buffers = {}$/;"	v
-g:fzf_layout	nvim/init.vim	/^let g:fzf_layout = { 'window': 'call CreateCenteredFloatingWindow()' }$/;"	v
 g:gitgutter_grep	nvim/plugged/vim-gitgutter/plugin/gitgutter.vim	/^      let g:gitgutter_grep .= ' --color=never'$/;"	v
 g:gitgutter_grep	nvim/plugged/vim-gitgutter/plugin/gitgutter.vim	/^    let g:gitgutter_grep = ''$/;"	v
 g:gitgutter_sign_allow_clobber	nvim/plugged/vim-gitgutter/plugin/gitgutter.vim	/^  let g:gitgutter_sign_allow_clobber = 1$/;"	v
@@ -11747,6 +11742,11 @@ plug#helptags	nvim/autoload/plug.vim	/^function! plug#helptags()$/;"	f
 plug#load	nvim/autoload/plug.vim	/^function! plug#load(...)$/;"	f
 plug#shellescape	nvim/autoload/plug.vim	/^function! plug#shellescape(arg, ...)$/;"	f
 plugTs	nvim/plugged/coc.nvim/src/list/manager.ts	/^  private plugTs = 0$/;"	m
+plug_call	nvim/autoload/plug.vim	/^  function! s:plug_call(fn, ...)$/;"	f
+plug_expand	nvim/autoload/plug.vim	/^function! s:plug_expand(fmt)$/;"	f
+plug_fnamemodify	nvim/autoload/plug.vim	/^function! s:plug_fnamemodify(fname, mods)$/;"	f
+plug_getcwd	nvim/autoload/plug.vim	/^function! s:plug_getcwd()$/;"	f
+plug_tempname	nvim/autoload/plug.vim	/^function! s:plug_tempname()$/;"	f
 plug_window_exists	nvim/autoload/plug.vim	/^function! s:plug_window_exists()$/;"	f
 plugin	nvim/plugged/coc.nvim/build/index.js	/^    const plugin = new plugin_1.default(nvim);$/;"	V
 plugin	nvim/plugged/coc.nvim/src/__tests__/helper.ts	/^  public plugin: Plugin$/;"	m
@@ -11823,7 +11823,6 @@ prepareRename	nvim/plugged/coc.nvim/src/languages.ts	/^  public async prepareRen
 prepareRename	nvim/plugged/coc.nvim/src/provider/renameManager.ts	/^  public async prepareRename($/;"	m
 prepend	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^	prepend: function() {$/;"	M
 prependTo	nvim/plugged/emmet-vim/docs/static/js/jquery-latest.js	/^	prependTo: "prepend",$/;"	P
-prepend_icon	nvim/init.vim	/^  function! s:prepend_icon(candidates)$/;"	f
 prepend_opts	nvim/plugged/fzf.vim/autoload/fzf/vim.vim	/^function! s:prepend_opts(dict, eopts)$/;"	f
 prerelease	nvim/plugged/coc.nvim/build/index.js	/^function prerelease (version, options) {$/;"	F
 preselect	nvim/plugged/coc.nvim/build/index.js	/^        let preselect = this.config.enablePreselect ? items.findIndex(o => o.preselect == true) : -1;$/;"	F
@@ -16543,7 +16542,7 @@ s:match_words	nvim/plugged/vim-pug/ftplugin/pug.vim	/^let s:match_words = ""$/;"
 s:match_words	nvim/plugged/vim-ruby/ftplugin/eruby.vim	/^  let s:match_words = b:match_words . ',' . s:match_words$/;"	v
 s:match_words	nvim/plugged/vim-ruby/ftplugin/eruby.vim	/^  let s:match_words = b:match_words$/;"	v
 s:match_words	nvim/plugged/vim-ruby/ftplugin/eruby.vim	/^let s:match_words = ""$/;"	v
-s:me	nvim/autoload/plug.vim	/^let s:me = resolve(expand('<sfile>:p'))$/;"	v
+s:me	nvim/autoload/plug.vim	/^  let s:me = resolve(expand('<sfile>:p'))$/;"	v
 s:med_gray_hi	nvim/plugged/vim-airline-themes/autoload/airline/themes/fruit_punch.vim	/^let s:med_gray_hi     = ['#444444', 238]$/;"	v
 s:med_gray_lo	nvim/plugged/vim-airline-themes/autoload/airline/themes/fruit_punch.vim	/^let s:med_gray_lo     = ['#3a3a3a', 237]$/;"	v
 s:media_syntax	nvim/plugged/vimwiki/syntax/vimwiki_media.vim	/^let s:media_syntax = g:vimwiki_syntax_variables['media']$/;"	v
@@ -17113,6 +17112,7 @@ shellesc	nvim/plugged/vim-fugitive/autoload/fugitive.vim	/^function! s:shellesc(
 shellesc	nvim/plugged/vim-rhubarb/autoload/rhubarb.vim	/^function! s:shellesc(arg) abort$/;"	f
 shellesc_cmd	nvim/autoload/plug.vim	/^function! s:shellesc_cmd(arg, script)$/;"	f
 shellesc_ps1	nvim/autoload/plug.vim	/^function! s:shellesc_ps1(arg)$/;"	f
+shellesc_sh	nvim/autoload/plug.vim	/^function! s:shellesc_sh(arg)$/;"	f
 shift	nvim/plugged/coc.nvim/build/index.js	/^    shift() {$/;"	M
 shift	nvim/plugged/coc.nvim/build/index.js	/^Yallist.prototype.shift = function () {$/;"	M
 shortcut	nvim/plugged/coc.nvim/src/model/source.ts	/^  public get shortcut(): string {$/;"	m
