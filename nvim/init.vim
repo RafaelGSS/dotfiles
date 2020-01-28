@@ -309,6 +309,9 @@ autocmd QuickFixCmdPost    l* nested lwindow
 " search
 nnoremap <leader>s :nohlsearch<cr>
 
+" reload files after changes (checkout)
+nnoremap <F5> :checktime<CR>
+
 " Maps Alt-[h,j,k,l] to resizing a window split
 map <silent> <A-H> <C-w><
 map <silent> <A-K> <C-W>-

@@ -54,6 +54,7 @@ $updateConfigurationOption	nvim/plugged/coc.nvim/src/configuration/shape.ts	/^  
 <D-CR>	nvim/plugged/vimwiki/ftplugin/vimwiki.vim	/^  nmap <silent><buffer> <D-CR> <Plug>VimwikiTabnewLink$/;"	m
 <Down>	nvim/init.vim	/^noremap <Down> <Nop>$/;"	m
 <F3>	nvim/init.vim	/^noremap <F3> :Format<CR>$/;"	m
+<F5>	nvim/init.vim	/^nnoremap <F5> :checktime<CR>$/;"	m
 <Left>	nvim/init.vim	/^noremap <Left> <Nop>$/;"	m
 <Plug>(-fzf-complete-trigger)	nvim/plugged/fzf.vim/autoload/fzf/vim.vim	/^inoremap <silent> <Plug>(-fzf-complete-trigger) <c-o>:call <sid>complete_trigger()<cr>$/;"	m
 <Plug>(GitGutterNextHunk)	nvim/plugged/vim-gitgutter/plugin/gitgutter.vim	/^nnoremap <silent> <expr> <Plug>(GitGutterNextHunk) &diff ? ']c' : ":\\<C-U>execute v:count1 . 'GitGutterNextHunk'\\<CR>"$/;"	m
