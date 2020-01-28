@@ -281,8 +281,8 @@ $updateConfigurationOption	nvim/plugged/coc.nvim/src/configuration/shape.ts	/^  
 <leader>f	nvim/init.vim	/^nmap <leader>f  <Plug>(coc-format-selected)$/;"	m
 <leader>gb	nvim/init.vim	/^nnoremap <leader>gb :Gblame<CR>$/;"	m
 <leader>gd	nvim/init.vim	/^nnoremap <leader>gd :Gdiff<CR>$/;"	m
-<leader>gl	nvim/init.vim	/^nnoremap <leader>gl :Glog -10 --<CR>$/;"	m
-<leader>glf	nvim/init.vim	/^nnoremap <leader>glf :Glog -10 -- %<CR>$/;"	m
+<leader>gf	nvim/init.vim	/^nnoremap <leader>gf :Glog! -10 -- %<CR>$/;"	m
+<leader>gl	nvim/init.vim	/^nnoremap <leader>gl :Glog! -10 --<CR>$/;"	m
 <leader>gs	nvim/init.vim	/^nnoremap <leader>gs :Gstatus<CR>$/;"	m
 <leader>h	nvim/init.vim	/^nnoremap <leader>h :bprev<CR>$/;"	m
 <leader>l	nvim/init.vim	/^nnoremap <leader>l :bnext<CR>$/;"	m
