@@ -5,6 +5,7 @@ ASDF_DIR := $(HOME)/.asdf
 deps:
 		sudo apt update -y && sudo apt upgrade -y 
 		sudo apt-get install -y \
+			bash-completion \
       build-essential \
       pkg-config \
       git-core \
