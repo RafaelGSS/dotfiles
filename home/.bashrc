@@ -167,7 +167,7 @@ GREEN="\[\e[1;32m\]"
 export PS1="${BLUE}\W ${GREEN}\u${YELLOW}\$(__kube_ps1)${NORMAL} \$ "
 
 alias k='kubectl'
-[ -f ~/.bashrc.k8s ] && source ~/.bashrc.k8s
+source <(kubectl completion bash)
 
 fi
 
