@@ -142,7 +142,6 @@ alias vi='nvim'
 alias oldvim='vim'
 alias vcfg='nvim $HOME/.config/nvim/init.vim'
 alias tmux-kill="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
-alias kcluster="kubectl config use-context $1"
 alias t='vim -t "$(cut -f1 tags | tail +7 | uniq | fzf)"'
 alias cat='bat'
 
@@ -166,6 +165,14 @@ YELLOW="\[\e[1;33m\]"
 GREEN="\[\e[1;32m\]"
 
 export PS1="${BLUE}\W ${GREEN}\u${YELLOW}\$(__kube_ps1)${NORMAL} \$ "
+
+alias kcluster="kubectl config use-context $1"
+alias k='kubectl'
+alias g='get'
+
+source <(kubectl completion bash)
+complete -F __start_kubectl k
+
 fi
 
 [ -f ~/.bashrc.private ] && source ~/.bashrc.private
