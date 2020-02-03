@@ -170,6 +170,7 @@ export PS1="${BLUE}\W ${GREEN}\u${YELLOW}\$(__kube_ps1)${NORMAL} \$ "
 
 alias kcluster="kubectl config use-context $1"
 alias k='kubectl'
+alias ks='kubectl -n stock'
 
 source <(kubectl completion bash)
 complete -F __start_kubectl k
