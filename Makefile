@@ -68,6 +68,7 @@ i3:
 nvim:
 		sudo add-apt-repository ppa:neovim-ppa/stable -y
 		sudo apt update
+		# Bat only works at ubuntu >= 19 based
 		sudo apt install neovim ctags tmux bat -y
 		sudo apt-get install silversearcher-ag -y
 		git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
