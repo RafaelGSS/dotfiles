@@ -29,6 +29,7 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'vim-ruby/vim-ruby'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'hashivim/vim-terraform'
 
 " lint
 Plug 'dense-analysis/ale'
