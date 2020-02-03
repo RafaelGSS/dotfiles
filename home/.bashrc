@@ -131,6 +131,8 @@ export NVM_DIR="$HOME/.nvm"
 alias b='git branch'
 alias git-personal='git config user.name "RafaelGSS" && git config user.email "rafael.nunu@hotmail.com"'
 alias sync-fork='git fetch upstream master; git checkout master; git rebase upstream/master; git push -f origin master;'
+alias gs='git status'
+alias gti='git'
 
 alias docker-kill='docker kill $(docker ps -q)'
 alias dkc='docker-compose'
