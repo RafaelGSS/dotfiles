@@ -61,6 +61,7 @@ set nowrap
 set autoread
 set cursorline
 set ignorecase
+set smartcase
 " hidden characters
 set hidden
 set list
