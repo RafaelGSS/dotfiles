@@ -137,7 +137,7 @@ alias gc='git checkout'
 alias gti='git'
 
 alias kbr='setxkbmap -layout br'
-alias kus='setxkbmap -layout br'
+alias kus='setxkbmap -layout us'
 
 alias docker-kill='docker kill $(docker ps -q)'
 alias dkc='docker-compose'
