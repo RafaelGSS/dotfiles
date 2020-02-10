@@ -136,6 +136,9 @@ alias ga='git add'
 alias gc='git checkout'
 alias gti='git'
 
+alias kbr='setxkbmap -layout br'
+alias kus='setxkbmap -layout br'
+
 alias docker-kill='docker kill $(docker ps -q)'
 alias dkc='docker-compose'
 alias dkc-run='dkc run --service-ports --use-alias --rm'
