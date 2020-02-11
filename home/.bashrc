@@ -135,6 +135,7 @@ alias gs='git status'
 alias ga='git add'
 alias gc='git checkout'
 alias gti='git'
+alias gcl='git clone'
 
 alias kbr='setxkbmap -layout br'
 alias kus='setxkbmap -layout us'
