@@ -131,6 +131,14 @@ export NVM_DIR="$HOME/.nvm"
 alias b='git branch'
 alias git-personal='git config user.name "RafaelGSS" && git config user.email "rafael.nunu@hotmail.com"'
 alias sync-fork='git fetch upstream master; git checkout master; git rebase upstream/master; git push -f origin master;'
+alias gs='git status'
+alias ga='git add'
+alias gc='git checkout'
+alias gti='git'
+alias gcl='git clone'
+
+alias kbr='setxkbmap -layout br'
+alias kus='setxkbmap -layout us'
 
 alias docker-kill='docker kill $(docker ps -q)'
 alias dkc='docker-compose'
@@ -142,8 +150,8 @@ alias vi='nvim'
 alias oldvim='vim'
 alias vcfg='nvim $HOME/.config/nvim/init.vim'
 alias tmux-kill="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
-alias kcluster="kubectl config use-context $1"
 alias t='vim -t "$(cut -f1 tags | tail +7 | uniq | fzf)"'
+alias cat='bat'
 
 if [ -f ~/.kube/config ]
 then
@@ -165,11 +173,25 @@ YELLOW="\[\e[1;33m\]"
 GREEN="\[\e[1;32m\]"
 
 export PS1="${BLUE}\W ${GREEN}\u${YELLOW}\$(__kube_ps1)${NORMAL} \$ "
+
+alias kcluster="kubectl config use-context $1"
+alias k='kubectl'
+alias ks='kubectl -n stock'
+
+source <(kubectl completion bash)
+complete -F __start_kubectl k
+
 fi
 
 [ -f ~/.bashrc.private ] && source ~/.bashrc.private
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"p
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
