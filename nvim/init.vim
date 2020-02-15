@@ -4,7 +4,6 @@ call plug#begin()
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() } }
-" Plug 'terryma/vim-multiple-cursors'
 
 " File explorer
 Plug 'scrooloose/nerdtree'
@@ -15,6 +14,7 @@ Plug 'terryma/vim-smooth-scroll'
 " interfaces
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'vim-airline/vim-airline'
+Plug 'chriskempson/base16-vim'
 
 " languages
 Plug 'pangloss/vim-javascript'
@@ -23,13 +23,13 @@ Plug 'posva/vim-vue'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
-Plug 'vim-scripts/svg.vim'
 Plug 'othree/html5.vim'
 Plug 'digitaltoad/vim-pug'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'vim-ruby/vim-ruby'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'hashivim/vim-terraform'
 
 " lint
 Plug 'dense-analysis/ale'
@@ -46,9 +46,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'shumphrey/fugitive-gitlab.vim'
 call plug#end()
 
-colorscheme gruvbox8
-set background=dark
-
 """""""""""""""""""""""""""""""""""
 " Commons Config
 """""""""""""""""""""""""""""""""""
@@ -61,7 +58,10 @@ set backupcopy=yes
 set inccommand=split
 set colorcolumn=120
 set nowrap
+set autoread
 set cursorline
+set ignorecase
+set smartcase
 " hidden characters
 set hidden
 set list
@@ -88,10 +88,20 @@ set tags=tags
 filetype plugin indent on
 command! -nargs=* Vcfg execute "vsplit $MYVIMRC"
 
+command! -nargs=* W execute "w"
+
 "navigate between buffers
 nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bprev<CR>
 nnoremap <leader>b :Buffers<CR>
+
+" interface cfg
+let base16colorspace=256  " Access colors present in 256 colorspace
+" colorscheme base16-default-dark
+colorscheme gruvbox8
+" set termguicolors
+set background=dark
+
 
 " remap go to definition
 nnoremap <C-]> g<C-]>
@@ -102,7 +112,8 @@ nnoremap <C-]> g<C-]>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gl :Glog<CR>
+nnoremap <leader>gl :Glog! -10 --<CR>
+nnoremap <leader>gf :Glog! -10 -- %<CR>
 nnoremap <leader>dg :diffget<CR>
 nnoremap <leader>dp :diffput<CR>
 
@@ -263,22 +274,6 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-eslint', 'coc-highlight', 'coc-html', 'coc-tslint', 'coc-vetur', 'coc-elixir']
 
-"""""""""""""""""""""""""""""""" 
-" Plugin multiple-cursors
-""""""""""""""""""""""""""""""""
-
-" " Default mapping
-" let g:multi_cursor_start_word_key      = '<C-d>'
-" let g:multi_cursor_select_all_word_key = '<A-d>'
-" let g:multi_cursor_start_key           = 'g<C-d>'
-" let g:multi_cursor_select_all_key      = 'g<A-d>'
-" let g:multi_cursor_next_key            = '<C-d>'
-" let g:multi_cursor_prev_key            = '<C-p>'
-" let g:multi_cursor_skip_key            = '<C-x>'
-" let g:multi_cursor_quit_key            = '<Esc>'
-
-" let g:multi_cursor_exit_from_visual_mode=1
-
 """"""""""""""""""""""""""""""""""
 " Plugin vim-airline
 """"""""""""""""""""""""""""""""""
@@ -318,6 +313,9 @@ autocmd QuickFixCmdPost    l* nested lwindow
 " search
 nnoremap <leader>s :nohlsearch<cr>
 
+" reload files after changes (checkout)
+nnoremap <F5> :checktime<CR>
+
 " Maps Alt-[h,j,k,l] to resizing a window split
 map <silent> <A-H> <C-w><
 map <silent> <A-K> <C-W>-
@@ -336,3 +334,8 @@ noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
 
+" Disable Arrow keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>

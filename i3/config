@@ -174,3 +174,5 @@ bindsym $mod+r mode "resize"
 bar {
   status_command ~/.config/i3/i3status-custom.sh
 }
+
+exec --no-startup-id setxkbmap -layout us,br
