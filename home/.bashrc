@@ -134,6 +134,7 @@ alias sync-fork='git fetch upstream master; git checkout master; git rebase upst
 alias gs='git status'
 alias ga='git add'
 alias gc='git checkout'
+alias gp='git pull'
 alias gti='git'
 alias gcl='git clone'
 
