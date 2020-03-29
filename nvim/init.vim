@@ -84,6 +84,8 @@ set incsearch
 set hlsearch
 " ctags
 set tags=tags
+" set timeout for keybinding insertion
+set timeoutlen=200
 
 filetype plugin indent on
 command! -nargs=* Vcfg execute "vsplit $MYVIMRC"
