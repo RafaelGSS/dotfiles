@@ -34,7 +34,8 @@ deps:
 			sshpass \
 			xclip \
 			arandr \
-			tmux
+			tmux;
+		sudo snap install ccls --classic
 
 gitwatch:
 		git clone https://github.com/gitwatch/gitwatch.git ~/gitwatch
@@ -81,7 +82,7 @@ docker:
 		sudo apt-get install aptetransport-https ca-certificates curl software-properties-common -y
 
 		curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-		sudo add-apt-repository "deb [arch=amd64] https://download.docker.comm/linux/ubuntu xenial stable"
+		sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
 		sudo apt-get update
 
 		sudo apt-get install docker-ce -y
