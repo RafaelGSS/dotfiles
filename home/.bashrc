@@ -133,7 +133,8 @@ alias git-personal='git config user.name "RafaelGSS" && git config user.email "r
 alias sync-fork='git fetch upstream master; git checkout master; git rebase upstream/master; git push -f origin master;'
 alias gs='git status'
 alias ga='git add'
-alias gc='git checkout'
+alias gco='git checkout'
+alias gc='git commit'
 alias gp='git pull'
 alias gti='git'
 alias gcl='git clone'
@@ -153,6 +154,7 @@ alias vcfg='nvim $HOME/.config/nvim/init.vim'
 alias tmux-kill="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
 alias t='vim -t "$(cut -f1 tags | tail +7 | uniq | fzf)"'
 alias cat='bat'
+alias CD='cd'
 
 if [ -f ~/.kube/config ]
 then
@@ -196,3 +198,4 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+export PATH=$PATH:$HOME/bin
