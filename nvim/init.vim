@@ -84,8 +84,6 @@ set incsearch
 set hlsearch
 " ctags
 set tags=tags
-" set timeout for keybinding insertion
-set timeoutlen=200
 
 filetype plugin indent on
 command! -nargs=* Vcfg execute "vsplit $MYVIMRC"
@@ -183,7 +181,7 @@ set nowritebackup
 set cmdheight=2
 
 " You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
+set updatetime=1000
 
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
@@ -323,6 +321,10 @@ map <silent> <A-H> <C-w><
 map <silent> <A-K> <C-W>-
 map <silent> <A-J> <C-W>+
 map <silent> <A-L> <C-w>>
+
+" move selected region
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
 
 " " Go to tab by number
 noremap <leader>1 1gt
