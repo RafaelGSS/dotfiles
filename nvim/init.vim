@@ -3,13 +3,12 @@ call plug#begin()
 " autocomplete
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() } }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " File explorer
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'terryma/vim-smooth-scroll'
 
 " interfaces
 Plug 'lifepillar/vim-gruvbox8'
@@ -19,30 +18,20 @@ Plug 'chriskempson/base16-vim'
 " languages
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
-Plug 'posva/vim-vue'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'othree/html5.vim'
-Plug 'digitaltoad/vim-pug'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'vim-ruby/vim-ruby'
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'hashivim/vim-terraform'
-
-" lint
-Plug 'dense-analysis/ale'
 
 " utils
 Plug 'tpope/vim-commentary'
-Plug 'vimwiki/vimwiki'
 Plug 'ludovicchabant/vim-gutentags'
 
 " git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
 Plug 'shumphrey/fugitive-gitlab.vim'
 call plug#end()
 
@@ -61,7 +50,6 @@ set nowrap
 set autoread
 set cursorline
 set ignorecase
-set smartcase
 " hidden characters
 set hidden
 set list
@@ -181,7 +169,7 @@ set nowritebackup
 set cmdheight=2
 
 " You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=1000
+set updatetime=50
 
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
@@ -220,23 +208,11 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
+nmap <leader>rn <Plug>(coc-rename)
+nnoremap <leader>cr :CocRestart
 
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Remap for rename current word
-nmap <leader>rn <Plug>(coc-rename)
 
 " Remap for format selected region
 xmap <leader>f  <Plug>(coc-format-selected)
@@ -252,12 +228,6 @@ augroup end
 
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
-
-" Create mappings for function text object, requires document symbols feature of languageserver.
-" xmap if <Plug>(coc-funcobj-i)
-" xmap af <Plug>(coc-funcobj-a)
-" omap if <Plug>(coc-funcobj-i)
-" omap af <Plug>(coc-funcobj-a)
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
@@ -285,19 +255,6 @@ let g:airline#extensions#tabline#enabled = 1
 """"""""""""""""""""""""""""""""""
 
 let g:AutoPairsFlyMode = 0
-
-""""""""""""""""""""""""""""""""""
-" VimWiki
-""""""""""""""""""""""""""""""""""
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
-
-""""""""""""""""""""""""""""""""""
-" Plugin Smooth Scroll
-""""""""""""""""""""""""""""""""""
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
-
 
 """"""""""""""""""""""""""""""""""
 " Typescript
@@ -343,3 +300,4 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+
