@@ -18,6 +18,8 @@ font pango:monospace 8
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
+exec "setxkbmap -layout us,br"
+exec "setxkbmap -option 'grp:alt_shift_toggle'"
 
 # Custom snippets
 bindsym Control+Mod1+l exec i3lock  

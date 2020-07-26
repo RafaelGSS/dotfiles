@@ -54,5 +54,7 @@
   },
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-  "diagnostic.messageTarget": "echo"
+  "diagnostic.messageTarget": "echo",
+  "suggest.floatEnable": false,
+  "typescript.preferences.quoteStyle":"single"
 }

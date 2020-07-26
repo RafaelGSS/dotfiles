@@ -34,8 +34,12 @@ deps:
 			sshpass \
 			xclip \
 			arandr \
+			alacritty \
+			bpfcc-tools linux-headers-$(uname -r) \
+			atop \
 			tmux;
 		sudo snap install ccls --classic
+		sudo snap install valgrind --classic
 
 gitwatch:
 		git clone https://github.com/gitwatch/gitwatch.git ~/gitwatch

@@ -24,6 +24,7 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'vim-ruby/vim-ruby'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'hashivim/vim-terraform'
 
 " utils
 Plug 'tpope/vim-commentary'
@@ -274,10 +275,10 @@ nnoremap <leader>s :nohlsearch<cr>
 nnoremap <F5> :checktime<CR>
 
 " Maps Alt-[h,j,k,l] to resizing a window split
-map <silent> <A-H> <C-w><
-map <silent> <A-K> <C-W>-
-map <silent> <A-J> <C-W>+
-map <silent> <A-L> <C-w>>
+map <silent> <C-H> <C-w><
+map <silent> <C-K> <C-W>-
+map <silent> <C-J> <C-W>+
+map <silent> <C-L> <C-w>>
 
 " move selected region
 vnoremap J :m '>+1<CR>gv=gv
