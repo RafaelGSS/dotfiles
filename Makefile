@@ -35,7 +35,6 @@ deps:
 			xclip \
 			arandr \
 			alacritty \
-			bpfcc-tools linux-headers-$(uname -r) \
 			atop \
 			tmux;
 		sudo snap install ccls --classic
