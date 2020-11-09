@@ -1,48 +1,40 @@
 NVM_DIR := $(HOME)/.nvm
-RVM_DIR := $(HOME)/.rvm
-ASDF_DIR := $(HOME)/.asdf
 
 deps:
-		sudo apt update -y && sudo apt upgrade -y 
+		sudo apt update -y && sudo apt upgrade -y
 		sudo apt-get install -y \
 			bash-completion \
-      build-essential \
-      pkg-config \
-      git-core \
+			build-essential \
+			pkg-config \
+			git-core \
 			automake \
-      autoconf \
-      bison \
-      libxml2-dev \
-      libbz2-dev \
-      libicu-dev \
-      libcurl4-openssl-dev \
+			autoconf \
+			bison \
+			libxml2-dev \
+			libbz2-dev \
+			libicu-dev \
+			libcurl4-openssl-dev \
 			libncurses-dev \
 			libssl-dev \
 			libyaml-dev \
 			libxslt-dev \
 			libffi-dev \
 			libtool \
-      libltdl-dev \
-      libjpeg-dev \
-      libpng-dev \
-      libpspell-dev \
+			libltdl-dev \
+			libjpeg-dev \
+			libpng-dev \
+			libpspell-dev \
 			libreadline-dev \
 			unzip \
-      git \
-      htop \
-			snapd \
+			git \
+			htop \
 			sshpass \
 			xclip \
 			arandr \
-			alacritty \
 			atop \
 			tmux;
-		sudo snap install ccls --classic
-		sudo snap install valgrind --classic
-
-gitwatch:
-		git clone https://github.com/gitwatch/gitwatch.git ~/gitwatch
-		sudo install -b ~/gitwatch/gitwatch.sh /usr/local/bin/gitwatch
+#		sudo snap install ccls --classic
+#		sudo snap install valgrind --classic
 
 homefiles:
 		sudo apt install ctags
@@ -54,14 +46,11 @@ homefiles:
 		rm -f ${HOME}/.ctags
 		ln -s $(realpath ./home/.ctags) ${HOME}/.ctags
 
-		rm -rf ~/.tmux/plguins/tpm
+		rm -rf ~/.tmux/plugins/tpm
 		git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 		rm -f ${HOME}/.tmux.conf
 		ln -s $(realpath ./home/.tmux.conf) ${HOME}/.tmux.conf
-
-tools:
-		sudo apt-get install fonts-firacode -y
-		sudo snap install spt --channel=edge
+		# prefix + I to fetch plugins
 
 i3:
 		sudo apt-get install i3 i3status i3lock -y
@@ -73,7 +62,7 @@ nvim:
 		sudo add-apt-repository ppa:neovim-ppa/stable -y
 		sudo apt update
 		# Bat only works at ubuntu >= 19 based
-		sudo apt install neovim ctags tmux bat -y
+		sudo apt install neovim ctags tmux -y
 		sudo apt-get install silversearcher-ag -y
 		git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 		rm -rf ${HOME}/.config/nvim
@@ -82,7 +71,7 @@ nvim:
 		nvim -u ${HOME}/.config/nvim/init.vim +PlugInstall +qa
 
 docker:
-		sudo apt-get install aptetransport-https ca-certificates curl software-properties-common -y
+		sudo apt-get install apt-transport-https ca-certificates curl software-properties-common -y
 
 		curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 		sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
@@ -95,37 +84,14 @@ docker:
 		chmod +x /usr/local/bin/docker-compose
 
 		# https://docs.docker.com/install/linux/linux-postinstall/
-		groupadd docker
-		sudo usermod -aG docker $USER
+		# groupadd docker
+		# sudo usermod -aG docker $USER
 
 nvm:
 		curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 
-rvm:
-		sudo apt-get install gnupg2 -y
-		gpg2 --keyserver hkp://pool.sks-keyservers.net --recv-keys \
-				409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-		\curl -sSL https://get.rvm.io | bash -s stable --rails
-
-asdf:
-		git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.5;
-		echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.bashrc;	echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.bashrc;
-
-lang: nvm rvm asdf
+lang: nvm
 		. $(NVM_DIR)/nvm.sh; nvm install --lts
-		. $(RVM_DIR)/scripts/rvm; rvm install ruby --latest
-		. $(ASDF_DIR)/asdf.sh;
 
-		asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git;
-
-		asdf plugin-add erlang;
-		asdf plugin-add elixir;
-
-		asdf install erlang 22.0.7;
-		asdf install elixir 1.9.1-otp-22;
-
-		asdf global erlang 22.0.7;
-		asdf global elixir 1.9.1-otp-22;
-
-install: deps docker homefiles lang tools i3 nvim gitwatch
+install: deps docker homefiles lang i3 nvim
 

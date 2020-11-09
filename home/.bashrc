@@ -120,14 +120,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-. $HOME/.asdf/asdf.sh
-
-. $HOME/.asdf/completions/asdf.bash
-
-. $HOME/.asdf/asdf.sh
-
-. $HOME/.asdf/completions/asdf.bash
-
 alias b='git branch'
 alias git-personal='git config user.name "RafaelGSS" && git config user.email "rafael.nunu@hotmail.com"'
 alias sync-fork='git fetch upstream master; git checkout master; git rebase upstream/master; git push -f origin master;'
