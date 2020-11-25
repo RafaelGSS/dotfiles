@@ -51,7 +51,8 @@ homefiles:
 		rm -f ${HOME}/.tmux.conf
 		ln -s $(realpath ./home/.tmux.conf) ${HOME}/.tmux.conf
 		# prefix + I to fetch plugins
-
+		rm -f ${HOME}/.gitconfig
+		ln -s $(realpath ./home/.gitconfig) ${HOME}/.gitconfig
 i3:
 		sudo apt-get install i3 i3status i3lock -y
 		rm -rf ${HOME}/.config/i3
