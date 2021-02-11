@@ -152,6 +152,11 @@ autocmd FileType scss set iskeyword+=-
 setlocal formatprg=mix\ format\ -
 
 """"""""""""""""""""""""""""""""""""""
+" Plugin go
+""""""""""""""""""""""""""""""""""""""
+autocmd FileType go setlocal shiftwidth=4 tabstop=4 softtabstop=4 noexpandtab
+
+""""""""""""""""""""""""""""""""""""""
 " Plugin ale
 """"""""""""""""""""""""""""""""""""""
 let g:ale_sign_error = '❌'
@@ -243,7 +248,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-eslint', 'coc-highlight', 'coc-html', 'coc-tslint', 'coc-vetur', 'coc-elixir', 'coc-cmake']
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-eslint', 'coc-highlight', 'coc-html', 'coc-tslint', 'coc-vetur', 'coc-elixir', 'coc-cmake', 'coc-go']
 
 """"""""""""""""""""""""""""""""""
 " Plugin vim-airline
