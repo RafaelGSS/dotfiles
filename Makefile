@@ -1,10 +1,8 @@
 NVM_DIR := $(HOME)/.nvm
-RVM_DIR := $(HOME)/.rvm
-ASDF_DIR := $(HOME)/.asdf
 
 deps:
 		sudo rm /etc/apt/preferences.d/nosnap.pref || true;
-		sudo apt update -y && sudo apt upgrade -y 
+		sudo apt update -y && sudo apt upgrade -y
 		sudo apt-get install -y \
 			bash-completion \
 			build-essential \
@@ -38,6 +36,8 @@ deps:
 			tmux;
 		sudo snap install ccls --classic
 		sudo snap install valgrind --classic
+#		sudo snap install ccls --classic
+#		sudo snap install valgrind --classic
 
 homefiles:
 		sudo apt install ctags
@@ -47,11 +47,16 @@ homefiles:
 
 		rm -f ${HOME}/.ctags
 		ln -s $(realpath ./home/.ctags) ${HOME}/.ctags
-		rm -rf ~/.tmux/plguins/tpm
+
+		rm -rf ~/.tmux/plugins/tpm
 		git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm || true
 		rm -f ${HOME}/.tmux.conf
 		ln -s $(realpath ./home/.tmux.conf) ${HOME}/.tmux.conf
+		# prefix + I to fetch plugins
 		echo "Reload tmux with <CTRL>+I"
+
+		rm -f ${HOME}/.gitconfig
+		ln -s $(realpath ./home/.gitconfig) ${HOME}/.gitconfig
 
 i3:
 		sudo apt-get install i3 i3status i3lock -y
@@ -63,7 +68,7 @@ nvim:
 		sudo add-apt-repository ppa:neovim-ppa/stable -y
 		sudo apt update
 		# Bat only works at ubuntu >= 19 based
-		sudo apt install neovim ctags bat -y
+		sudo apt install neovim ctags -y
 		sudo apt-get install silversearcher-ag -y
 		git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 		rm -rf ${HOME}/.config/nvim
@@ -91,34 +96,10 @@ docker:
 nvm:
 		curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 
-rvm:
-		sudo apt-get install gnupg2 -y
-		gpg2 --keyserver hkp://pool.sks-keyservers.net --recv-keys \
-				409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-		\curl -sSL https://get.rvm.io | bash -s stable --rails
-
-asdf:
-		git clone https://github.com/asdf-vm/asdf.git ~/.asdf || true;
-		echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.bashrc;
-		echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.bashrc;
-
-lang: nvm rvm asdf
+lang: nvm
 		. $(NVM_DIR)/nvm.sh; nvm install --lts
-		. $(RVM_DIR)/scripts/rvm; rvm install ruby --latest
-		. $(ASDF_DIR)/asdf.sh;
-
-		asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git;
-
-		asdf plugin-add erlang;
-		asdf plugin-add elixir;
-
-		asdf install erlang 22.0.7;
-		asdf install elixir 1.9.1-otp-22;
-
-		asdf global erlang 22.0.7;
-		asdf global elixir 1.9.1-otp-22;
 
 preferences: install
 		base16_gruvbox-dark-medium;
 
-install: deps docker homefiles lang i3 nvim 
+install: deps docker homefiles lang i3 nvim preferences
