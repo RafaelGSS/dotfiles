@@ -123,6 +123,7 @@ export NVM_DIR="$HOME/.nvm"
 alias b='git branch'
 alias git-personal='git config user.name "RafaelGSS" && git config user.email "rafael.nunu@hotmail.com"'
 alias sync-fork='git fetch upstream master; git checkout master; git rebase upstream/master; git push -f origin master;'
+alias sync-fork-main='git fetch upstream main; git checkout main; git rebase upstream/main; git push -f origin main;'
 alias gs='git status'
 alias ga='git add'
 alias gco='git checkout'
