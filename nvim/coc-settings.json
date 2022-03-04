@@ -32,7 +32,8 @@
         "c",
         "cpp",
         "objc",
-        "objcpp"
+        "objcpp",
+        "cc"
       ],
       "rootPatterns": [
         "compile_commands.json",

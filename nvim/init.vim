@@ -22,7 +22,6 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'othree/html5.vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'elixir-editors/vim-elixir'
-Plug 'vim-ruby/vim-ruby'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'hashivim/vim-terraform'
 
@@ -86,8 +85,8 @@ nnoremap <leader>b :Buffers<CR>
 
 " interface cfg
 let base16colorspace=256  " Access colors present in 256 colorspace
-" colorscheme base16-default-dark
 colorscheme gruvbox8
+" colorscheme base16-gruvbox-light-soft
 " set termguicolors
 set background=dark
 
@@ -98,8 +97,8 @@ nnoremap <C-]> g<C-]>
 """"""""""""""""""""""""""""""""""""""
 " Plugin git
 """"""""""""""""""""""""""""""""""""""
-nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gd :Git diff<CR>
+nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gl :Glog! -10 --<CR>
 nnoremap <leader>gf :Glog! -10 -- %<CR>
@@ -128,10 +127,6 @@ let NERDTreeWinSize=30
 
 let g:NERDTreeMapOpenVSplit = "v"
 setlocal indentkeys+=0.
-""""""""""""""""""""""""""""""""""""""
-" Plugin vue
-""""""""""""""""""""""""""""""""""""""
-let g:vue_pre_processors = 'detect_on_enter'
 
 """"""""""""""""""""""""""""""""""""""
 " Plugin css
