@@ -1,4 +1,5 @@
 --exclude=node_modules
+--exclude=.ccls-cache
 --exclude=platforms
 --exclude=plugins
 --exclude=resources
