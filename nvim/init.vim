@@ -271,6 +271,9 @@ autocmd QuickFixCmdPost    l* nested lwindow
 " search
 nnoremap <leader>s :nohlsearch<cr>
 
+" search
+nnoremap <leader>p "\"_dP"
+
 " reload files after changes (checkout)
 nnoremap <F5> :checktime<CR>
 
