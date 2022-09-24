@@ -1,5 +1,4 @@
 call plug#begin()
-
 " autocomplete
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
@@ -301,4 +300,3 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
-
