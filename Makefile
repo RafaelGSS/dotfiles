@@ -35,9 +35,6 @@ deps:
 			atop \
 			tmux;
 		sudo snap install ccls --classic
-		sudo snap install valgrind --classic
-#		sudo snap install ccls --classic
-#		sudo snap install valgrind --classic
 
 homefiles:
 		sudo apt install ctags
@@ -76,25 +73,8 @@ nvim:
 		curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 		nvim -u ${HOME}/.config/nvim/init.vim +PlugInstall +qa
 
-docker:
-		sudo apt-get install apt-transport-https ca-certificates curl software-properties-common -y
-
-		curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-		sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
-		sudo apt-get update
-
-		sudo apt-get install docker-ce -y
-
-		# https://docs.docker.com/compose/install/
-		sudo curl -L https://github.com/docker/compose/releases/download/1.20.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-		sudo chmod +x /usr/local/bin/docker-compose
-
-		# https://docs.docker.com/install/linux/linux-postinstall/
-		groupadd docker || true
-		sudo usermod -aG docker $USER || true
-
 nvm:
-		curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+		curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
 
 lang: nvm
 		. $(NVM_DIR)/nvm.sh; nvm install --lts
@@ -102,4 +82,4 @@ lang: nvm
 preferences: install
 		base16_gruvbox-dark-medium;
 
-install: deps docker homefiles lang i3 nvim preferences
+install: deps homefiles lang i3 nvim preferences
