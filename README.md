@@ -1,6 +1,6 @@
-# dev-package-installation
+# Dotfiles
 
-List of installation inside Debian/Ubuntu.
+This dotfiles has been tested on Ubuntu. All the remaps are just personal preferences.
 
 ## Usage
 
@@ -9,32 +9,28 @@ git clone https://github.com/RafaelGSS/dotfiles.git ~/.dotfiles;
 cd ~/.dotfiles; make install;
 ```
 
-## Update config
-_Can be add to a hook onResume onStart_
-```sh
-./reload.sh
+## Backlights (i3wm + linux)
+
+To control backlights, I use [light](https://haikarainen.github.io/).
+
+Increase backlight with
+
+```console
+$ light -A 10
 ```
 
-## Optionals
+and decrease with
 
-To controll backlights, I recommend [light](https://haikarainen.github.io/).
-
-To increase just run (or add to i3 config):
-
-```sh
-light -A 10
-```
-
-and decrease
-```sh
-light -U 10
+```console
+$ light -U 10
 ```
 
 ## VimWatch
 
-I recommend of use gitwatch to not conflict things between workplace.
+I recommend the use of `gitwatch` to not conflict changes between workplaces.
 
 usage:
-```sh
-gitwatch -r origin -m "Autocommit on change (%d)" -b sync .dotfiles/
+
+```console
+$ gitwatch -r origin -m "Autocommit on change (%d)" -b sync .dotfiles/
 ```
