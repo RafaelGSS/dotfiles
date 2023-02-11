@@ -37,7 +37,7 @@ deps:
 		sudo snap install ccls --classic
 
 homefiles:
-		sudo apt install ctags
+		sudo apt install exuberant-ctags
 		rm -f ${HOME}/.bashrc
 		ln -s $(realpath ./home/.bashrc) ${HOME}/.bashrc
 		if [ -f "$(realpath ./home/)/.bashrc.private" ]; then rm -f ${HOME}/.bashrc.private; ln -s $(realpath ./home/.bashrc.private) ${HOME}/.bashrc.private; fi;
