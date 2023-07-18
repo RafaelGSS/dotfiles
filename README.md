@@ -6,6 +6,8 @@ This dotfiles has been tested on Ubuntu. All the remaps are just personal prefer
 
 ```sh
 git clone https://github.com/RafaelGSS/dotfiles.git ~/.dotfiles;
+# or
+git clone git@github.com:RafaelGSS/dotfiles.git ~/.dotfiles;
 cd ~/.dotfiles; make install;
 ```
 
