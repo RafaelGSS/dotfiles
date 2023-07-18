@@ -5,9 +5,10 @@ Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " File explorer
-Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'nvim-tree/nvim-tree.lua'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
 
 " interfaces
 Plug 'lifepillar/vim-gruvbox8'
@@ -80,7 +81,7 @@ command! -nargs=* W execute "w"
 "navigate between buffers
 nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bprev<CR>
-nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>b <cmd>Telescope buffers<cr>
 
 " interface cfg
 let base16colorspace=256  " Access colors present in 256 colorspace
@@ -105,27 +106,36 @@ nnoremap <leader>dg :diffget<CR>
 nnoremap <leader>dp :diffput<CR>
 
 """"""""""""""""""""""""""""""""""""""
-" Plugin fuzzy finder - fzf
+" Plugin nvim-telescope
 """"""""""""""""""""""""""""""""""""""
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
-nnoremap <c-P> :Files<cr>
-nnoremap <c-F> :Ag<cr>
-nnoremap <leader>t :BTags<CR>
-nnoremap <leader>T :Tags<CR>
+nnoremap <c-P> <cmd>Telescope find_files<cr>
+nnoremap <c-F> <cmd>Telescope live_grep<cr>
+nnoremap <leader>t <cmd>Telescope help_tags<cr>
+nnoremap <leader>T <cmd>Telescope tags<cr>
 
 """"""""""""""""""""""""""""""""""""""
-" Plugin NERDTree
+" Plugin NvimTree
 """"""""""""""""""""""""""""""""""""""
-nnoremap <C-e> :NERDTreeToggle<CR>
+nnoremap <C-e> :NvimTreeToggle<CR>
 
-nnoremap <leader>m :NERDTreeFind<cr>
-let NERDTreeShowHidden=1
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-let NERDTreeWinSize=30
+nnoremap <leader>m :NvimTreeFindFile<cr>
 
-let g:NERDTreeMapOpenVSplit = "v"
-setlocal indentkeys+=0.
+lua << EOF
+require("nvim-tree").setup {
+  disable_netrw = true,
+  hijack_netrw = true,
+  actions = {
+    open_file = {
+      quit_on_open = true,
+    }
+  },
+  git = {
+    enable = true,
+    ignore = false,
+    timeout = 500,
+  },
+}
+EOF
 
 """"""""""""""""""""""""""""""""""""""
 " Plugin css

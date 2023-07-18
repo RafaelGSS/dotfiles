@@ -28,19 +28,19 @@ deps:
 			unzip \
 			git \
 			htop \
-			sshpass \
-			xclip \
 			arandr \
 			snapd \
 			atop \
-			tmux;
+			tmux \
+			exuberant-ctags;
 		sudo snap install ccls --classic
 
+deps-mac:
+		brew install ccls ninja ctags tmux zsh;
+
 homefiles:
-		sudo apt install exuberant-ctags
 		rm -f ${HOME}/.bashrc
 		ln -s $(realpath ./home/.bashrc) ${HOME}/.bashrc
-		if [ -f "$(realpath ./home/)/.bashrc.private" ]; then rm -f ${HOME}/.bashrc.private; ln -s $(realpath ./home/.bashrc.private) ${HOME}/.bashrc.private; fi;
 
 		rm -f ${HOME}/.ctags
 		ln -s $(realpath ./home/.ctags) ${HOME}/.ctags
@@ -66,7 +66,13 @@ nvim:
 		sudo apt update
 		# Bat only works at ubuntu >= 19 based
 		sudo apt-get install silversearcher-ag -y
-		git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+		rm -rf ${HOME}/.config/nvim
+		ln -s $(realpath ./nvim/) ${HOME}/.config/nvim
+		curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+		nvim -u ${HOME}/.config/nvim/init.vim +PlugInstall +qa
+
+nvim-mac:
+		brew install neovim the_silver_searcher;
 		rm -rf ${HOME}/.config/nvim
 		ln -s $(realpath ./nvim/) ${HOME}/.config/nvim
 		curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -78,7 +84,6 @@ nvm:
 lang: nvm
 		. $(NVM_DIR)/nvm.sh; nvm install --lts
 
-preferences: install
-		base16_gruvbox-dark-medium;
-
 install: deps homefiles lang i3 nvim preferences
+
+install-mac: deps-mac homefiles lang nvim-mac 
