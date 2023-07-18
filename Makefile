@@ -39,6 +39,7 @@ deps-mac:
 		brew install ccls ninja ctags tmux zsh;
 
 homefiles:
+		sudo apt install exuberant-ctags
 		rm -f ${HOME}/.bashrc
 		ln -s $(realpath ./home/.bashrc) ${HOME}/.bashrc
 
