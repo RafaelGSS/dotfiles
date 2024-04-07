@@ -9,5 +9,6 @@ lg = !"git lg1"
 	email = rafael.nunu@hotmail.com
 [core]
 	editor = nvim
+  excludesFile = tags*
 [init]
 	defaultBranch = main

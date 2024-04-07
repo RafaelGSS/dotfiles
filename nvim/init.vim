@@ -43,6 +43,7 @@ let mapleader="\<space>"
 set foldmethod=manual
 set so=7
 set clipboard=unnamedplus
+set clipboard+=unnamedplus
 set backupcopy=yes
 set inccommand=split
 set colorcolumn=120
@@ -122,6 +123,17 @@ nnoremap <leader>m :NvimTreeFindFile<cr>
 
 lua << EOF
 require("nvim-tree").setup {
+  renderer = {
+    icons = {
+      show = {
+        file = false,
+        folder = false,
+        folder_arrow = false,
+        git = false,
+        modified = false,
+      },
+    },
+  },
   disable_netrw = true,
   hijack_netrw = true,
   actions = {
