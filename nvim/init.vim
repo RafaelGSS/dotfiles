@@ -29,6 +29,9 @@ Plug 'hashivim/vim-terraform'
 Plug 'tpope/vim-commentary'
 Plug 'ludovicchabant/vim-gutentags'
 
+Plug 'nvim-lua/plenary.nvim'
+Plug 'instant-bench/instant-bench-nvim'
+
 " git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
@@ -146,6 +149,12 @@ require("nvim-tree").setup {
     ignore = false,
     timeout = 500,
   },
+}
+EOF
+
+lua << EOF
+require("instant-bench").setup {
+  endpoint = "http://localhost:4001"
 }
 EOF
 
