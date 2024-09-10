@@ -12,3 +12,5 @@ lg = !"git lg1"
   excludesFile = tags*
 [init]
 	defaultBranch = main
+[gpg]
+	program = gpg
