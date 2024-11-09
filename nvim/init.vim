@@ -8,7 +8,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 
 " interfaces
 Plug 'lifepillar/vim-gruvbox8'
@@ -36,6 +36,10 @@ Plug 'instant-bench/instant-bench-nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'shumphrey/fugitive-gitlab.vim'
+
+" Ib
+Plug 'nvim-lua/plenary.nvim'
+Plug 'instant-bench/instant-bench-nvim'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""
@@ -274,6 +278,17 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-eslint', 'coc-highlight', 'coc-html', 'coc-tslint', 'coc-vetur', 'coc-elixir', 'coc-cmake', 'coc-go', 'coc-pyright']
+
+""""""""""""""""""""""""""""""""""
+" Instant Bench
+""""""""""""""""""""""""""""""""""
+
+lua << EOF
+require("instant-bench").setup {
+  endpoint = "http://localhost:4000",
+  api_key = "XXXXXX",
+}
+EOF
 
 """"""""""""""""""""""""""""""""""
 " Plugin vim-airline
