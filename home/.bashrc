@@ -182,6 +182,8 @@ complete -F __start_kubectl k
 
 fi
 
+alias npx-safe='function _npx_safe() { npx --node-options="--permission --allow-fs-read=$(npm prefix -g) --allow-fs-read=$(npm config get cache)" "$@"; }; _npx_safe'
+
 [ -f ~/.bashrc.private ] && source ~/.bashrc.private
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
