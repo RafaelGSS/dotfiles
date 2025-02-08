@@ -191,3 +191,41 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+alias npx-safe='function _npx_safe() {
+  local node_opts="--permission --allow-fs-read=$(npm prefix -g) --allow-fs-read=$(npm config get cache)"
+  local package=""
+  local package_args=()
+  while [[ $# -gt 0 ]]; do
+    if [[ "$1" == --* ]]; then
+      # Anything starting with `--` goes into node_opts
+      node_opts+=" $1"
+    else
+      # The first non-`--` argument is the package; the rest are package args
+      if [[ -z "$package" ]]; then
+        package="$1"
+      else
+        package_args+=("$1")
+      fi
+    fi
+    shift
+  done
+  echo "============================="
+  echo "         npx-safe Log        "
+  echo "============================="
+  echo "Node.js options:"
+  echo "  $node_opts"
+  echo
+  echo "Package:"
+  echo "  $package"
+  echo
+  if [[ ${#package_args[@]} -gt 0 ]]; then
+    echo "Arguments:"
+    for arg in "${package_args[@]}"; do
+      echo "  $arg"
+    done
+    echo
+  fi
+  echo "============================="
+  npx --node-options="$node_opts" "$package" "${package_args[@]}"
+}; _npx_safe'
