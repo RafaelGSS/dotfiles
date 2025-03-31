@@ -5,7 +5,7 @@ lg = !"git lg1"
 	st = status
 	co = checkout
 [user]
-	name = Rafael Gonzaga <rafael.nunu@hotmail.com>
+	name = RafaelGSS
 	email = rafael.nunu@hotmail.com
 [core]
 	editor = nvim
