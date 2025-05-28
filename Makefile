@@ -85,6 +85,6 @@ nvm:
 lang: nvm
 		. $(NVM_DIR)/nvm.sh; nvm install --lts
 
-install: deps homefiles lang i3 nvim preferences
+install: deps homefiles lang i3 nvim
 
 install-mac: deps-mac homefiles lang nvim-mac 
