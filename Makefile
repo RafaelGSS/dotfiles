@@ -125,21 +125,17 @@ homefiles: check-tools check-dirs
 i3: check-tools check-dirs
 	@echo "Setting up i3 window manager..."
 	-sudo apt-get install i3 i3status i3lock -y
-	@if [ -d "./i3" ]; then \
-		rm -rf ${HOME}/.config/i3; \
-		ln -sf $(DOTFILES_DIR)/i3 ${HOME}/.config/; \
-		echo "✓ i3 config linked"; \
-		i3-msg reload 2>/dev/null || echo "Note: i3-msg not available or failed, you may need to reload i3 manually"; \
-	else \
-		echo "Warning: ./i3 directory not found, skipping i3 setup"; \
-	fi
+	rm -rf ${HOME}/.config/i3; \
+	ln -s $(DOTFILES_DIR)/i3 ${HOME}/.config/; \
+	echo "✓ i3 config linked"; \
+	i3-msg reload 2>/dev/null || echo "Note: i3-msg not available or failed, you may need to reload i3 manually"; \
 
 # Setup Neovim for Ubuntu/Debian
 nvim: check-tools check-dirs
 	@echo "Setting up Neovim..."
 	-sudo add-apt-repository ppa:neovim-ppa/stable -y
 	-sudo apt update
-	-sudo apt-get install -y neovim silversearcher-ag
+	-sudo apt-get install -y neovim silversearcher-ag ripgrep
 	@if [ -d "./nvim" ]; then \
 		rm -rf ${HOME}/.config/nvim; \
 		ln -sf $(DOTFILES_DIR)/nvim ${HOME}/.config/nvim; \
