@@ -262,6 +262,8 @@ check-landing() {
     fi
 
     git cherry-pick --abort >/dev/null 2>&1 || true
+    git reset --hard >/dev/null 2>&1 || true
+    git clean -f -d >/dev/null 2>&1 || true
     git switch "$current_branch" >/dev/null 2>&1
     git branch -D "$tmp_branch" >/dev/null 2>&1
   done
