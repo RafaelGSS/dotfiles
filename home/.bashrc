@@ -229,3 +229,40 @@ alias npx-safe='function _npx_safe() {
   echo "============================="
   npx --node-options="$node_opts" "$package" "${package_args[@]}"
 }; _npx_safe'
+
+check-landing() {
+  if [ "$#" -lt 1 ]; then
+    echo "Usage: check-landing <target-branch> [<target-branch> ...]"
+    return 1
+  fi
+
+  local current_commit
+  current_commit=$(git rev-parse HEAD)
+  local current_branch
+  current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+  for branch in "$@"; do
+    echo "Checking if HEAD applies cleanly to $branch..."
+
+    local tmp_branch="tmp-cherry-pick-${branch//\//_}"
+    git fetch origin "$branch" >/dev/null 2>&1 || {
+      echo "⚠️  Failed to fetch origin/$branch"
+      continue
+    }
+
+    git switch -c "$tmp_branch" "origin/$branch" >/dev/null 2>&1 || {
+      echo "⚠️  Failed to create tmp branch from origin/$branch"
+      continue
+    }
+
+    if git cherry-pick --no-commit "$current_commit" >/dev/null 2>&1; then
+      echo "✅ HEAD applies cleanly on $branch"
+    else
+      echo "❌ Conflict when applying on $branch"
+    fi
+
+    git cherry-pick --abort >/dev/null 2>&1 || true
+    git switch "$current_branch" >/dev/null 2>&1
+    git branch -D "$tmp_branch" >/dev/null 2>&1
+  done
+}
